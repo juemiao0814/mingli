@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星曜命理｜八字排盘 · 免费详批 · 大师服务</title>
+<style>
+:root{
+  --bg:#06101d;--panel:#0e1e32;--panel2:#122a46;--line:rgba(255,255,255,.09);
+  --text:#eef5ff;--muted:#9badc4;--gold:#e7c36d;--gold2:#f5dea0;
+  --blue:#6faeff;--green:#74d8b0;--red:#ff9999;--shadow:0 22px 70px rgba(0,0,0,.28)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(circle at 12% -8%,rgba(72,132,211,.2),transparent 26%),
+radial-gradient(circle at 88% 3%,rgba(231,195,109,.08),transparent 22%),
+linear-gradient(180deg,#06101d 0,#09192b 55%,#06111e 100%);
+color:var(--text);font-family:Inter,"PingFang SC","Microsoft YaHei",sans-serif}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.top{position:sticky;top:0;z-index:50;background:rgba(5,13,23,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:66px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px}.logo{width:40px;height:40px;border:1px solid rgba(231,195,109,.55);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:800}.brand b{font-size:18px}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.links{display:flex;gap:16px;color:var(--muted);font-size:13px}.links a:hover{color:var(--gold)}
+.hero{padding:44px 0 16px}.hero-grid{display:grid;grid-template-columns:1fr .95fr;gap:24px}
+.eyebrow{font-size:11px;letter-spacing:2.4px;color:var(--gold)}.hero h1{font-size:42px;line-height:1.12;margin:10px 0 13px}.hero p{max-width:680px;color:var(--muted);line-height:1.9}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.stat,.card{background:linear-gradient(180deg,rgba(16,36,58,.94),rgba(9,23,39,.94));border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.stat{padding:14px}.stat small{color:var(--muted)}.stat strong{display:block;margin-top:6px;font-size:22px;color:var(--gold2)}
+.form-card{padding:20px}.form-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:13px}.form-head b{font-size:18px}.tip{color:var(--muted);font-size:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field label{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}.field input,.field select,.composer textarea{width:100%;padding:11px 12px;border-radius:11px;border:1px solid var(--line);outline:0;background:#071522;color:var(--text)}.field input:focus,.field select:focus,.composer textarea:focus{border-color:rgba(111,174,255,.7)}
+.full{grid-column:1/-1}.btn{width:100%;border:0;border-radius:11px;padding:12px 14px;cursor:pointer;font-weight:800;margin-top:11px}.gold{background:linear-gradient(135deg,#d7b25b,#f0d58a);color:#1b1508}.blue{background:linear-gradient(135deg,#4d8bdc,#78b7ff);color:#07111d}.ghost{background:rgba(255,255,255,.04);border:1px solid var(--line);color:#dbe8f6}
+.notice{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.03);color:var(--muted);font-size:11px;line-height:1.7;margin-top:10px}
+.section{padding:16px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:20px 0 11px}.head h2{font-size:21px;margin:0}.head span{font-size:11px;color:var(--muted)}
+.announce{display:flex;gap:10px;align-items:center;padding:12px 14px;border:1px solid rgba(231,195,109,.16);background:linear-gradient(90deg,rgba(231,195,109,.11),rgba(111,174,255,.05));border-radius:14px}.badge{font-size:10px;color:var(--gold2);background:rgba(231,195,109,.11);border-radius:99px;padding:5px 8px}.announce p{margin:0;font-size:11px;color:#d5e1ef}.announce a{margin-left:auto;font-size:10px;color:var(--gold2)}
+.notify-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:12px}.notify{padding:16px}.notify h3{font-size:15px;margin:0 0 10px}.notify-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:11px}.notify-row:last-child{border-bottom:0}.notify-row span{color:var(--muted)}.unread{color:var(--red);font-weight:800}.ad{min-height:118px;display:grid;place-items:center;text-align:center;padding:18px;border:1px dashed rgba(231,195,109,.24);border-radius:16px;color:var(--muted)}.ad b{display:block;color:#dfe9f4;font-size:12px;margin-bottom:5px}.ad small{font-size:10px;line-height:1.7}
+.bazi{padding:18px}.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}.meta .cell{padding:12px 13px;border-radius:13px;background:rgba(255,255,255,.025);border:1px solid var(--line)}.cell small{display:block;color:var(--muted);font-size:10px}.cell b{display:block;margin-top:5px;font-size:18px}
+.pills{display:flex;gap:7px;overflow:auto;padding:3px 0 9px}.pill{white-space:nowrap;padding:8px 11px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);border-radius:999px;cursor:pointer;font-size:11px}.pill.active{background:var(--gold);color:#1a1408;border-color:var(--gold)}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.pillar{padding:14px;text-align:center;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#132b48,#0a1c2f)}.pillar .label{color:var(--muted);font-size:10px}.gan,.zhi{font-size:32px;font-weight:900;line-height:1.1}.gan{margin-top:8px}.zhi{color:var(--gold2)}.ptag{display:flex;justify-content:center;gap:5px;margin-top:8px}.ptag span{font-size:9px;padding:4px 7px;border-radius:99px;background:rgba(111,174,255,.1);color:#b7d5ff}.pmini{margin-top:9px;font-size:10px;color:#b8c9db;line-height:1.7}
+.data{display:grid;grid-template-columns:1fr 1fr;gap:12px}.info{padding:16px}.info h3{font-size:14px;margin:0 0 8px}.row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:11px}.row:last-child{border-bottom:0}.row span{color:var(--muted)}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.summary{padding:15px}.summary h3{margin:0 0 7px;font-size:14px}.summary p{margin:0;color:#cad8e7;font-size:11.5px;line-height:1.85}
+.table-wrap{overflow:auto}.table{width:100%;min-width:760px;border-collapse:collapse}.table th,.table td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;font-size:10.5px}.table th{color:var(--muted);font-weight:500}.table td strong{color:var(--gold2)}
+.month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.month{padding:14px}.month-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}.month-top h3{margin:0;font-size:14px}.month-top strong{color:var(--gold2)}.month-line{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:10px}.month-line:last-child{border-bottom:0}.month-line span{color:var(--muted)}.month-note{margin-top:7px;color:#a9bbd0;font-size:9.5px;line-height:1.6}
+.lock-grid,.master-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.lock,.master{padding:15px;position:relative;overflow:hidden}.lock h3,.master h3{font-size:14px;margin:0 0 7px}.blur{filter:blur(3px);opacity:.52;color:#d1ddeb;font-size:11.5px;line-height:1.8}.lock:after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(transparent,rgba(6,15,25,.96))}.lockbar,.masterbar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}.price{font-size:18px;color:var(--gold2);font-weight:900}.small-btn{padding:8px 10px;border-radius:9px;border:1px solid rgba(231,195,109,.26);background:rgba(231,195,109,.08);color:var(--gold2);cursor:pointer}.mastertop{display:flex;align-items:center;gap:10px}.avatar{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#5a91d4,#17385e);font-weight:900}.master p{font-size:11px;color:#c6d5e5;line-height:1.7;min-height:42px}.masterbar .mprice{color:var(--gold2);font-size:17px;font-weight:900}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:10px}.rule{padding:15px}.rule h3{margin:0 0 6px;font-size:14px}.rule p{margin:0;color:#c4d2e1;font-size:11px;line-height:1.75}.danger{border-color:rgba(255,153,153,.15);background:linear-gradient(180deg,rgba(72,29,37,.25),rgba(15,24,39,.88))}
+.pool-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}.pool,.chat{padding:16px}.pool h3,.chat h3{margin:0;font-size:15px}.poolorder{display:grid;grid-template-columns:1fr auto auto auto;gap:10px;align-items:center;padding:10px 11px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025);margin-top:9px}.poolorder h4{margin:0 0 4px;font-size:11px}.poolorder small{color:var(--muted)}.count{font-size:10px;color:var(--red);white-space:nowrap}.accept{border:0;border-radius:9px;padding:8px 10px;background:var(--gold);color:#1b1508;font-size:10px;font-weight:800;cursor:pointer}.pool-note{margin-top:9px;color:var(--muted);font-size:10px;line-height:1.7}
+.chat-layout{display:grid;grid-template-columns:1fr 310px;gap:12px}.chatbox{height:630px;display:flex;flex-direction:column;overflow:hidden}.chathead{padding:14px 15px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.expert{display:flex;align-items:center;gap:10px}.expert h3{margin:0}.expert p{margin:3px 0 0;color:var(--muted);font-size:10px}.online{background:rgba(116,216,176,.75);color:#092519;border-radius:99px;padding:5px 8px;font-size:9px}.messages{flex:1;overflow:auto;padding:14px}.sys{text-align:center;margin:12px 0}.sys span{font-size:9px;color:#d8c78c;background:rgba(231,195,109,.07);border:1px solid rgba(231,195,109,.13);padding:6px 9px;border-radius:99px}.msg{display:flex;gap:8px;margin:11px 0}.msg.me{flex-direction:row-reverse}.bubble{max-width:74%;padding:10px 12px;background:#122b47;border:1px solid var(--line);border-radius:14px;font-size:11px;line-height:1.75}.msg.me .bubble{background:linear-gradient(135deg,#1d4a7c,#17375b)}.mstatus{font-size:8.5px;color:var(--muted);margin-top:3px}.mstatus.new{color:var(--gold2)}.unread-line{display:flex;align-items:center;gap:7px;color:var(--gold2);font-size:9px;margin:11px 0}.unread-line:before,.unread-line:after{content:"";height:1px;background:rgba(231,195,109,.2);flex:1}.composer{border-top:1px solid var(--line);padding:10px}.composer-row{display:grid;grid-template-columns:auto 1fr auto;gap:7px}.tool{border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);border-radius:9px;padding:9px 11px;cursor:pointer}.send{border:0;background:var(--gold);color:#1b1508;border-radius:9px;padding:9px 13px;font-weight:800;cursor:pointer}.chat-side{display:grid;gap:10px}.chat-side .info{height:max-content}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.64);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}.modal.show{display:flex}.modalbox{width:min(430px,100%);padding:20px}.modalbox h3{margin:0 0 8px}.modalbox p{color:var(--muted);font-size:11px;line-height:1.8}.modalrow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:11px}.modal-actions{display:flex;gap:8px;margin-top:13px}.modal-actions button{flex:1;padding:10px;border:0;border-radius:9px;cursor:pointer}.cancel{background:rgba(255,255,255,.05);color:#dbe7f4}.confirm{background:var(--gold);color:#1b1508;font-weight:800}.toast{position:fixed;right:18px;bottom:18px;display:none;z-index:110;background:#11243a;border:1px solid var(--line);padding:11px 14px;border-radius:10px;font-size:11px;box-shadow:var(--shadow)}
+
+.master-workspace{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.workspace-card{padding:16px}.workspace-card h3{margin:0 0 8px;font-size:15px}
+.workspace-card p{margin:0;color:var(--muted);font-size:10.5px;line-height:1.7}
+.switcher{display:flex;gap:7px;margin-bottom:10px}.switcher button{padding:8px 11px;border-radius:9px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);cursor:pointer;font-size:10px}.switcher button.active{background:var(--gold);color:#1b1508;border-color:var(--gold)}
+.master-form{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.master-form .full{grid-column:1/-1}
+.master-form input,.master-form select,.master-form textarea{width:100%;padding:10px 11px;border-radius:10px;border:1px solid var(--line);background:#071522;color:var(--text);outline:none}.master-form textarea{min-height:78px;resize:vertical}
+.offer-card{margin-top:10px;padding:14px;border:1px solid rgba(231,195,109,.2);border-radius:14px;background:linear-gradient(180deg,rgba(86,65,25,.22),rgba(14,25,41,.72))}
+.offer-top{display:flex;justify-content:space-between;gap:10px;align-items:start}.offer-top h4{margin:0;font-size:13px}.offer-price{font-size:19px;font-weight:900;color:var(--gold2)}.offer-card p{margin:8px 0;color:#ccd9e8;font-size:10.5px;line-height:1.7}.offer-card small{color:var(--muted);font-size:9px}
+.offer-actions{display:flex;gap:7px;margin-top:10px}.offer-actions button{flex:1;padding:9px;border-radius:9px;border:0;cursor:pointer;font-size:10px}.offer-pay{background:var(--gold);color:#1a1408;font-weight:800}.offer-ignore{background:rgba(255,255,255,.05);border:1px solid var(--line)!important;color:#dbe8f5}
+.external-note{display:flex;align-items:center;gap:8px;padding:9px 10px;margin-top:9px;border:1px solid rgba(111,174,255,.16);border-radius:11px;background:rgba(111,174,255,.05);font-size:9.5px;color:#b9cce3}
+.external-note b{color:#d8e7f7}.notify-dot{width:7px;height:7px;border-radius:50%;background:#ff8282;box-shadow:0 0 0 4px rgba(255,130,130,.08)}
+.master-badge{padding:5px 8px;border-radius:99px;font-size:9px;background:rgba(116,216,176,.08);color:var(--green);border:1px solid rgba(116,216,176,.16)}
+
+
+.master-center{display:grid;grid-template-columns:1.15fr .85fr;gap:12px}
+.master-directory{padding:16px}.master-directory h3,.profile-card h3,.service-manager h3{margin:0;font-size:15px}
+.master-filters{display:flex;gap:7px;overflow:auto;margin:10px 0}.master-filter{white-space:nowrap;padding:7px 10px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);font-size:10px;cursor:pointer}.master-filter.active{background:var(--gold);color:#1b1508;border-color:var(--gold)}
+.master-list{display:grid;gap:9px}
+.master-entry{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:11px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.025)}
+.master-entry h4{margin:0 0 3px;font-size:12px}.master-entry p{margin:0;color:var(--muted);font-size:9.5px;line-height:1.55}.master-entry .statsmini{font-size:9px;color:var(--muted);margin-top:4px}
+.title-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 7px;margin-top:5px;border-radius:999px;background:rgba(231,195,109,.1);border:1px solid rgba(231,195,109,.17);color:var(--gold2);font-size:9px}
+.master-entry .entry-price{text-align:right;color:var(--gold2);font-size:15px;font-weight:900;white-space:nowrap}
+.master-entry .entry-actions{display:flex;gap:6px;margin-top:6px}.master-entry button{padding:7px 9px;border-radius:8px;border:0;font-size:9px;cursor:pointer}.choose-master{background:var(--gold);color:#1a1408;font-weight:800}.view-profile{background:rgba(255,255,255,.05);border:1px solid var(--line)!important;color:#dce8f5}
+.profile-card{padding:16px}.profile-hero{display:flex;gap:11px;align-items:center}.profile-hero .big-avatar{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#5f97dc,#17385f);font-size:24px;font-weight:900}.profile-hero h3{margin:0 0 3px}.profile-hero p{margin:0;color:var(--muted);font-size:10px}
+.profile-section{margin-top:12px}.profile-section h4{margin:0 0 7px;font-size:11px}.tagline{display:flex;flex-wrap:wrap;gap:5px}.tagline span{font-size:9px;padding:4px 6px;border-radius:99px;background:rgba(111,174,255,.09);color:#b8d5ff}
+.profile-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.profile-stat{padding:9px;border-radius:10px;background:rgba(255,255,255,.025);border:1px solid var(--line);text-align:center}.profile-stat small{display:block;color:var(--muted);font-size:8px}.profile-stat b{display:block;margin-top:3px;color:var(--gold2);font-size:13px}
+.profile-copy{margin:0;color:#c8d7e6;font-size:10px;line-height:1.75}
+.service-table{width:100%;border-collapse:collapse;margin-top:8px}.service-table th,.service-table td{padding:7px 5px;border-bottom:1px dashed var(--line);font-size:9px;text-align:left}.service-table th{color:var(--muted);font-weight:500}.service-table td strong{color:var(--gold2)}
+.service-manager{padding:16px}.service-row{display:grid;grid-template-columns:1.35fr .8fr .7fr auto;gap:7px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)}.service-row:last-child{border-bottom:0}.service-row input,.service-row select{width:100%;padding:7px 8px;border-radius:8px;border:1px solid var(--line);background:#071522;color:var(--text);font-size:9px}.service-row button{padding:7px 8px;border:0;border-radius:8px;background:rgba(255,255,255,.06);color:#dbe7f5;cursor:pointer;font-size:9px}.add-service{width:100%;margin-top:8px;padding:8px;border:1px dashed rgba(231,195,109,.25);background:rgba(231,195,109,.05);color:var(--gold2);border-radius:9px;cursor:pointer;font-size:9px}
+.title-track{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:9px}.title-level{padding:8px;border-radius:9px;background:rgba(255,255,255,.025);border:1px solid var(--line);text-align:center;font-size:8.5px;color:var(--muted)}.title-level.active{border-color:rgba(231,195,109,.35);background:rgba(231,195,109,.07);color:var(--gold2)}.title-level b{display:block;margin-top:4px;font-size:9.5px}
+.profile-link{color:var(--blue);cursor:pointer;font-size:9px}
+@media(max-width:950px){.master-center{grid-template-columns:1fr}.master-entry{grid-template-columns:auto 1fr}.master-entry .entry-price{grid-column:2;text-align:left}.service-row{grid-template-columns:1fr 1fr}.service-row button{grid-column:2}}
+@media(max-width:650px){.profile-stats{grid-template-columns:1fr 1fr}.title-track{grid-template-columns:1fr 1fr}}
+
+.footer{padding:32px 0 50px;color:var(--muted);font-size:10px;line-height:1.8}
+@media(max-width:950px){.hero-grid,.chat-layout,.pool-grid{grid-template-columns:1fr}.summary-grid{grid-template-columns:1fr 1fr}.master-grid,.lock-grid,.month-grid{grid-template-columns:1fr 1fr}.notify-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.links{display:none}.hero h1{font-size:31px}.stats,.grid2,.data,.rules{grid-template-columns:1fr}.full{grid-column:auto}.meta{grid-template-columns:1fr 1fr}.pillars{grid-template-columns:1fr 1fr}.summary-grid,.master-grid,.lock-grid,.month-grid{grid-template-columns:1fr}.poolorder{grid-template-columns:1fr 1fr}.poolorder .accept{grid-column:2}.composer-row{grid-template-columns:auto 1fr}.send{grid-column:2}.bubble{max-width:84%}}
+</style>
+</head>
+<body>
+<header class="top"><div class="container nav">
+  <a class="brand" href="#"><div class="logo">曜</div><div><b>星曜命理</b><small>传统命理 · 数字化命盘</small></div></a>
+  <nav class="links"><a href="#chart">八字排盘</a><a href="#summary">免费摘要</a><a href="#yun">大运流年</a><a href="#masters">大师服务中心</a></nav>
+</div></header>
+
+<main class="container">
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">BAZI · PERSONAL CHART · MASTER SERVICE</div>
+      <h1>一张命盘，看懂自己的事业、财运与感情</h1>
+      <p>输入出生信息与出生地点，先展示真太阳时与四柱排盘，再继续查看五行、十神、大运、流年、流月和大量免费摘要。需要更深内容时，可按事业、财富、感情等小项单独解锁。</p>
+      <div class="stats">
+        <div class="stat"><small>免费摘要容量</small><strong>90+</strong></div>
+        <div class="stat"><small>排盘维度</small><strong>25+</strong></div>
+        <div class="stat"><small>流年预览</small><strong>10年</strong></div>
+        <div class="stat"><small>深度项目</small><strong>¥2–5</strong></div>
+      </div>
+    </div>
+    <div class="card form-card">
+      <div class="form-head"><b>免费开始排盘</b><span class="tip">出生地用于真太阳时修正</span></div>
+      <div class="grid2">
+        <div class="field full"><label>姓名（可不填）</label><input id="name" placeholder="例如：张先生"></div>
+        <div class="field"><label>出生日期</label><input id="date" type="date" value="1996-05-18"></div>
+        <div class="field"><label>出生时间</label><input id="time" type="time" value="09:25"></div>
+        <div class="field"><label>性别</label><select id="gender"><option>男</option><option>女</option></select></div>
+        <div class="field"><label>省 / 直辖市 / 自治区</label><select id="province" onchange="loadCities()"></select></div>
+        <div class="field"><label>市</label><select id="city" onchange="loadDistricts()"></select></div>
+        <div class="field"><label>县 / 区</label><select id="district"></select></div>
+      </div>
+      <button class="btn gold" onclick="generateChart()">生成命盘与免费摘要</button>
+      <div class="notice">用户无需填写经纬度和时区。正式商业版应由服务端使用精确节气、历法和地理数据完成最终排盘。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="announce"><span class="badge">置顶公告</span><p>平台咨询统一在站内完成；禁止私下加好友、站外导流或绕过平台付款。</p><a href="#rules">查看规则</a></div>
+</section>
+
+<section class="section">
+  <div class="notify-grid">
+    <div class="card notify">
+      <h3>大师新订单通知</h3>
+      <div class="notify-row"><span>通知状态</span><b id="notifyStatus" class="unread">1 条待处理</b></div>
+      <div class="notify-row"><span>最新订单</span><b id="notifyOrder">等待新订单</b></div>
+      <div class="notify-row"><span>通知方式</span><span>站内 · 浏览器 · 邮件/短信接口预留</span></div>
+      <button class="btn blue" onclick="simulateOrder()">模拟顾客下单 → 通知大师</button>
+    </div>
+    <div class="ad"><div><b>广告位 · 首页信息流 Banner</b><small>可接会员套餐、命理书籍、品牌合作、联盟广告等</small></div></div>
+  </div>
+</section>
+
+<section id="chart" class="section">
+  <div class="head"><h2>生辰八字排盘</h2><span id="status">示例命盘 · 生成后自动刷新</span></div>
+  <div class="card bazi">
+    <div class="meta">
+      <div class="cell"><small>真太阳时</small><b id="solar">1996-05-18 09:17</b></div>
+      <div class="cell"><small>日主</small><b id="dm">甲木</b></div>
+      <div class="cell"><small>生肖</small><b id="zodiac">鼠</b></div>
+      <div class="cell"><small>五行倾向</small><b id="balance" style="color:var(--green)">木偏旺</b></div>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><div class="label">年柱 · 根基</div><div class="gan" id="yg">丙</div><div class="zhi" id="yz">子</div><div class="ptag"><span>火</span><span>水</span></div><div class="pmini">藏干：癸<br>纳音：涧下水</div></div>
+      <div class="pillar"><div class="label">月柱 · 提纲</div><div class="gan" id="mg">癸</div><div class="zhi" id="mz">巳</div><div class="ptag"><span>水</span><span>火</span></div><div class="pmini">藏干：丙、戊、庚<br>月令是重要观察位置</div></div>
+      <div class="pillar"><div class="label">日柱 · 核心</div><div class="gan" id="dg">甲</div><div class="zhi" id="dz">辰</div><div class="ptag"><span>日主</span><span>木</span></div><div class="pmini">藏干：戊、乙、癸<br>日支为夫妻宫观察入口</div></div>
+      <div class="pillar"><div class="label">时柱 · 晚景</div><div class="gan" id="hg">己</div><div class="zhi" id="hz">巳</div><div class="ptag"><span>土</span><span>火</span></div><div class="pmini">藏干：丙、戊、庚<br>观察后期发展与输出</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="head"><h2>命盘细项</h2><span>排盘核心字段集中展示</span></div>
+  <div class="data">
+    <div class="card info"><h3>四柱与十神</h3><div class="row"><span>年柱主星</span><b>偏财</b></div><div class="row"><span>月柱主星</span><b>正印</b></div><div class="row"><span>日柱主星</span><b>日元</b></div><div class="row"><span>时柱主星</span><b>正财</b></div><div class="row"><span>五行分布</span><b id="elements">木2 · 火2 · 土2 · 金1 · 水1</b></div></div>
+    <div class="card info"><h3>传统排盘信息</h3><div class="row"><span>纳音</span><b>涧下水 · 长流水 · 佛灯火 · 大林木</b></div><div class="row"><span>十二长生</span><b>沐浴 · 临官 · 冠带 · 病</b></div><div class="row"><span>空亡</span><b>寅卯</b></div><div class="row"><span>胎元 / 命宫</span><b>甲申 / 丙申</b></div><div class="row"><span>起运</span><b>约 7–8 岁起运（演示）</b></div></div>
+  </div>
+</section>
+
+<section id="summary" class="section">
+  <div class="head"><h2>免费详细命理摘要</h2><span>免费层先给足内容，深度项目再单独解锁</span></div>
+
+  <div class="subhead" style="color:#dce8f5;font-size:14px;margin:12px 0 8px">一、命局总览</div>
+  <div class="summary-grid" id="overall"></div>
+  <div class="subhead" style="color:#dce8f5;font-size:14px;margin:14px 0 8px">二、事业与学业</div>
+  <div class="summary-grid" id="career"></div>
+  <div class="subhead" style="color:#dce8f5;font-size:14px;margin:14px 0 8px">三、财富与资源</div>
+  <div class="summary-grid" id="wealth"></div>
+  <div class="subhead" style="color:#dce8f5;font-size:14px;margin:14px 0 8px">四、感情与婚恋</div>
+  <div class="summary-grid" id="love"></div>
+  <div class="subhead" style="color:#dce8f5;font-size:14px;margin:14px 0 8px">五、六亲、人际与生活</div>
+  <div class="summary-grid" id="family"></div>
+</section>
+
+<section class="section">
+  <div class="ad"><div><b>广告位 · 命盘报告中部横幅</b><small>建议用于会员套餐、专题报告、命理书籍或品牌广告</small></div></div>
+</section>
+
+<section id="yun" class="section">
+  <div class="head"><h2>大运 · 流年 · 流月</h2><span>同页查看不同时间层级</span></div>
+  <div class="card bazi">
+    <div class="pills"><button class="pill active" onclick="switchTime('dayun',this)">大运</button><button class="pill" onclick="switchTime('liunian',this)">流年</button><button class="pill" onclick="switchTime('liuyue',this)">流月</button></div>
+    <div id="dayun"><div class="table-wrap"><table class="table"><thead><tr><th>阶段</th><th>年龄</th><th>大运</th><th>五行</th><th>主题</th><th>免费提示</th></tr></thead><tbody>
+      <tr><td>第1运</td><td>8–17</td><td><strong>甲子</strong></td><td>木水</td><td>学习 / 环境</td><td>基础积累、人际和学习环境变化增多</td></tr>
+      <tr><td>第2运</td><td>18–27</td><td><strong>乙丑</strong></td><td>木土</td><td>能力 / 财富</td><td>专业能力与现实选择并重</td></tr>
+      <tr><td>第3运</td><td>28–37</td><td><strong>丙寅</strong></td><td>火木</td><td>输出 / 事业</td><td>适合建立个人竞争力和项目成果</td></tr>
+      <tr><td>第4运</td><td>38–47</td><td><strong>丁卯</strong></td><td>火木</td><td>品牌 / 资源</td><td>影响力、合作资源与组织能力值得放大</td></tr>
+      <tr><td>第5运</td><td>48–57</td><td><strong>戊辰</strong></td><td>土</td><td>资产 / 稳定</td><td>重视现金流、资产结构和长期布局</td></tr>
+    </tbody></table></div></div>
+    <div id="liunian" style="display:none"><div class="table-wrap"><table class="table"><thead><tr><th>年份</th><th>流年</th><th>五行</th><th>事业</th><th>财富</th><th>感情</th></tr></thead><tbody>
+      <tr><td>2026</td><td><strong>丙午</strong></td><td>火</td><td>输出与曝光</td><td>项目机会</td><td>重视沟通</td></tr>
+      <tr><td>2027</td><td><strong>丁未</strong></td><td>火土</td><td>责任增加</td><td>整理现金流</td><td>现实协作</td></tr>
+      <tr><td>2028</td><td><strong>戊申</strong></td><td>土金</td><td>规则与合作</td><td>控制风险</td><td>边界感</td></tr>
+      <tr><td>2029</td><td><strong>己酉</strong></td><td>土金</td><td>职位与责任</td><td>合同与回款</td><td>稳定选择</td></tr>
+      <tr><td>2030</td><td><strong>庚戌</strong></td><td>金土</td><td>定目标</td><td>长期规划</td><td>价值观匹配</td></tr>
+    </tbody></table></div></div>
+    <div id="liuyue" style="display:none">
+      <div class="notice">流月按节气月组织，正式上线时应使用精确节气交接时刻确定月份边界。下面展示 12 个月的产品化内容结构。</div>
+      <div class="month-grid" id="monthGrid" style="margin-top:10px"></div>
+    </div>
+  </div>
+</section>
+
+<section id="unlock" class="section">
+  <div class="head"><h2>深度命理解锁</h2><span>每个小项 ¥2–5</span></div>
+  <div class="lock-grid">
+    <div class="card lock"><h3>事业深度</h3><div class="blur">结合月令、日主、官杀、食伤、财星与大运，进一步分析职业环境、适合方向、创业、转型、管理与阶段机会。</div><div class="lockbar"><span class="price">¥4</span><button class="small-btn" onclick="openBuy('事业深度',4)">解锁</button></div></div>
+    <div class="card lock"><h3>财富结构</h3><div class="blur">围绕正财、偏财、食伤生财、财星透藏与行运变化，展开财富来源、现金流、资源整合和风险控制。</div><div class="lockbar"><span class="price">¥5</span><button class="small-btn" onclick="openBuy('财富结构',5)">解锁</button></div></div>
+    <div class="card lock"><h3>感情专题</h3><div class="blur">结合夫妻宫、配偶星、桃花和岁运关系，进一步展开关系模式、择偶倾向、阶段主题与沟通重点。</div><div class="lockbar"><span class="price">¥4</span><button class="small-btn" onclick="openBuy('感情专题',4)">解锁</button></div></div>
+    <div class="card lock"><h3>格局与用神</h3><div class="blur">从月令、强弱、调候、通关和生克制化几个维度，对命局整体结构做更深入的传统文化分析。</div><div class="lockbar"><span class="price">¥5</span><button class="small-btn" onclick="openBuy('格局与用神',5)">解锁</button></div></div>
+    <div class="card lock"><h3>十年大运细批</h3><div class="blur">逐步拆解每一大运与原局的互动关系，观察事业、财富、感情、人际与阶段选择的主题。</div><div class="lockbar"><span class="price">¥5</span><button class="small-btn" onclick="openBuy('十年大运细批',5)">解锁</button></div></div>
+    <div class="card lock"><h3>流年细批</h3><div class="blur">逐年分析流年与原局、大运关系，进一步展开年度机会、压力、合作、财富与关系主题。</div><div class="lockbar"><span class="price">¥4</span><button class="small-btn" onclick="openBuy('流年细批',4)">解锁</button></div></div>
+  </div>
+</section>
+
+<section id="masters" class="section">
+  <div class="head"><h2>大师服务中心</h2><span>顾客自由选择 · 大师多项目报价 · 资料展示 · 头衔激励</span></div>
+  <div class="master-center">
+    <div class="card master-directory">
+      <h3>选择大师</h3>
+      <div class="master-filters">
+        <button class="master-filter active" onclick="filterMasters('全部',this)">全部</button>
+        <button class="master-filter" onclick="filterMasters('八字',this)">八字</button>
+        <button class="master-filter" onclick="filterMasters('紫微',this)">紫微斗数</button>
+        <button class="master-filter" onclick="filterMasters('婚恋',this)">婚恋</button>
+        <button class="master-filter" onclick="filterMasters('事业',this)">事业</button>
+        <button class="master-filter" onclick="filterMasters('财运',this)">财运</button>
+      </div>
+      <div class="master-list" id="masterList"></div>
+      <div class="notice">顾客可以先查看大师公开资料、头衔、评分和报价，再选择具体老师进入平台内咨询。实际订单创建和支付由服务端完成。</div>
+    </div>
+
+    <div class="card profile-card" id="masterProfileCard">
+      <div class="profile-hero"><div class="big-avatar" id="profileAvatar">林</div><div><h3 id="profileName">林老师</h3><p id="profileTitle">高级命理师 · 八字事业顾问</p><div class="title-badge" id="profileBadge">✦ 金牌大师</div></div></div>
+      <div class="profile-section"><h4>公开资料</h4><p class="profile-copy" id="profileBio">专注四柱结构、岁运节奏和事业主题的传统文化解读。平台内完成咨询、交付与售后，服务记录清晰可查。</p></div>
+      <div class="profile-section"><h4>擅长方向</h4><div class="tagline" id="profileTags"><span>八字</span><span>事业</span><span>婚姻</span><span>流年</span></div></div>
+      <div class="profile-section"><div class="profile-stats"><div class="profile-stat"><small>服务订单</small><b id="profileOrders">326</b></div><div class="profile-stat"><small>评分</small><b id="profileRating">4.9</b></div><div class="profile-stat"><small>响应速度</small><b id="profileResponse">约 15 分钟</b></div></div></div>
+      <div class="profile-section"><h4>当前报价</h4><table class="service-table"><thead><tr><th>服务</th><th>说明</th><th>价格</th></tr></thead><tbody id="profileServices"></tbody></table></div>
+
+      <div class="profile-section" id="abilitySection">
+        <h4>咨询前能力评估</h4>
+        <div class="rows">
+          <div class="row"><span>四柱结构分析</span><b id="abilityBazi" style="color:var(--gold2)">★★★★★</b></div>
+          <div class="row"><span>大运流年分析</span><b id="abilityYun" style="color:var(--gold2)">★★★★☆</b></div>
+          <div class="row"><span>事业 / 财运专题</span><b id="abilityCareer" style="color:var(--gold2)">★★★★★</b></div>
+          <div class="row"><span>婚恋 / 合婚专题</span><b id="abilityLove" style="color:var(--gold2)">★★★★☆</b></div>
+          <div class="row"><span>沟通与服务</span><b id="abilityService" style="color:var(--green)">★★★★★</b></div>
+        </div>
+        <div class="notice" id="abilityNotice">建议先根据自己的问题选择对应服务，再进入平台咨询。能力指标用于帮助顾客理解大师的公开服务方向，不代表对预测准确性的保证。</div>
+      </div>
+
+      <div class="profile-section">
+        <h4>适合咨询的问题</h4>
+        <div class="tagline" id="profileQuestions">
+          <span>事业方向</span><span>职业选择</span><span>财富结构</span><span>感情关系</span><span>流年趋势</span>
+        </div>
+      </div>
+
+      <button class="btn gold" onclick="startConsultFromProfile()">选择这位大师 → 进入咨询前确认</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="masterDesk">
+  <div class="head"><h2>大师入驻端 · 服务工作台</h2><span>入驻审核通过后，可向顾客发起测算订单</span></div>
+  <div class="master-workspace">
+    <div class="card workspace-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <h3>大师服务权限</h3><span class="master-badge">已通过入驻审核</span>
+      </div>
+      <p>大师除了等待顾客主动下单，还可以在平台内根据顾客咨询内容主动发送“测算服务订单”。顾客收到订单卡后自行选择是否付款，不会自动扣款。</p>
+      <div class="row" style="margin-top:10px"><span>发起订单</span><b style="color:var(--green)">允许</b></div>
+      <div class="row"><span>价格</span><b>大师自主设定</b></div>
+      <div class="row"><span>平台佣金</span><b>默认 15%</b></div>
+      <div class="external-note"><span class="notify-dot"></span><div><b>站外通知</b>：订单/消息在后台时可通过浏览器系统通知提醒；正式版接 Web Push、邮件、短信。</div></div>
+    </div>
+    <div class="card workspace-card">
+      <h3>发起一笔测算订单</h3>
+      <form class="master-form" onsubmit="sendMasterOffer(event)">
+        <div><label style="display:block;color:var(--muted);font-size:9px;margin-bottom:5px">服务名称</label><input id="offerName" value="八字事业专题解读"></div>
+        <div><label style="display:block;color:var(--muted);font-size:9px;margin-bottom:5px">服务价格（元）</label><input id="offerPrice" type="number" min="2" step="1" value="39"></div>
+        <div class="full"><label style="display:block;color:var(--muted);font-size:9px;margin-bottom:5px">服务分类</label><select id="offerCategory"><option>八字</option><option>事业</option><option>财运</option><option>感情</option><option>合婚</option><option>紫微斗数</option><option>流年</option></select></div>
+        <div class="full"><label style="display:block;color:var(--muted);font-size:9px;margin-bottom:5px">给顾客的说明</label><textarea id="offerDesc">根据当前命盘，结合四柱结构与大运流年，为你做一次针对性的专题解读。</textarea></div>
+        <div class="full"><button class="btn gold" type="submit">发送测算订单给当前顾客</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="masterManager">
+  <div class="head"><h2>大师入驻端 · 报价表与资料管理</h2><span>大师可设置多个接单种类、价格、资料与头衔展示</span></div>
+  <div class="master-center">
+    <div class="card service-manager">
+      <h3>我的接单报价表</h3>
+      <div class="notice">每个大师可以设置多个独立服务。价格由大师自行填写，正式订单按后台审核后的报价单创建。</div>
+      <div id="serviceRows"></div>
+      <button class="add-service" onclick="addServiceRow()">＋ 添加新的接单项目</button>
+    </div>
+    <div class="card profile-card">
+      <h3>我的大师资料展示</h3>
+      <div class="notice">公开资料会显示在顾客端大师列表和大师详情页，可用于展示资历、擅长领域、服务数量与头衔。</div>
+      <div class="row"><span>大师昵称</span><b>林老师</b></div>
+      <div class="row"><span>身份头衔</span><b style="color:var(--gold2)">金牌大师</b></div>
+      <div class="row"><span>认证状态</span><b style="color:var(--green)">平台认证</b></div>
+      <div class="row"><span>服务订单</span><b>326</b></div>
+      <div class="row"><span>平均评分</span><b>4.9</b></div>
+      <div class="row"><span>平均响应</span><b>15 分钟</b></div>
+      <div class="profile-section"><h4>头衔成长</h4><div class="title-track">
+        <div class="title-level active"><small>基础</small><b>新锐老师</b></div>
+        <div class="title-level active"><small>50 单</small><b>资深老师</b></div>
+        <div class="title-level active"><small>200 单</small><b>金牌大师</b></div>
+        <div class="title-level"><small>500 单+</small><b>首席大师</b></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pool">
+  <div class="head"><h2>大师公共订单池</h2><span>原指派大师超时未查看 → 公共池 → 其他大师按顾客原价接单</span></div>
+  <div class="pool-grid">
+    <div class="card pool">
+      <h3>待接订单</h3>
+      <div id="poolOrders">
+        <div class="poolorder">
+          <div><h4>八字事业咨询 · XY905218</h4><small>原指派大师 15 分钟未查看，已释放</small></div>
+          <div><strong style="color:var(--gold2)">¥39</strong><small style="display:block">顾客原价</small></div>
+          <div class="count" id="c1">04:28</div>
+          <button class="accept" onclick="acceptPool('XY905218',39,'八字事业咨询',this)">立即接单</button>
+        </div>
+        <div class="poolorder">
+          <div><h4>合婚咨询 · XY905231</h4><small>原指派大师未查看，已释放</small></div>
+          <div><strong style="color:var(--gold2)">¥68</strong><small style="display:block">顾客原价</small></div>
+          <div class="count" id="c2">08:51</div>
+          <button class="accept" onclick="acceptPool('XY905231',68,'合婚咨询',this)">立即接单</button>
+        </div>
+      </div>
+      <div class="pool-note">正式商业版应由服务器原子锁定订单，避免两位大师同时点击产生重复接单。超时规则、结算规则和违规处理应明确写入大师服务协议。</div>
+    </div>
+    <div class="card pool">
+      <h3>转单规则</h3>
+      <div class="row"><span>默认未查看时间</span><b>15 分钟</b></div>
+      <div class="row"><span>转入</span><b>公共订单池</b></div>
+      <div class="row"><span>接单价格</span><b style="color:var(--gold2)">顾客原价</b></div>
+      <div class="row"><span>结算</span><b>平台 15% / 大师 85%</b></div>
+      <button class="btn ghost" onclick="document.getElementById('consult').scrollIntoView({behavior:'smooth'})">查看在线咨询界面</button>
+    </div>
+  </div>
+</section>
+
+<div id="consultPanel" class="card workspace-card" style="display:none;margin-top:12px">
+  <div class="head" style="margin-top:0"><h2 style="font-size:16px">已选大师 · 开始咨询</h2><span id="consultHeader">平台内订单咨询</span></div><div id="consultConfirm" class="notice" style="display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid rgba(231,195,109,.17);background:rgba(231,195,109,.05);margin-bottom:10px">
+  <div><b style="color:var(--gold2)">咨询前确认</b><br><span id="confirmText">已选大师与服务，确认后进入平台咨询。</span></div>
+  <button class="small-btn" onclick="confirmConsult()">确认进入咨询</button>
+</div>
+  <div class="chat-layout">
+    <div class="card chatbox" id="chatboxInner">
+      <div class="chathead" style="opacity:.7">
+        <div class="expert"><div class="avatar" id="chatAvatar">林</div><div><h3 id="chatMaster">林老师</h3><p id="chatService">八字事业咨询 · 待创建订单</p></div></div>
+        <div style="display:flex;align-items:center;gap:8px"><label style="font-size:9px;color:var(--muted)"><input id="sound" type="checkbox" checked> 提示音</label><span class="online">在线</span></div>
+      </div>
+      <div id="chatLock" class="notice" style="margin:12px;display:block;text-align:center;border:1px dashed rgba(231,195,109,.25)">请先确认咨询服务，聊天区将为你开启。</div>
+      <div class="messages" id="messages" onclick="markRead()" style="display:none">
+        <div class="sys"><span>选定大师后，订单与咨询全部在平台内完成</span></div>
+        <div class="msg"><div class="avatar">林</div><div><div class="bubble">你好。选择服务并完成订单后，你可以在这里发送问题，我会根据本次服务范围进行平台内解读。</div><div class="mstatus">刚刚 · 已读</div></div></div>
+        <div id="unreadLine" class="unread-line" style="display:none"><span>1 条新消息</span></div>
+        <div class="sys"><span>平台提示：禁止发送微信、手机号、QQ、Telegram、WhatsApp 等站外联系方式</span></div>
+      </div>
+      <div class="composer" id="composer" style="display:none">
+        <div style="font-size:9px;color:#d9c37c;margin-bottom:7px">🔒 聊天内容留存于订单，可用于售后、申诉与服务记录。</div>
+        <div class="composer-row"><button class="tool" onclick="toast('图片上传功能已预留')">＋</button><textarea id="messageInput" rows="1" placeholder="请输入咨询内容……"></textarea><button class="send" onclick="sendMessage()">发送</button></div>
+      </div>
+    </div>
+    <div class="chat-side">
+      <div class="card info"><h3>咨询订单</h3>
+        <div class="row"><span>大师</span><b id="sideMaster">林老师</b></div>
+        <div class="row"><span>服务</span><b id="sideService">八字事业咨询</b></div>
+        <div class="row"><span>价格</span><b id="sidePrice" style="color:var(--gold2)">¥39</b></div>
+        <div class="row"><span>状态</span><b style="color:var(--green)">咨询中</b></div>
+      </div>
+      <div class="card rule danger"><h3>平台保护</h3><p>双方仅限平台内沟通。禁止私下交换联系方式、站外导流或绕过平台付款。正式商业版可在订单里增加举报、证据上传与仲裁入口。</p></div>
+    </div>
+  </div>
+</div>
+
+<section id="rules" class="section">
+  <div class="head"><h2>公告与平台规则</h2><span>前台公开展示</span></div>
+  <div class="rules">
+    <div class="card rule"><h3>订单通知</h3><p>顾客完成付款后，平台写入订单并向对应大师发送站内新订单提醒；正式版可继续接浏览器推送、邮件、短信。</p></div>
+    <div class="card rule danger"><h3>禁止私下联系</h3><p>大师与顾客不得私下交换联系方式、诱导站外沟通或绕过平台付款。实际处罚规则应写入双方服务协议并按适用法律执行。</p></div>
+    <div class="card rule"><h3>超时转单</h3><p>默认示例为原指派大师 15 分钟未查看订单，订单进入公共订单池，其他符合条件的大师可按顾客原价接单。</p></div>
+    <div class="card rule"><h3>平台分佣</h3><p>大师自行设置服务价格，平台默认按订单金额的 15% 计算服务佣金，大师对应结算 85%。实际以正式协议及支付结算规则为准。</p></div>
+  </div>
+</section>
+
+<section class="section"><div class="ad"><div><b>广告位 · 页面底部原生广告</b><small>预留程序化广告 / 品牌推广 / 自有服务推荐位置</small></div></div></section>
+<footer class="footer">本网站用于传统命理文化体验。内容属于传统文化参考，不替代医疗、法律、投资等专业意见。正式商业上线需将精确历法、节气、真太阳时与排盘放在服务端，并接入用户鉴权、订单数据库、支付、通知和安全审核。站外提示音由浏览器/操作系统通知权限与系统声音设置共同决定，无法由网页强制开启。</footer>
+</main>
+
+<div id="modal" class="modal"><div class="card modalbox"><h3 id="modalTitle">确认解锁</h3><p>当前为前端整合预览。正式版通过微信 / Stripe 支付后，由服务端验证成功并写入用户权益。</p><div class="modalrow"><span>项目</span><b id="modalItem">事业深度</b></div><div class="modalrow"><span>金额</span><b id="modalPrice">¥4</b></div><div class="modal-actions"><button class="cancel" onclick="closeBuy()">取消</button><button class="confirm" onclick="confirmBuy()">确认（演示）</button></div></div></div>
+<div id="toast" class="toast"></div>
+
+<script>
+const locationData={
+ "北京市":{"北京市":["朝阳区","海淀区","丰台区"]},
+ "广东省":{"广州市":["天河区","越秀区","白云区"],"深圳市":["南山区","福田区","罗湖区"]},
+ "浙江省":{"杭州市":["西湖区","拱墅区","余杭区"],"宁波市":["鄞州区","海曙区","江北区"]},
+ "四川省":{"成都市":["武侯区","锦江区","金牛区"],"绵阳市":["涪城区","游仙区"]},
+ "江苏省":{"南京市":["玄武区","鼓楼区","建邺区"],"苏州市":["姑苏区","吴中区","相城区"]}
+};
+const longitude={"北京市":116.40,"广州市":113.26,"深圳市":114.06,"杭州市":120.15,"宁波市":121.55,"成都市":104.07,"绵阳市":104.68,"南京市":118.78,"苏州市":120.58};
+const stems=["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"],branches=["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"];
+const elem={"甲":"木","乙":"木","丙":"火","丁":"火","戊":"土","己":"土","庚":"金","辛":"金","壬":"水","癸":"水"};
+const zodiac=["猴","鸡","狗","猪","鼠","牛","虎","兔","龙","蛇","马","羊"];
+let buyState={item:"",price:0},soundCtx=null,unread=1,orderNo="";
+
+
+const mastersData = [
+  {id:1,name:"林老师",avatar:"林",title:"高级命理师 · 八字事业顾问",badge:"✦ 金牌大师",cats:["八字","事业","婚恋"],
+   bio:"专注四柱结构、岁运节奏和事业主题的传统文化解读。平台内完成咨询、交付与售后，服务记录清晰可查。",
+   orders:326,rating:"4.9",response:"约 15 分钟", abilities:{bazi:"★★★★★",yun:"★★★★★",career:"★★★★★",love:"★★★★☆",service:"★★★★★"}, questions:["事业方向","职业选择","财富结构","流年趋势"],
+   services:[["八字基础咨询","30分钟图文咨询","¥39"],["事业专题解读","命盘＋大运方向","¥68"],["合婚专题","双方命盘关系观察","¥99"]]},
+  {id:2,name:"陈老师",avatar:"陈",title:"紫微斗数 · 流年顾问",badge:"✦ 资深老师",cats:["紫微","财运","事业"],
+   bio:"以紫微斗数与年度主题做传统文化层面的命盘解读，擅长把复杂信息整理成容易理解的咨询结构。",
+   orders:185,rating:"4.8",response:"约 22 分钟", abilities:{bazi:"★★★★☆",yun:"★★★★★",career:"★★★★☆",love:"★★★☆☆",service:"★★★★☆"}, questions:["紫微十二宫","流年趋势","财富主题","事业节奏"],
+   services:[["紫微命盘咨询","十二宫基础解读","¥49"],["流年专题","年度重点方向","¥68"],["财富专题","事业与资源观察","¥88"]]},
+  {id:3,name:"王老师",avatar:"王",title:"合婚 · 关系顾问",badge:"✦ 金牌大师",cats:["八字","婚恋"],
+   bio:"聚焦合婚、夫妻宫、沟通与长期关系主题，采用平台内图文服务完成咨询与交付。",
+   orders:412,rating:"5.0",response:"约 10 分钟", abilities:{bazi:"★★★★★",yun:"★★★★☆",career:"★★★★☆",love:"★★★★★",service:"★★★★★"}, questions:["合婚关系","婚恋沟通","夫妻宫","流年感情"],
+   services:[["八字合婚","双方基础合婚","¥68"],["婚恋深度","关系主题详解","¥99"],["流年感情","年度关系观察","¥59"]]}
+];
+let selectedMaster = mastersData[0];
+let masterServices = [
+  {name:"八字事业专题",category:"事业",price:39},
+  {name:"财运结构分析",category:"财运",price:49},
+  {name:"感情专题解读",category:"婚恋",price:39}
+];
+
+function renderMasters(filter="全部"){
+  const list=document.getElementById("masterList"); if(!list)return;
+  const data=filter==="全部"?mastersData:mastersData.filter(m=>m.cats.includes(filter));
+  list.innerHTML=data.map(m=>`<div class="master-entry">
+    <div class="avatar">${m.avatar}</div>
+    <div><h4>${m.name} <span style="color:var(--muted);font-weight:400">${m.title}</span></h4>
+      <div class="title-badge">${m.badge}</div>
+      <p>${m.cats.join(" · ")} · 已服务 ${m.orders} 单 · 评分 ${m.rating} · ${m.response}</p>
+      <div class="entry-actions"><button class="view-profile" onclick="viewMaster(${m.id})">查看资料</button><button class="choose-master" onclick="chooseMaster(${m.id})">选择咨询</button></div>
+    </div>
+    <div class="entry-price">¥${m.services[0][2].replace("¥","")}<small style="display:block;color:var(--muted);font-size:8px">起 / 单</small></div>
+  </div>`).join("");
+}
+function viewMaster(id){
+  selectedMaster=mastersData.find(m=>m.id===id)||mastersData[0];
+  document.getElementById("profileAvatar").textContent=selectedMaster.avatar;
+  document.getElementById("profileName").textContent=selectedMaster.name;
+  document.getElementById("profileTitle").textContent=selectedMaster.title;
+  document.getElementById("profileBadge").textContent=selectedMaster.badge;
+  document.getElementById("profileBio").textContent=selectedMaster.bio;
+  document.getElementById("profileOrders").textContent=selectedMaster.orders;
+  document.getElementById("profileRating").textContent=selectedMaster.rating;
+  document.getElementById("profileResponse").textContent=selectedMaster.response;
+  document.getElementById("profileTags").innerHTML=selectedMaster.cats.map(x=>`<span>${x}</span>`).join("");
+  document.getElementById("profileServices").innerHTML=selectedMaster.services.map((s,i)=>`<tr><td><strong>${s[0]}</strong></td><td>${s[1]}</td><td>${s[2]}</td></tr>`).join("");
+  if(selectedMaster.abilities){
+    document.getElementById("abilityBazi").textContent=selectedMaster.abilities.bazi;
+    document.getElementById("abilityYun").textContent=selectedMaster.abilities.yun;
+    document.getElementById("abilityCareer").textContent=selectedMaster.abilities.career;
+    document.getElementById("abilityLove").textContent=selectedMaster.abilities.love;
+    document.getElementById("abilityService").textContent=selectedMaster.abilities.service;
+    document.getElementById("profileQuestions").innerHTML=selectedMaster.questions.map(x=>`<span>${x}</span>`).join("");
+  }
+  document.getElementById("masterProfileCard")?.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+function confirmConsult(){
+  const panel=document.getElementById("consultPanel");
+  const lock=document.getElementById("chatLock"),msgs=document.getElementById("messages"),composer=document.getElementById("composer"),strip=document.getElementById("consultConfirm");
+  if(lock)lock.style.display="none";
+  if(msgs)msgs.style.display="block";
+  if(composer)composer.style.display="block";
+  if(strip)strip.style.display="none";
+  toast("已进入平台咨询");
+}
+function chooseMaster(id){
+  viewMaster(id);
+  setTimeout(()=>startConsultFromProfile(),350);
+}
+function startConsultFromProfile(){
+  if(!selectedMaster)return;
+  const first=selectedMaster.services[0];
+  document.getElementById("chatAvatar").textContent=selectedMaster.avatar;
+  document.getElementById("chatMaster").textContent=selectedMaster.name;
+  document.getElementById("chatService").textContent=`${first[0]} · 待确认`;
+  document.getElementById("sideMaster").textContent=selectedMaster.name;
+  document.getElementById("sideService").textContent=first[0];
+  document.getElementById("sidePrice").textContent=first[2];
+  const panel=document.getElementById("consultPanel");
+  panel.style.display="block";
+  panel.scrollIntoView({behavior:"smooth",block:"start"});
+  toast(`${selectedMaster.name}已选中：先确认能力与服务，再进入咨询`);
+}
+function filterMasters(filter,btn){
+  document.querySelectorAll(".master-filter").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active"); renderMasters(filter);
+}
+function renderServiceRows(){
+  const box=document.getElementById("serviceRows");if(!box)return;
+  box.innerHTML=masterServices.map((s,i)=>`<div class="service-row">
+    <input value="${s.name.replace(/"/g,'&quot;')}" onchange="updateService(${i},'name',this.value)">
+    <select onchange="updateService(${i},'category',this.value)">${["八字","紫微","事业","财运","婚恋","合婚","流年"].map(x=>`<option ${x===s.category?"selected":""}>${x}</option>`).join("")}</select>
+    <input type="number" min="2" value="${s.price}" onchange="updateService(${i},'price',Number(this.value))">
+    <button onclick="removeService(${i})">删除</button>
+  </div>`).join("");
+}
+function addServiceRow(){masterServices.push({name:"新测算项目",category:"八字",price:29});renderServiceRows();toast("已添加新的接单项目")}
+function updateService(i,key,val){if(masterServices[i]){masterServices[i][key]=val;toast("报价表已更新（演示）")}}
+function removeService(i){masterServices.splice(i,1);renderServiceRows();toast("接单项目已删除")}
+function calculateTitle(orders,rating,responseMinutes){
+  if(orders>=500 && rating>=4.9 && responseMinutes<=15)return "✦ 首席大师";
+  if(orders>=200 && rating>=4.8 && responseMinutes<=30)return "✦ 金牌大师";
+  if(orders>=50 && rating>=4.7)return "✦ 资深老师";
+  return "✦ 新锐老师";
+}
+
+function initLocations(){const p=document.getElementById("province");p.innerHTML=Object.keys(locationData).map(x=>`<option>${x}</option>`).join("");loadCities()}
+function loadCities(){const p=document.getElementById("province").value,c=document.getElementById("city");c.innerHTML=Object.keys(locationData[p]).map(x=>`<option>${x}</option>`).join("");loadDistricts()}
+function loadDistricts(){const p=document.getElementById("province").value,c=document.getElementById("city").value,d=document.getElementById("district");d.innerHTML=(locationData[p][c]||["城区"]).map(x=>`<option>${x}</option>`).join("")}
+function equationOfTime(dayOfYear){const B=2*Math.PI*(dayOfYear-81)/364;return 9.87*Math.sin(2*B)-7.53*Math.cos(B)-1.5*Math.sin(B)}
+function calcSolar(dateStr,timeStr,city){const dt=new Date(`${dateStr}T${timeStr}:00`);const y=dt.getFullYear();const start=new Date(`${y}-01-01T00:00:00`);const day=Math.floor((dt-start)/86400000)+1;const minutes=((longitude[city]||120)-120)*4+equationOfTime(day);dt.setMinutes(dt.getMinutes()+minutes);const pad=n=>String(n).padStart(2,"0");return `${dt.getFullYear()}-${pad(dt.getMonth()+1)}-${pad(dt.getDate())} ${pad(dt.getHours())}:${pad(dt.getMinutes())}`}
+function generateChart(){
+ const date=document.getElementById("date").value,time=document.getElementById("time").value,p=document.getElementById("province").value,c=document.getElementById("city").value,d=document.getElementById("district").value,g=document.getElementById("gender").value;
+ if(!date||!time){toast("请先填写出生日期与时间");return}
+ const y=+date.slice(0,4),m=+date.slice(5,7),day=+date.slice(8,10),seed=(y+m*3+day*7+time.replace(":","")*1)%60;
+ const ps=[[stems[(seed+2)%10],branches[(seed+4)%12]],[stems[(seed+5)%10],branches[(m+1)%12]],[stems[seed%10],branches[(seed+day)%12]],[stems[(seed+3)%10],branches[(Math.floor(+time.slice(0,2)/2)+1)%12]]];
+ [["yg","yz"],["mg","mz"],["dg","dz"],["hg","hz"]].forEach((ids,i)=>{document.getElementById(ids[0]).textContent=ps[i][0];document.getElementById(ids[1]).textContent=ps[i][1]});
+ const dm=ps[2][0], solar=calcSolar(date,time,c);
+ document.getElementById("solar").textContent=solar;document.getElementById("dm").textContent=dm+elem[dm];document.getElementById("zodiac").textContent=zodiac[(y-4+12)%12];document.getElementById("balance").textContent=elem[dm]+"偏旺";document.getElementById("status").textContent=`${p} · ${c} · ${d} · ${g}`;document.getElementById("sideBirth").textContent=`${p} · ${c} · ${d}`;document.getElementById("sideSolar").textContent=solar;document.getElementById("sideDm").textContent=dm+elem[dm];
+ buildSummary(dm,y);buildMonths(y,dm);window.scrollTo({top:document.getElementById("chart").offsetTop-76,behavior:"smooth"});toast("命盘已生成，免费摘要已展开");
+}
+const texts={
+ overall:[
+ ["日主气质","日主代表命局的核心观察点。当前排盘以日主为中心，再结合月令和四柱的生扶泄耗观察整体倾向，因此不会只用一个五行标签概括。"],
+ ["月令观察","传统子平法重视月令，因为出生季节会影响五行的旺衰背景。免费层先展示趋势，深度项目再进一步解释具体制化关系。"],
+ ["五行流通","判断命局时不只是看“缺什么”，更要看五行之间能否流通。某元素明显偏强或偏弱时，通常会影响做事节奏、选择与资源分配。"],
+ ["性格底色","做事更适合先建立方向和标准，再逐步推进。面对自己熟悉的领域时，主见往往会更明显。"],
+ ["思考方式","遇到新问题时，倾向先建立自己的判断框架，再决定是否接受外部观点。"],
+ ["执行方式","把大目标拆成阶段动作会更有效。清晰的截止时间与可量化结果，通常有助于保持执行力。"],
+ ["沟通模式","比起复杂表达，更适合把事实、方案、边界和下一步讲清楚。关系紧张时需要避免只讲结论。"],
+ ["学习方式","通过项目、案例、复盘和长期积累形成能力，比短期大量输入更适合建立真正的熟练度。"],
+ ["人生节奏","人生通常不是一直同一种速度推进，而是积累、突破、调整、再积累的循环。"],
+ ["优势主题","长期积累后，更容易把经验沉淀为方法、资源和专业可信度，这比短期运气更稳定。"],
+ ["压力来源","目标过多、边界不清、持续承担并不属于自己的责任，容易让精力被分散。"],
+ ["家庭主题","个人发展和家庭责任需要动态平衡。边界清晰、长期沟通，比临时解决问题更重要。"],
+ ["贵人来源","贵人更可能出现在学习、职业、合作和资源平台中，重点不是认识很多人，而是建立可靠关系。"],
+ ["当前课题","当前阶段适合做选择和减法，把时间集中到可长期产生复利的能力或项目上。"],
+ ["综合观察","命理适合用作传统文化视角下的自我观察工具，真正的人生选择仍应结合现实信息。"]
+ ],
+ career:[
+ ["事业主线","更适合建立可以持续积累的专业壁垒，而不是长期依赖临时运气。"],
+ ["职业环境","有明确目标、成长路径和规则的工作环境，更容易把能力稳定发挥出来。"],
+ ["工作能力","把经验整理成流程、模板、方法论，会逐渐形成自己的不可替代性。"],
+ ["学习与事业","边做边学往往更有效，尤其适合通过实际项目验证知识和能力。"],
+ ["管理能力","随着经验增加，可以逐渐从单纯执行转向项目统筹、资源整合或带人协作。"],
+ ["创业观察","创业不仅是胆量问题，还要看产品、客户、现金流和合作规则是否稳定。"],
+ ["合作关系","选择伙伴时应优先看履约能力、价值观和长期沟通习惯。"],
+ ["事业风险","机会多的时候更需要控制方向切换，频繁换赛道会削弱积累效果。"],
+ ["贵人主题","真正有帮助的人通常能提供平台、经验、资源或关键反馈。"],
+ ["职业建议","长期可以围绕“专业能力＋行业资源＋个人可信度”建立竞争力。"],
+ ["阶段发展","越到后期，越应该从“做得快”转向“做得稳、做得可复制”。"],
+ ["学业观察","如果处于学习阶段，理解底层逻辑和真实应用会比单纯追求短期成绩更重要。"]
+ ],
+ wealth:[
+ ["财富总览","财富不仅是赚钱能力，还包括现金流、资源配置、风险意识和长期留存能力。"],
+ ["正财路径","稳定收入更依赖专业价值、持续工作能力和长期合作关系。"],
+ ["偏财路径","额外机会可能来自资源整合和项目合作，但越是高收益机会越要重视验证。"],
+ ["现金流","收入增加后也需要同步管理支出、回款、库存和债务等现实环节。"],
+ ["资源观","资源越多越要建立优先级，否则容易忙碌增加而实际积累不明显。"],
+ ["合作财务","合作赚钱时应提前写清分成、成本、回款、退出机制和责任边界。"],
+ ["财务习惯","预算、储蓄和安全垫是长期财富质量的重要基础。"],
+ ["风险控制","真正的财务风险常来自没有验证就投入过多，而不是单纯没有机会。"],
+ ["财富积累","更适合先建立稳定现金流，再根据风险承受能力逐步配置资产。"],
+ ["阶段重点","扩张期重现金流，资产期重结构，成熟期重稳定与可持续。"],
+ ["财富心态","“赚得更多、留下更多、持续更久”需要同时考虑。"],
+ ["现实提醒","涉及真实投资、借贷和经营时，应以专业财务信息和风险评估为准。"]
+ ],
+ love:[
+ ["感情总览","感情更适合从信任、沟通、边界、现实协作和价值观来观察，而不是只看一句“合不合”。"],
+ ["关系模式","稳定关系中，持续行动和责任感通常比短期表达更有影响。"],
+ ["择偶倾向","长期更适合生活节奏、责任观和价值观相近的人。"],
+ ["沟通主题","发生分歧时先确认彼此真正关心的点，再讨论解决方案，更容易降低误解。"],
+ ["安全感","可预期的承诺、稳定回应和持续行动通常比偶尔的强烈表达更重要。"],
+ ["桃花观察","机会多并不等于关系稳定，真正有价值的关系仍需要边界和长期投入。"],
+ ["关系风险","冷处理、猜测心意和反复试探容易放大矛盾，重要问题更适合直接表达。"],
+ ["婚姻主题","长期关系还涉及时间、家庭分工、财务观念和未来计划等现实协作。"],
+ ["吸引力","成熟的吸引力更多来自稳定、专业、可信赖和有清晰生活目标。"],
+ ["阶段提醒","进入关键关系阶段时，需要把感受和现实安排一起讨论。"],
+ ["冲突处理","减少翻旧账，把问题拆成能够解决的小步骤，通常更有效。"],
+ ["长期建议","把伴侣看成共同成长的合作伙伴，关系通常会更稳。"]
+ ],
+ family:[
+ ["父母主题","成年后与长辈相处更适合尊重和边界并行，减少控制与被控制的循环。"],
+ ["同辈关系","兄弟姐妹、同学、同事等同辈关系，最好通过明确规则减少资源分配上的误解。"],
+ ["子女主题","子女议题更适合重视陪伴、规则和长期教育，不宜只追求结果。"],
+ ["人际边界","关系好不代表必须放弃边界，边界清晰反而更有利于长期稳定。"],
+ ["社交效率","高质量人际关系不一定很多，重点是长期信任和互相成就。"],
+ ["贵人识别","愿意承担责任、持续提供具体建议的人，比只提供情绪鼓励的人更值得建立深层连接。"],
+ ["家庭责任","个人发展速度提高后，更需要提前安排时间和家庭责任。"],
+ ["生活习惯","固定的学习、运动、作息和复盘有助于把生活节奏稳定下来。"],
+ ["压力管理","长期压力可能来自目标过多、边界不清和承担了过多不属于自己的责任。"],
+ ["选择原则","重要选择可以听取专业意见，但最终仍应结合现实信息和自身情况。"],
+ ["成长主题","年龄增长后，能力会从“证明自己”逐渐转向“建立稳定而可持续的结构”。"],
+ ["文化定位","命理属于传统文化视角，页面内容不应替代医疗、法律、投资等专业意见。"]
+ ]};
+
+function buildSummary(dm,y){
+ const render=(id,data)=>document.getElementById(id).innerHTML=data.map(([t,p])=>`<div class="card summary"><h3>${t}</h3><p>${p.replaceAll("日主","日主"+dm+"（"+elem[dm]+"）").replaceAll("当前排盘",`当前${y}年出生盘` )}</p></div>`).join("");
+ render("overall",texts.overall);render("career",texts.career);render("wealth",texts.wealth);render("love",texts.love);render("family",texts.family);
+}
+const months=["寅","卯","辰","巳","午","未","申","酉","戌","亥","子","丑"];
+const monthText={
+寅:["启动","适合启动计划、建立新规则；事业先定方向；财富控制投入；感情重视主动沟通。"],
+卯:["协作","适合拓展人脉和合作；财富关注资源交换；感情避免过度敏感。"],
+辰:["整合","适合整理项目与账目；事业强调流程；感情把现实安排说清楚。"],
+巳:["输出","适合表达、展示和推进项目；财富防止冲动投入；关系热度增加但要保留边界。"],
+午:["执行","适合集中完成重点目标；财富关注节奏；感情沟通更直接，避免急于下结论。"],
+未:["沉淀","适合复盘、储蓄和调整长期方案；工作以稳为主；关系更看重责任。"],
+申:["规则","事业适合按规则办事；资金更重合同；感情中信任和边界更重要。"],
+酉:["筛选","适合筛选项目、客户和合作方；控制冲动消费；关系更适合确认未来方向。"],
+戌:["责任","事业进入责任主题；财富重视现金流；感情关注共同目标。"],
+亥:["学习","适合学习、蓄力和布局；财富不宜冒进；关系中给彼此空间。"],
+子:["流动","信息和人脉流动增强；工作快中求稳；资金流动增加时注意风险。"],
+丑:["收尾","适合完成遗留事项、盘点收支；事业为下一阶段做准备；感情谈长期安排。"]};
+function buildMonths(y,dm){const grid=document.getElementById("monthGrid");grid.innerHTML=months.map((b,i)=>`<div class="card month"><div class="month-top"><h3>${i+1}月 · ${b}月</h3><strong>${b}</strong></div><div class="month-line"><span>月令</span><b>${b==="寅"||b==="卯"?"木":b==="巳"||b==="午"?"火":b==="申"||b==="酉"?"金":b==="亥"||b==="子"?"水":"土"}</b></div><div class="month-line"><span>事业</span><b>${monthText[b][0]}</b></div><div class="month-line"><span>财富</span><b>${monthText[b][1].split("；")[1]||"控制节奏"}</b></div><div class="month-line"><span>感情</span><b>${monthText[b][1].split("；").slice(-1)[0]}</b></div><div class="month-note">${monthText[b][1]}</div></div>`).join("")}
+function switchTime(id,btn){document.querySelectorAll("#yun .pill").forEach(x=>x.classList.remove("active"));btn.classList.add("active");["dayun","liunian","liuyue"].forEach(x=>document.getElementById(x).style.display=x===id?"block":"none")}
+function openBuy(item,price){buyState={item,price};document.getElementById("modalItem").textContent=item;document.getElementById("modalPrice").textContent="¥"+price;document.getElementById("modal").classList.add("show")}
+function closeBuy(){document.getElementById("modal").classList.remove("show")}
+function confirmBuy(){closeBuy();toast(`已创建“${buyState.item}”订单（前端演示）`)}
+
+function getNotificationMessage(title,body){
+  if("Notification" in window && Notification.permission==="granted"){
+    try{
+      if("serviceWorker" in navigator && navigator.serviceWorker.controller){
+        navigator.serviceWorker.controller.postMessage({type:"notify",title,body});
+      }else{
+        new Notification(title,{body,silent:false,requireInteraction:true});
+      }
+    }catch(e){}
+  }
+}
+function sendMasterOffer(event){
+  event.preventDefault();
+  const name=document.getElementById("offerName").value.trim() || "定制测算服务";
+  const price=Number(document.getElementById("offerPrice").value || 0);
+  const category=document.getElementById("offerCategory").value;
+  const desc=document.getElementById("offerDesc").value.trim() || "大师发起了一笔测算订单。";
+  if(price<2){toast("订单价格最低为 ¥2");return}
+  const no="M"+String(Date.now()).slice(-9);
+  document.getElementById("chatMaster").textContent="林老师";
+  document.getElementById("chatService").textContent=`${name} · 订单 ${no}`;
+  document.getElementById("sideService").textContent=name;
+  document.getElementById("sidePrice").textContent="¥"+price;
+  const box=document.getElementById("messages");
+  const offer=`<div class="msg"><div class="avatar">林</div><div style="width:min(78%,640px)">
+    <div class="offer-card">
+      <div class="offer-top"><div><h4>大师发起测算订单</h4><small>${category} · 订单 ${no}</small></div><div class="offer-price">¥${price}</div></div>
+      <p>${desc.replace(/[<>]/g,"")}</p>
+      <div class="offer-actions"><button class="offer-pay" onclick="customerPayOffer('${no}',${price})">查看并下单</button><button class="offer-ignore" onclick="ignoreOffer(this)">稍后再看</button></div>
+    </div>
+    <div class="mstatus new">刚刚 · 大师发起订单</div>
+  </div></div>`;
+  box.insertAdjacentHTML("beforeend",offer);
+  document.getElementById("unreadLine").style.display="flex";
+  document.getElementById("unreadLine").innerHTML="<span>1 条新订单</span>";
+  box.scrollTop=box.scrollHeight;
+  toast(`测算订单已发送给顾客：¥${price}`);
+  playSound();
+  getNotificationMessage("星曜命理 · 新测算订单",`大师向你发送了${name}，价格 ¥${price}`);
+}
+function customerPayOffer(no,price){
+  openBuy("大师测算订单 · "+no,price);
+}
+function ignoreOffer(btn){
+  const card=btn.closest(".offer-card");
+  if(card){card.style.opacity=".55";btn.disabled=true;btn.textContent="已暂缓"}
+  toast("订单已暂缓查看");
+}
+
+function selectMaster(name,service,price){
+  document.getElementById("chatMaster").textContent=name;
+  document.getElementById("chatService").textContent=service+" · 新订单";
+  document.getElementById("sideService").textContent=service;
+  document.getElementById("sidePrice").textContent="¥"+price;
+  document.getElementById("consult").scrollIntoView({behavior:"smooth"});
+  toast(`${name}已选中，进入平台内咨询`);
+}
+function simulateOrder(){
+  orderNo="XY"+String(Date.now()).slice(-8);
+  document.getElementById("notifyStatus").textContent="1 条新订单待处理";
+  document.getElementById("notifyStatus").className="unread";
+  document.getElementById("notifyOrder").textContent=orderNo+" · 八字咨询 · 待接单";
+  toast("新订单已进入大师通知区");
+  enableNotify();
+  playSound();
+  if(document.visibilityState!=="visible"){
+    getNotificationMessage("星曜命理 · 新订单",`订单 ${orderNo} 等待大师接单`);
+  }
+}
+async function enableNotify(){
+  try{
+    if("Notification" in window && Notification.permission==="default"){
+      await Notification.requestPermission();
+    }
+    if("serviceWorker" in navigator){
+      await navigator.serviceWorker.register("service-worker.js");
+    }
+  }catch(e){}
+}
+function playSound(){if(!document.getElementById("sound")?.checked)return;try{soundCtx=soundCtx||new(window.AudioContext||window.webkitAudioContext)();const o=soundCtx.createOscillator(),g=soundCtx.createGain();o.type="sine";o.frequency.value=880;g.gain.setValueAtTime(.001,soundCtx.currentTime);g.gain.exponentialRampToValueAtTime(.08,soundCtx.currentTime+.02);g.gain.exponentialRampToValueAtTime(.001,soundCtx.currentTime+.18);o.connect(g);g.connect(soundCtx.destination);o.start();o.stop(soundCtx.currentTime+.2)}catch(e){}}
+function acceptPool(no,price,title,btn){btn.disabled=true;btn.textContent="已接单";btn.style.opacity=".55";const parent=btn.closest(".poolorder");if(parent){const c=parent.querySelector(".count");if(c)c.textContent="已锁定"}toast(`已按顾客原价 ¥${price} 接单：${title}`);playSound()}
+let c1=268,c2=531;setInterval(()=>{[[1,c1],[2,c2]].forEach(()=>{});if(c1>0)c1--;if(c2>0)c2--;const fmt=n=>String(Math.floor(n/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0");document.getElementById("c1").textContent=c1>0?fmt(c1):"已关闭";document.getElementById("c2").textContent=c2>0?fmt(c2):"已关闭"},1000)
+function markRead(){unread=0;document.getElementById("unreadLine").style.display="none";toast("新消息已标记为已读")}
+function sendMessage(){const input=document.getElementById("messageInput"),text=input.value.trim();if(!text){toast("请输入消息");return}if(/微信|微信号|手机号|电话|QQ|telegram|whatsapp|vx/i.test(text)){toast("为保障平台交易安全，请勿发送站外联系方式");playSound();return}const box=document.getElementById("messages");box.insertAdjacentHTML("beforeend",`<div class="msg me"><div class="avatar">我</div><div><div class="bubble">${text.replace(/[<>]/g,"")}</div><div class="mstatus">刚刚 · 已发送</div></div></div>`);input.value="";box.scrollTop=box.scrollHeight;playSound();setTimeout(()=>{box.insertAdjacentHTML("beforeend",`<div class="msg"><div class="avatar">林</div><div><div class="bubble">收到，我会结合你的命盘继续分析这个问题。</div><div class="mstatus new">刚刚 · 未读</div></div></div>`);document.getElementById("unreadLine").style.display="flex";document.getElementById("unreadLine").innerHTML="<span>1 条新消息</span>";box.scrollTop=box.scrollHeight;playSound();toast("大师发来新消息");if(document.visibilityState!=="visible"){getNotificationMessage("星曜命理 · 林老师","大师发来一条新消息，请返回订单查看")}},1200)}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.style.display="none",2200)}
+initLocations();buildSummary("甲",1996);buildMonths(1996,"木");renderMasters();viewMaster(1);renderServiceRows();enableNotify();
+</script>
+</body>
+</html>
