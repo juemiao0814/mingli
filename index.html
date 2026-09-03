@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星曜命理 · V46 大师视角服务室</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1b2e;--panel2:#101f34;--line:#223957;--gold:#d8b36a;--gold2:#f0d79c;--text:#eef4ff;--muted:#91a5bf;--blue:#5d9cff;--ok:#54d6b0;--danger:#ff7f86}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 70% 0%,#17365b 0,#07111f 38%,#050b14 100%);color:var(--text);font-family:Inter,"PingFang SC","Microsoft YaHei",sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1240px;margin:auto;padding:0 22px}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);position:sticky;top:0;background:rgba(5,11,20,.82);backdrop-filter:blur(16px);z-index:20}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800}.logo{width:40px;height:40px;border:1px solid #876d39;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#1d3048,#0b1422);color:var(--gold2);font-size:20px}.brand small{display:block;color:var(--muted);font-weight:500;margin-top:2px}
+.navlinks{display:flex;gap:22px;color:#b8c7da;font-size:14px}.navlinks a:hover{color:var(--gold2)}
+.btn{border:1px solid var(--line);background:#10223a;color:var(--text);padding:11px 16px;border-radius:11px;cursor:pointer;font-weight:700}.btn.gold{background:linear-gradient(135deg,#d4ae63,#f1d797);color:#10151c;border:0}.btn.blue{background:#173d70;border-color:#2b5c99}.btn:hover{transform:translateY(-1px)}
+.hero{padding:74px 0 46px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}.eyebrow{color:var(--gold2);letter-spacing:3px;font-size:12px}.hero h1{font-size:54px;line-height:1.08;margin:14px 0}.hero p{font-size:17px;color:var(--muted);line-height:1.9;max-width:690px}.hero-actions{display:flex;gap:12px;margin-top:26px}
+.mini-orbit{height:430px;border:1px solid #29415f;border-radius:28px;background:radial-gradient(circle,#173a5f 0,#0c1c30 45%,#081321 70%);position:relative;overflow:hidden;box-shadow:0 25px 70px rgba(0,0,0,.35)}
+.mini-orbit:before,.mini-orbit:after{content:"";position:absolute;border:1px solid rgba(216,179,106,.32);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.mini-orbit:before{width:270px;height:270px}.mini-orbit:after{width:380px;height:380px}
+.star{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 12px #9ec5ff}.s1{left:15%;top:20%}.s2{left:74%;top:18%}.s3{left:82%;top:63%}.s4{left:25%;top:76%}.sun{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#f8e7a7,#d49e44 65%,#765020);color:#17110a;font-size:30px;box-shadow:0 0 55px rgba(238,197,106,.4)}
+.section{padding:38px 0}.section h2{margin:0 0 8px;font-size:28px}.sub{color:var(--muted);margin-bottom:22px}
+.card{background:linear-gradient(180deg,rgba(16,31,52,.94),rgba(10,22,37,.96));border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 18px 55px rgba(0,0,0,.2)}
+.formgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.field label{display:block;color:#9fb0c7;font-size:12px;margin-bottom:7px}.field input,.field select{width:100%;background:#081523;border:1px solid #29415d;color:var(--text);padding:12px;border-radius:10px;outline:none}.field input:focus,.field select:focus{border-color:#5b86bd}
+.notice{margin-top:15px;color:#a9bad0;font-size:12px;line-height:1.7;padding:11px 13px;border-left:2px solid var(--gold);background:rgba(216,179,106,.05)}
+.pill{display:inline-flex;padding:5px 9px;border-radius:99px;background:#132844;color:#b8d3f7;border:1px solid #28486d;font-size:11px;margin:3px}
+.result{display:none;margin-top:18px}.result.show{display:block}.resultgrid{display:block}.bazi-free-panel .result{scroll-margin-top:90px}.bazi-result{box-shadow:0 18px 55px rgba(0,0,0,.12)}.bazi-free-panel .summary-clean{margin-top:16px}.bazi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.pillar{padding:16px;border:1px solid #29415d;border-radius:14px;background:#0a1727;text-align:center}.pillar b{display:block;font-size:26px;color:var(--gold2);margin-bottom:5px}.pillar small{color:var(--muted)}
+.summary{line-height:1.9;color:#c8d4e4}.summary b{color:#fff}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tab{padding:9px 13px;border-radius:10px;border:1px solid var(--line);background:#0b192a;color:#9fb0c7;cursor:pointer}.tab.active{color:#111;background:var(--gold2);border-color:var(--gold2)}
+.table{width:100%;border-collapse:collapse}.table th,.table td{padding:12px 8px;border-bottom:1px solid #1e334d;text-align:left;font-size:13px}.table th{color:#8fa6c2}.paygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.pay{position:relative}.price{font-size:27px;color:var(--gold2);font-weight:800}.pay ul{padding-left:19px;color:#aebed1;line-height:1.9;font-size:13px}.tagfree{position:absolute;right:16px;top:16px;color:var(--ok);font-size:11px}
+.zcard strong{font-size:22px;color:var(--gold2)}
+.mastergrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.master .avatar{width:54px;height:54px;border-radius:16px;background:linear-gradient(145deg,#304b6e,#18283e);display:grid;place-items:center;color:var(--gold2);font-size:22px}.mastertop{display:flex;gap:12px;align-items:center}.rating{color:var(--gold2)}.master p{color:#9fb0c7;font-size:13px;line-height:1.7}.master .row{display:flex;justify-content:space-between;color:#b7c5d7;font-size:12px;margin:10px 0}
+.ad{height:110px;border:1px dashed #4a5d73;border-radius:16px;display:grid;place-items:center;color:#6f8198;background:rgba(255,255,255,.015)}
+footer{padding:38px 0 60px;border-top:1px solid rgba(255,255,255,.07);color:#71849d;font-size:12px}
+.toast{position:fixed;right:22px;bottom:22px;background:#14263c;border:1px solid #385579;padding:13px 16px;border-radius:12px;display:none;z-index:50}.toast.show{display:block}
+
+/* V23 命盘展示：参考专业八字 App 的信息密度与阅读层级 */
+.bazi-result{background:#f7f7f5;color:#333;border-radius:18px;overflow:hidden;border:1px solid #e5e2da;box-shadow:0 18px 55px rgba(0,0,0,.18)}
+.bazi-head{background:linear-gradient(135deg,#11110f,#24221d);color:#fff;padding:22px 24px;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}.bazi-head .title{font-size:22px;font-weight:800}.bazi-head .meta{font-size:13px;line-height:1.9;color:#eee}.bazi-head .meta b{color:#f1d797}.bazi-head .badge{border:1px solid #8b7340;color:#f0d79c;padding:7px 10px;border-radius:99px;font-size:11px;white-space:nowrap}
+.bazi-sheet{overflow:hidden;background:#fff}.bazi-sheet table{width:100%;min-width:0;border-collapse:collapse;table-layout:fixed}.bazi-sheet th,.bazi-sheet td{border-bottom:1px solid #eee;border-right:1px solid #eee;text-align:center;padding:11px 7px;vertical-align:middle}.bazi-sheet th:first-child{width:76px;background:#f4f4f2;color:#999;font-weight:500}.bazi-sheet tr:nth-child(even) td{background:#fbfbfa}.bazi-sheet .label{color:#999;font-size:13px;background:#f4f4f2}.bazi-sheet .pillar-name{font-size:13px;color:#777}.bazi-sheet .gan{font-size:31px;font-weight:800;line-height:1.1}.bazi-sheet .zhi{font-size:31px;font-weight:800;line-height:1.1}.bazi-sheet .subline{font-size:12px;line-height:1.65}.bazi-sheet .goldtext{color:#9b7a2d}.bazi-sheet .muted{color:#777}.bazi-sheet .wuxing{font-size:11px;color:#888;margin-top:4px}.bazi-sheet .mini{font-size:12px;line-height:1.7}.bazi-sheet .mini b{font-weight:700}
+.bazi-tools{padding:14px 18px;background:#fafaf8;border-bottom:1px solid #eee;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.bazi-tools span{font-size:12px;color:#777}.bazi-tools .tag{padding:6px 9px;border:1px solid #e4dcc9;border-radius:999px;color:#876c31;background:#fffaf0}
+.summary-clean{color:#344154}.summary-clean .sum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.sum-card{border:1px solid #e1e7ef;border-radius:13px;padding:13px;background:#f8fbff}.sum-card .k{font-size:11px;color:#8a98a8;margin-bottom:5px}.sum-card .v{font-size:19px;font-weight:800;color:#17253a}.sum-card .d{font-size:12px;color:#6f7d8d;margin-top:5px;line-height:1.55}.sum-points{margin-top:12px;display:grid;gap:8px}.sum-point{padding:10px 12px;border-radius:10px;background:#f6f8fb;border-left:3px solid #cda85c;font-size:13px;line-height:1.65}.sum-point b{color:#24364d}.report-switch{display:flex;gap:8px;margin-bottom:14px}.report-switch button{flex:1}.report-note{font-size:12px;color:#7d8998;line-height:1.7;margin-top:12px}
+.consult-shell{display:grid;grid-template-columns:280px 1fr;min-height:620px}.consult-side{background:#081522;border-right:1px solid #243b56;padding:18px}.consult-side .master-mini{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid #29415d;border-radius:12px;background:#0d1d30}.consult-side .master-mini.active{border-color:#d4b46c;box-shadow:0 0 0 1px rgba(212,180,108,.15)}.consult-main{display:flex;flex-direction:column;background:#07111f}.consult-header{padding:17px 20px;border-bottom:1px solid #223957;display:flex;justify-content:space-between;align-items:center}.consult-status{font-size:12px;color:var(--ok)}.consult-body{flex:1;padding:20px;overflow:auto}.consult-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid #223957}.consult-input input{flex:1;background:#081523;border:1px solid #29415d;color:white;padding:12px;border-radius:10px}
+.master-select-btn{width:100%;margin-top:12px}.master-select-btn.selected{background:linear-gradient(135deg,#d4ae63,#f1d797);color:#10151c;border:0}
+@media(max-width:900px){.consult-shell{grid-template-columns:1fr}.consult-side{border-right:0;border-bottom:1px solid #243b56}.summary-clean .sum-grid{grid-template-columns:1fr}.bazi-sheet table{font-size:11px}.bazi-sheet th,.bazi-sheet td{padding:8px 4px}.bazi-sheet th:first-child{width:58px}}
+@media(max-width:900px){.formgrid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.mini-orbit{height:320px}.formgrid{grid-template-columns:repeat(2,1fr)}.resultgrid,.paygrid,.mastergrid{grid-template-columns:1fr}#basicReport>div:first-child,#detailReport>div:first-child{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}}
+@media(max-width:560px){.formgrid{grid-template-columns:1fr}.wrap{padding:0 14px}.hero h1{font-size:40px}.formgrid{grid-template-columns:1fr}.bazi{grid-template-columns:repeat(2,1fr)}}
+.reverse-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.reverse-item{border:1px solid var(--line);border-radius:12px;padding:12px;background:#0a1727}.reverse-item b{color:var(--gold2);font-size:18px}@media(max-width:900px){.reverse-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.reverse-grid{grid-template-columns:1fr}.bazi-sheet{overflow:hidden}.bazi-sheet table{min-width:0;width:100%;font-size:10px}.bazi-sheet th,.bazi-sheet td{padding:7px 3px}.bazi-sheet th:first-child{width:48px}.bazi-sheet .gan,.bazi-sheet .zhi{font-size:23px}.bazi-sheet .mini{font-size:10px}.bazi-sheet .wuxing{font-size:9px}}
+
+.bazi-display-tip{margin:12px 0;padding:11px 14px;border:1px solid #d9cfb9;background:#fffaf0;color:#67552f;border-radius:12px;font-size:12px;line-height:1.7}.bazi-display-tip span{margin-left:10px;color:#8b7441}.bazi-sheet td{color:#3b4350}.bazi-sheet .gan{font-family:"Noto Serif SC","Songti SC","STSong",serif}.bazi-sheet .zhi{font-family:"Noto Serif SC","Songti SC","STSong",serif}.bazi-sheet .label{position:sticky;left:0;z-index:2}.bazi-sheet th,.bazi-sheet td{min-height:48px} @media(max-width:700px){.bazi-display-tip span{display:block;margin:4px 0 0}.bazi-head{padding:18px}.bazi-sheet table{min-width:0;width:100%;font-size:10px}.bazi-sheet th,.bazi-sheet td{padding:6px 2px}.bazi-sheet th:first-child{width:46px}.bazi-sheet .gan,.bazi-sheet .zhi{font-size:22px}.bazi-sheet .mini{font-size:9px;line-height:1.45}}
+
+.divination-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.div-panel{animation:fadeIn .18s ease}.div-form .btn{margin-top:16px}.div-result{margin-top:16px}.div-card{background:#0a1727;border:1px solid #29415d;border-radius:16px;padding:18px}.div-title{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.div-title h3{margin:0}.qimen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:15px}.gong{min-height:105px;border:1px solid #29415d;border-radius:12px;padding:10px;background:#0d1d30}.gong b{font-size:18px;color:var(--gold2)}.gong small{display:block;color:var(--muted);line-height:1.7;margin-top:5px}.coin-area{margin-top:16px;padding:15px;border:1px solid #29415d;border-radius:14px;background:#081522}.coin-hint{color:#aebed1;font-size:13px;margin-bottom:10px}.coin-log{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:13px}.coin-item{min-width:72px;text-align:center;padding:9px;border:1px solid #385579;border-radius:10px;background:#0d2036;color:#d9e6f6}.gua-row{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:15px}.yao{padding:10px;text-align:center;border-radius:10px;background:#f4f1e8;color:#333;font-weight:700}.result-kv{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.result-kv .card{padding:13px}.result-kv .k{font-size:11px;color:var(--muted)}.result-kv .v{font-size:18px;color:var(--gold2);font-weight:800;margin-top:5px}@keyframes fadeIn{from{opacity:.5;transform:translateY(3px)}to{opacity:1;transform:none}}@media(max-width:900px){.qimen-grid{grid-template-columns:repeat(3,1fr)}.result-kv{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.qimen-grid{grid-template-columns:repeat(2,1fr)}.gua-row{grid-template-columns:repeat(3,1fr)}}
+
+.bazi-free-panel{margin-top:18px;padding:0}.bazi-free-panel > .card:first-child{margin-top:0}.bazi-free-panel .resultgrid{align-items:start}.bazi-free-panel .result.show{display:block}.divination-tabs{position:sticky;top:64px;z-index:8;background:rgba(8,20,34,.96);padding:10px;border-radius:14px;border:1px solid #29415d;box-shadow:0 10px 25px rgba(0,0,0,.12)}
+
+.reverse-inline{margin-top:18px;margin-bottom:0;border:1px solid var(--line);border-radius:16px;background:rgba(10,23,39,.72);overflow:hidden}.reverse-inline summary{cursor:pointer;padding:15px 18px;color:var(--gold2);font-weight:800}.reverse-inline>.card{border:0;border-radius:0;background:transparent}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.formgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.formgrid{grid-template-columns:1fr}}
+.timeline-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.luck-scroll{overflow-x:auto}.luck-scroll .table{min-width:720px}.goldtext{color:var(--gold2)}
+@media(max-width:900px){.luck-scroll .table{min-width:640px}.sum-grid{grid-template-columns:repeat(2,1fr)!important}}
+
+.core-summary-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:18px 20px;margin-bottom:12px;border:1px solid #344b67;border-radius:16px;background:linear-gradient(135deg,#10243a,#0a1727)}.core-summary-head h3{margin:5px 0 6px;font-size:24px;color:#f3d58d}.core-summary-head p{margin:0;color:#aebed1;line-height:1.8}.eyebrow{font-size:12px;letter-spacing:.08em;color:#69d8b5}.trust-badge{white-space:nowrap;padding:8px 11px;border:1px solid #3a6f62;border-radius:999px;color:#68d8b5;background:#0c201f;font-size:12px}.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.evidence-grid>div{padding:15px;border:1px solid #29415d;border-radius:14px;background:#091725}.evidence-grid b{color:#f0d79c}.evidence-grid p{margin:8px 0 0;color:#b7c6d8;line-height:1.85}.sha-tag{display:inline-block;padding:2px 6px;margin:1px 0;border-radius:6px;background:#f0d79c18;color:#cfae68}@media(max-width:700px){.core-summary-head,.evidence-grid{grid-template-columns:1fr;display:grid}.trust-badge{width:max-content}}
+.top-report-switch{display:flex;gap:8px;margin:0 0 10px;padding:10px 0;border-bottom:1px solid var(--line);}.top-report-switch .tab{min-width:108px}.report-note{font-size:12px;color:#8fa6c2;margin:0 0 12px}.report-host{margin-top:12px}.sha-tag{display:inline-block;padding:2px 7px;margin:2px 0;border:1px solid #8a7440;border-radius:999px;color:#d7bd77;background:rgba(196,158,74,.08);font-size:11px}.bazi-sheet td{vertical-align:middle}.bazi-sheet .mini{line-height:1.8}
+/* V35：精准细盘与大运展开组件 */
+.detail-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.luck-detail-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}.luck-mini{border:1px solid #29415d;background:#0b192a;color:#eef4ff;border-radius:10px;padding:10px;text-align:left;cursor:pointer}.luck-mini:hover,.year-row:hover,.clickable-row:hover{border-color:#c9a65b;background:#10233a}.luck-mini span,.luck-mini small{display:block;color:#8fa6c2;font-size:11px}.luck-mini b{display:block;color:var(--gold2);font-size:17px;margin:4px 0}.nested-luck{grid-column:1/-1;background:#071321;border:1px solid #29415d;border-radius:10px;padding:10px}.nested-title{color:#d9e6f6;margin-bottom:8px;font-weight:700}.year-row{display:flex;align-items:center;gap:14px;width:100%;padding:9px 10px;border:1px solid #203a58;background:#0a1727;color:#eef4ff;border-radius:8px;margin:5px 0;cursor:pointer;text-align:left}.year-row b{color:var(--gold2)}.year-row small{color:#8fa6c2}.nested-month{padding:8px 10px 10px}.month-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}.month-grid>div{padding:8px;border:1px solid #29415d;border-radius:8px;background:#0c1c2d;text-align:center}.month-grid span{display:block;color:#8fa6c2;font-size:11px}.month-grid b{color:var(--gold2);display:block;margin-top:3px}.clickable-row{cursor:pointer}.clickable-row td{transition:.15s}@media(max-width:900px){.detail-grid{grid-template-columns:repeat(2,1fr)}.luck-detail-grid{grid-template-columns:repeat(3,1fr)}.month-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:560px){.detail-grid{grid-template-columns:1fr 1fr}.luck-detail-grid{grid-template-columns:repeat(2,1fr)}.month-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* V43 大师工作台：大气专业运营后台 */
+.master-work-modal{max-width:1180px!important;min-height:760px!important;background:linear-gradient(145deg,rgba(15,31,52,.98),rgba(7,15,27,.99))!important;box-shadow:0 30px 100px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05)!important;border:1px solid rgba(216,179,106,.18)!important}
+.master-work-modal:before{content:"";display:block;height:4px;background:linear-gradient(90deg,#d8b36a,#5d9cff,#54d6b0);}
+.master-work-modal h3{font-size:22px;letter-spacing:.5px;margin-top:8px}.master-work-modal .master-nav{background:rgba(255,255,255,.035)!important;border:1px solid rgba(255,255,255,.07)!important;padding:8px!important;border-radius:16px!important;box-shadow:0 12px 35px rgba(0,0,0,.2)}
+.master-work-modal .master-nav button{padding:13px 18px!important;border-radius:11px!important;font-weight:800!important;color:#9fb0c6!important}.master-work-modal .master-nav button.active{background:linear-gradient(135deg,#d8b36a,#f0d79c)!important;color:#10151c!important;box-shadow:0 8px 22px rgba(216,179,106,.2)}
+.master-work-modal .master-panel{margin-top:20px!important}.master-kpis{grid-template-columns:repeat(4,1fr)!important;gap:16px!important}.master-kpi{position:relative;overflow:hidden;background:linear-gradient(145deg,#122842,#0b1829)!important;border:1px solid rgba(255,255,255,.08)!important;border-radius:18px!important;padding:22px!important;min-height:125px;box-shadow:0 14px 35px rgba(0,0,0,.22)}.master-kpi:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;right:-35px;top:-35px;background:rgba(216,179,106,.08)}.master-kpi span{font-size:13px!important;color:#91a5bf!important}.master-kpi strong{font-size:32px!important;margin-top:12px!important;display:block!important;letter-spacing:.5px}.master-work-modal .notice{background:rgba(93,156,255,.06)!important;border-color:rgba(93,156,255,.2)!important;border-radius:15px!important;padding:16px!important}.master-work-modal .order{background:linear-gradient(145deg,#10233a,#0a1727)!important;border:1px solid rgba(255,255,255,.07)!important;border-radius:16px!important;padding:18px!important;margin-bottom:12px!important;box-shadow:0 10px 28px rgba(0,0,0,.18)}.master-work-modal .order-actions button{border-radius:10px!important;padding:9px 14px!important}.master-work-modal .service-item{background:linear-gradient(145deg,#10233a,#0a1727)!important;border-radius:15px!important;border:1px solid rgba(255,255,255,.07)!important;padding:16px!important}.master-work-modal .table{background:#0a1727!important;border-radius:14px!important;overflow:hidden}.master-work-modal .table th{background:#122842!important;color:#d8e3ef!important}.master-work-modal input,.master-work-modal select,.master-work-modal textarea{background:#081523!important;border-color:#29415d!important;border-radius:10px!important}.master-login-modal{box-shadow:0 30px 90px rgba(0,0,0,.55)!important;border:1px solid rgba(216,179,106,.2)!important}
+@media(max-width:800px){.master-kpis{grid-template-columns:repeat(2,1fr)!important}.master-work-modal{min-height:unset!important}.master-work-modal .master-nav{overflow-x:auto;display:flex}.master-work-modal .master-nav button{white-space:nowrap}}
+
+/* V46 大师视角咨询室：接单后不再显示顾客视角 */
+.master-consult-shell{display:grid;grid-template-columns:245px minmax(0,1fr) 285px;min-height:650px;background:#07111f}
+.master-consult-side,.master-consult-right{background:#081522;padding:18px;overflow:auto}.master-consult-side{border-right:1px solid #243b56}.master-consult-right{border-left:1px solid #243b56}
+.master-room-title{font-size:16px;font-weight:800;margin-bottom:14px}.master-customer-card,.master-order-card,.master-quick-card{border:1px solid #29415d;border-radius:14px;background:#0d1d30;padding:14px;margin-bottom:12px}.master-customer-card{border-color:#6f5b35}.master-avatar{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#304b6e,#18283e);color:var(--gold2);font-size:21px;font-weight:800}
+.master-room-main{display:flex;flex-direction:column;min-width:0;background:#06101d}.master-room-header{padding:15px 18px;border-bottom:1px solid #223957;display:flex;justify-content:space-between;align-items:center;gap:12px}.master-room-header .customer-name{font-size:17px;font-weight:800}.master-room-header .order-line{font-size:12px;color:#91a5bf;margin-top:5px}.master-room-status{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.master-live{padding:6px 9px;border:1px solid rgba(84,214,176,.35);color:var(--ok);border-radius:99px;font-size:11px;background:rgba(84,214,176,.06)}
+.master-chat-body{flex:1;overflow:auto;padding:18px 20px}.master-chat-welcome{padding:14px;border:1px solid #29415d;border-radius:13px;background:#0b192a;line-height:1.75;color:#c8d5e5}.master-message{max-width:76%;margin-top:14px}.master-message.customer{margin-right:auto}.master-message.master{margin-left:auto;text-align:right}.master-bubble{display:inline-block;padding:10px 13px;border-radius:13px;line-height:1.7;font-size:13px}.master-message.customer .master-bubble{background:#0d2035;border:1px solid #29415d}.master-message.master .master-bubble{background:#18375d;border:1px solid #2d5c8f}.master-time{font-size:10px;color:#72869d;margin-top:3px}.master-chat-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid #223957}.master-chat-input input{flex:1;background:#081523;border:1px solid #29415d;color:white;padding:12px;border-radius:10px;outline:none}.master-quick{display:grid;grid-template-columns:1fr 1fr;gap:7px}.master-quick button{font-size:11px;padding:9px}.master-order-card .rowline{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px}.master-order-card .rowline:last-child{border-bottom:0}.master-order-card .label{color:#8195ad}.master-section-label{font-size:11px;color:#8fa5bf;letter-spacing:1px;margin:15px 0 8px}.master-end{width:100%;margin-top:10px;border-color:#9d4e57!important;color:#ffb0b5!important;background:rgba(130,45,55,.12)!important}.master-return{width:100%;margin-top:8px}@media(max-width:1050px){.master-consult-shell{grid-template-columns:220px minmax(0,1fr)}.master-consult-right{display:none}}@media(max-width:700px){.master-consult-shell{grid-template-columns:1fr}.master-consult-side{display:none}.master-room-header{align-items:flex-start;flex-direction:column}.master-chat-body{padding:14px}.master-message{max-width:88%}}
+</style>
+<style>
+.master-entry{margin-top:18px;padding:18px;border:1px solid #6f5b35;border-radius:16px;background:linear-gradient(135deg,#101f31,#0a1725);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.master-entry b{font-size:16px}.master-entry p{margin:6px 0 0;color:#91a5bf;font-size:12px}.master-login input{margin-bottom:10px}.master-login-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.service-list{display:grid;gap:10px;margin-top:14px}.service-item{border:1px solid #29415d;border-radius:12px;padding:13px;background:#091725}.service-item .top{display:flex;justify-content:space-between;gap:10px;align-items:center}.service-item .meta{font-size:12px;color:#91a5bf;margin-top:6px;line-height:1.7}.service-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.service-actions button{padding:7px 10px;border-radius:8px;border:1px solid #29415d;background:#0d2033;color:#dce7f2;cursor:pointer}.service-actions .on{background:#173a2c;border-color:#2f7654;color:#a9e2c3}.service-form{display:grid;grid-template-columns:1.4fr .7fr .7fr 1fr;gap:10px;margin-top:14px}.service-form textarea{grid-column:1/-1;min-height:80px}.service-empty{padding:20px;text-align:center;color:#91a5bf;border:1px dashed #29415d;border-radius:12px}.master-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.master-nav button{border:1px solid #29415d;background:#0b1928;color:#cbd8e6;border-radius:10px;padding:9px 13px;cursor:pointer}.master-nav button.active{background:#e5c06d;color:#17140d;border-color:#e5c06d}.master-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.master-kpi{padding:15px;border:1px solid #29415d;border-radius:13px;background:#091725}.master-kpi span{font-size:12px;color:#91a5bf}.master-kpi strong{display:block;font-size:23px;margin-top:5px}.master-panel{display:none}.master-panel.active{display:block}.order{border:1px solid #29415d;border-radius:13px;padding:14px;background:#091725;margin-bottom:10px}.order-top{display:flex;justify-content:space-between;gap:10px}.order-meta{font-size:12px;color:#91a5bf;margin:7px 0 11px}.order-actions{display:flex;gap:8px;flex-wrap:wrap}.order-actions button{padding:8px 11px;border-radius:9px;border:1px solid #29415d;background:#0d2033;color:#dce7f2;cursor:pointer}.order-actions .primary{background:#e5c06d;color:#17140d;border-color:#e5c06d}.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.profile-grid textarea{grid-column:1/-1;min-height:100px}.master-login-modal{max-width:520px}.master-work-modal{max-width:1050px;max-height:92vh;overflow:auto}@media(max-width:700px){.master-login-grid,.profile-grid{grid-template-columns:1fr}.master-kpis{grid-template-columns:1fr 1fr}}
+</style>
+
+<style>.shared-order{padding:15px;border:1px solid #29415d;border-radius:12px;background:#0a1929;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:15px}.shared-order .title{font-weight:800}.shared-order .meta{font-size:12px;color:#91a5bf;line-height:1.8}.pool-badge{font-size:11px;color:#e3c77d;border:1px solid #705d37;padding:4px 8px;border-radius:99px}.pool-empty{padding:24px;text-align:center;color:#71869d;border:1px dashed #29415d;border-radius:12px}</style></head>
+<body>
+<nav><div class="wrap" style="width:100%;display:flex;align-items:center;justify-content:space-between"><a class="brand" href="#top"><span class="logo">曜</span><span>星曜命理<small>东方命理 · 八字 · 传统术数 · 人生咨询</small></span></a><div class="navlinks"><a href="#bazi">八字</a><a href="#qimen">传统排盘</a><a href="#paid">深度解读</a><a href="#masters">大师服务</a><a href="#join">大师入驻</a></div><a class="btn gold" href="#bazi">立即测算</a></div></nav>
+
+<main id="top">
+<section class="wrap hero"><div><div class="eyebrow">XINGYAO · PROFESSIONAL DIVINATION V30</div><h1>把生辰，读成一份<br><span style="color:var(--gold2)">可阅读的人生报告</span></h1><p>八字命盘、真太阳时、大运流年流月与传统术数、大师咨询统一入口。免费开放核心摘要，深度专题按单项解锁。</p><div class="hero-actions"><a class="btn gold" href="#bazi">免费生成命盘</a></div></div><div class="mini-orbit"><i class="star s1"></i><i class="star s2"></i><i class="star s3"></i><i class="star s4"></i><div class="sun">曜</div></div></section>
+
+<section class="wrap section" id="qimen">
+  <h2>传统术数排盘区</h2>
+  <div class="sub">将免费八字排盘与奇门遁甲、六爻、梅花易数、六壬统一收纳到同一个传统排盘中心。先选择术数，再进入对应起盘与结果页面。</div>
+  <div class="divination-tabs">
+    <button class="tab active" onclick="switchDivination('bazi',this)">八字 · 免费排盘</button>
+    <button class="tab" onclick="switchDivination('qimen',this)">奇门遁甲</button>
+    <button class="tab" onclick="switchDivination('liuyao',this)">六爻</button>
+    <button class="tab" onclick="switchDivination('meihua',this)">梅花易数</button>
+    <button class="tab" onclick="switchDivination('liuren',this)">六壬</button>
+  </div>
+
+<div id="bazi" class="div-panel bazi-free-panel" style="display:block"><h2>免费八字命盘</h2><div class="sub">出生地用于自动地点校正；选择省、市、区县后，系统自动获取出生地经度并换算真太阳时，无需手动填写经纬度。</div>
+<div class="card"><div class="formgrid">
+<div class="field"><label>出生日期</label><input id="date" type="date" value="2000-08-18"></div>
+<div class="field"><label>出生时间</label><input id="time" type="time" value="12:30"></div>
+<div class="field"><label>性别</label><select id="gender"><option>男</option><option>女</option></select></div>
+<div class="field"><label>出生地 · 省 / 自治区 / 直辖市</label><select id="province" onchange="loadCities()"></select></div>
+<div class="field"><label>出生地 · 市 / 自治州 / 盟</label><select id="city" onchange="loadDistricts()"></select></div>
+<div class="field"><label>出生地 · 区 / 县 / 旗</label><select id="district"></select></div>
+
+</div><div style="margin-top:15px"><button class="btn gold" onclick="calc()">生成我的命盘</button></div><div class="notice">校准说明：系统按出生地自动获取经度，结合均时差换算真太阳时，再进入专业历法引擎计算四柱、节气与大运。边界时间建议上线前使用标准案例做回归测试。</div></div>
+<div class="result" id="result">
+  <div class="resultgrid">
+    <div class="card" style="padding:0;overflow:hidden">
+      <div class="bazi-result">
+        <div class="bazi-head"><div><div class="title">八字命盘</div><div class="meta" id="baziMeta">农历：—　阳历：—<br>真太阳时：—　出生地：—</div></div><span class="badge">精准排盘 · 节气校正</span></div>
+        <div class="bazi-tools"><span>命盘校验</span><span class="tag" id="metaDayMaster">日主：—</span><span class="tag" id="metaZodiac">生肖：—</span><span class="tag" id="metaSolar">真太阳时：—</span><span class="tag" id="autoGeoStatus">出生地自动定位：—</span></div>
+        <div class="report-switch top-report-switch"><button class="tab active" id="basicBtn" onclick="switchReport('basic')">基础盘</button><button class="tab" id="detailBtn" onclick="switchReport('detail')">精准细盘</button></div><div class="report-note">排盘完成后默认显示基础盘；精准细盘会展开完整十神、藏干、十二长生、旬空、命宫、身宫、起运与大运。</div><div id="basicReport" style="display:none"></div><div class="bazi-sheet" id="baziBasicView"><table id="baziSheet"><tbody><tr><th class="label">日期</th><td class="pillar-name">年柱</td><td class="pillar-name">月柱</td><td class="pillar-name">日柱</td><td class="pillar-name">时柱</td></tr><tr><th class="label">主星</th><td class="mini">—</td><td class="mini">—</td><td class="mini">日主</td><td class="mini">—</td></tr><tr><th class="label">天干</th><td><div class="gan goldtext">—</div></td><td><div class="gan goldtext">—</div></td><td><div class="gan goldtext">—</div></td><td><div class="gan goldtext">—</div></td></tr><tr><th class="label">地支</th><td><div class="zhi">—</div></td><td><div class="zhi">—</div></td><td><div class="zhi">—</div></td><td><div class="zhi">—</div></td></tr><tr><th class="label">藏干</th><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td></tr><tr><th class="label">副星</th><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td></tr><tr><th class="label">星运</th><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td></tr><tr><th class="label">自坐</th><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td></tr><tr><th class="label">空亡</th><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td></tr><tr><th class="label">纳音</th><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td><td class="mini">—</td></tr><tr><th class="label">神煞</th><td class="mini muted">排盘后生成</td><td class="mini muted">排盘后生成</td><td class="mini muted">排盘后生成</td><td class="mini muted">排盘后生成</td></tr></tbody></table></div><div id="detailReport" class="report-host" style="display:none"></div>
+      </div>
+    </div>
+    <div class="card summary-clean"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><h3 style="margin:0">免费命理摘要</h3><span class="pill">一眼看懂</span></div><div id="summary"></div></div>
+  </div>
+  <div class="bazi-display-tip">排盘完成后默认显示<strong>基础盘</strong>；点击上方“精准细盘”可展开更完整的十神、藏干、十二长生、旬空、命宫、身宫、起运与大运。<span>出生地经度由系统自动换算，无需输入。</span></div>
+  <div class="card" style="margin-top:16px" id="luckTimeline"><div class="tabs"><button class="tab active" onclick="tab(this,'yun')">大运</button><button class="tab" onclick="tab(this,'liu')">流年</button><button class="tab" onclick="tab(this,'month')">流月</button></div><div id="yun"><div class="notice">生成八字后，大运将根据本次出生资料、性别与节气起运规则自动生成。</div></div><div id="liu" style="display:none"><div class="notice">生成八字后，流年将跟随本命盘自动生成。</div></div><div id="month" style="display:none"><div class="notice">生成八字后，流月将跟随本命盘自动生成。</div></div></div>
+</div></div>
+
+  <div id="div-qimen" class="div-panel">
+    <div class="card div-form">
+      <div class="formgrid">
+        <div class="field"><label>起局日期</label><input id="qDate" type="date"></div>
+        <div class="field"><label>起局时间</label><input id="qTime" type="time" value="12:00"></div>
+        <div class="field"><label>局式</label><select id="qMode"><option>时家奇门 · 阳遁</option><option>时家奇门 · 阴遁</option><option>自动判断阴阳遁</option></select></div>
+        <div class="field"><label>占问事项</label><input id="qQuestion" placeholder="例如：事业、合作、出行、感情"></div>
+      </div>
+      <button class="btn gold" onclick="generateQimen()">生成奇门盘</button>
+    </div>
+    <div id="qimenResult" class="div-result"></div>
+  </div>
+
+  <div id="div-liuyao" class="div-panel" style="display:none">
+    <div class="card div-form">
+      <div class="formgrid">
+        <div class="field"><label>起卦方式</label><select id="liuMode"><option>三枚铜钱 · 六次摇卦</option><option>系统随机起卦</option></select></div>
+        <div class="field"><label>占问事项</label><input id="liuQuestion" placeholder="例如：项目能否推进"></div>
+        <div class="field"><label>起卦时间</label><input id="liuTime" type="datetime-local"></div>
+      </div>
+      <div class="coin-area" id="coinArea"><div class="coin-hint">点击“摇一次”连续完成六爻，从初爻到上爻。</div><div class="coin-log" id="coinLog"></div><button class="btn gold" onclick="tossLiuyao()">摇一次（<span id="tossCount">0</span>/6）</button> <button class="btn" onclick="resetLiuyao()">重置</button></div>
+    </div>
+    <div id="liuyaoResult" class="div-result"></div>
+  </div>
+
+  <div id="div-meihua" class="div-panel" style="display:none">
+    <div class="card div-form">
+      <div class="formgrid">
+        <div class="field"><label>起卦日期</label><input id="mDate" type="date"></div>
+        <div class="field"><label>起卦时间</label><input id="mTime" type="time" value="12:00"></div>
+        <div class="field"><label>起卦数字（可选）</label><input id="mNumber" type="number" min="1" placeholder="不填则按时间起卦"></div>
+        <div class="field"><label>占问事项</label><input id="mQuestion" placeholder="例如：合作结果、近期计划"></div>
+      </div>
+      <button class="btn gold" onclick="generateMeihua()">生成梅花卦</button>
+    </div>
+    <div id="meihuaResult" class="div-result"></div>
+  </div>
+
+  <div id="div-liuren" class="div-panel" style="display:none">
+    <div class="card div-form">
+      <div class="formgrid">
+        <div class="field"><label>起课日期</label><input id="rDate" type="date"></div>
+        <div class="field"><label>起课时间</label><input id="rTime" type="time" value="12:00"></div>
+        <div class="field"><label>起课方式</label><select id="rMode"><option>时课 · 自动取四课三传</option><option>指定占时</option></select></div>
+        <div class="field"><label>占问事项</label><input id="rQuestion" placeholder="例如：求职、诉讼、出行"></div>
+      </div>
+      <button class="btn gold" onclick="generateLiuren()">生成六壬课</button>
+    </div>
+    <div id="liurenResult" class="div-result"></div>
+  </div>
+  <div class="notice">说明：本区是传统术数排盘工具。奇门、六爻、梅花、六壬的完整专业算法涉及历法、干支、九宫、纳甲、三传四课等规则；当前网页先建立独立起盘与展示层，商业上线建议接入经过验证的专业算法库并用标准案例回归测试，不宣称“100%准确”。</div>
+</section>
+
+
+<details class="reverse-inline wrap"><summary>四柱反推 · 八字高级工具（点击展开）</summary>
+  <h2>四柱反推</h2>
+  <div class="sub">输入已知四柱，系统按历法规则反向搜索可能的公历出生日期与时辰；可选输入时柱进一步缩小候选。结果为候选时间，不把反推结果当作唯一确定出生时间。</div>
+  <div class="card">
+    <div class="formgrid">
+      <div class="field"><label>年柱</label><input id="revYear" placeholder="例如：己巳"></div>
+      <div class="field"><label>月柱</label><input id="revMonth" placeholder="例如：丙子"></div>
+      <div class="field"><label>日柱</label><input id="revDay" placeholder="例如：丙寅"></div>
+      <div class="field"><label>时柱（可选）</label><input id="revTime" placeholder="例如：戊子"></div>
+      <div class="field"><label>搜索起始年份</label><input id="revFrom" type="number" value="1900"></div>
+      <div class="field"><label>搜索结束年份</label><input id="revTo" type="number" value="2100"></div>
+    </div>
+    <button class="btn gold" style="margin-top:15px" onclick="reverseBazi()">反推出生时间</button>
+    <div id="reverseResult" class="div-result"></div>
+  </div>
+</details>
+
+<section class="wrap section" id="free-report">
+  <h2>命盘核心摘要</h2>
+  <div class="sub">根据本次实际八字排盘动态生成，只展示与当前命盘直接相关的核心信息。</div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
+      <div><b>命盘报告状态：</b><span style="color:var(--ok)">已生成</span></div>
+      <span class="pill">本命盘 · 动态摘要</span>
+    </div>
+    <div class="tabs" id="reportTabs"></div>
+    <div id="reportContent" class="summary"></div>
+  </div>
+</section>
+
+<section class="wrap section" id="paid"><h2>深度专题解锁</h2><div class="sub">免费先看核心结论；用户按兴趣单独购买，不强制购买整套报告。</div><div class="paygrid">
+<div class="card pay"><span class="tagfree">推荐</span><h3>事业财运</h3><div class="price">¥3</div><ul><li>职业优势与风险点</li><li>财星结构专题</li><li>未来阶段建议</li></ul><button class="btn gold" onclick="buy('事业财运')">解锁</button></div>
+<div class="card pay"><h3>感情婚姻</h3><div class="price">¥3</div><ul><li>关系模式</li><li>伴侣画像方向</li><li>阶段性关系提醒</li></ul><button class="btn gold" onclick="buy('感情婚姻')">解锁</button></div>
+<div class="card pay"><h3>流年流月</h3><div class="price">¥5</div><ul><li>年度重点月份</li><li>事业财运节奏</li><li>重点月份展开</li></ul><button class="btn gold" onclick="buy('流年流月')">解锁</button></div>
+</div></section>
+
+<section class="wrap section"><div class="ad">广告位 · 728 × 90 · 可接入 AdSense / 国内广告平台 / 自有广告</div></section>
+
+
+<section class="wrap section" id="consult">
+  <h2>大师实时服务</h2>
+  <div class="sub">选择大师后进入站内咨询；状态、未读消息和订单状态均通过平台接口同步。联系方式不直接展示给顾客。</div>
+  <div class="master-entry"><div><b>大师工作入口</b><p>仅限已认证大师使用。登录后可处理订单、修改个人资料并查看近期经营数据。</p></div><button class="btn gold" onclick="openMasterLogin()">大师登录 / 工作台</button></div>
+  <div class="mastergrid">
+    <div class="card master" id="customerMasterCard"><div class="mastertop"><div class="avatar">玄</div><div><b id="customerMasterName">玄清老师</b><div><span style="color:var(--ok)">● 在线</span>　<span style="color:var(--muted)">平均3分钟响应</span></div></div></div><p>八字 / 大运 / 事业财运</p><button class="btn blue" style="width:100%" onclick="openChat('玄清老师')">进入咨询</button></div>
+    <div class="card master"><div class="mastertop"><div class="avatar">澄</div><div><b>澄心老师</b><div><span style="color:#e5c06d">● 忙碌</span>　<span style="color:var(--muted)">当前咨询中</span></div></div></div><p>合婚 / 感情 / 八字</p><button class="btn" style="width:100%" onclick="openAppointment('澄心老师','八字 / 感情 / 合婚','¥49 起')">预约咨询</button></div>
+    <div class="card"><h3>订单共享池</h3><p style="color:var(--muted);font-size:13px;line-height:1.7">指定大师超过5分钟未接单后，订单自动进入共享池；其他符合条件的大师可按顾客原支付价格接单。</p><div style="border:1px solid #29415d;border-radius:12px;padding:13px;background:#091625"><b>八字事业财运</b><div style="display:flex;justify-content:space-between;margin:8px 0;color:#aebed1;font-size:12px"><span>原订单 ¥39</span><span style="color:var(--danger)">剩余 04:32</span></div><button class="btn gold" style="width:100%" onclick="toast('已模拟抢单：订单价格锁定为 ¥39')">按原价接单</button></div></div>
+  </div>
+</section>
+
+<section class="wrap section" id="join">
+  <div class="card" style="border-color:#725f37;background:linear-gradient(135deg,#111f31,#0b1726)">
+    <div style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap">
+      <div><div class="eyebrow">MASTER PROGRAM</div><h2 style="margin-top:8px">成为星曜命理认证大师</h2><p class="sub" style="margin-bottom:0">开放八字、紫微、六爻、奇门、梅花、六壬等传统术数专业人士入驻，平台提供订单、站内咨询与结算。</p></div>
+      <button class="btn gold" onclick="openJoin()">申请大师入驻</button>
+    </div>
+    <div id="joinForm" style="display:none;margin-top:20px">
+      <div class="formgrid">
+        <div class="field"><label>姓名 / 艺名</label><input id="mname" placeholder="请输入"></div>
+        <div class="field"><label>手机</label><input placeholder="请输入"></div>
+        <div class="field"><label>微信 / WhatsApp</label><input placeholder="平台审核使用"></div>
+        <div class="field"><label>从业年限</label><input type="number" placeholder="例如 8"></div>
+        <div class="field"><label>擅长体系</label><select><option>八字</option><option>紫微斗数</option><option>六爻</option><option>奇门遁甲</option><option>合婚</option></select></div>
+        <div class="field"><label>个人简介</label><input placeholder="简述学习/从业经历"></div>
+      </div>
+      <button class="btn gold" style="margin-top:15px" onclick="submitJoin()">提交入驻申请</button>
+    </div>
+  </div>
+</section>
+
+
+<div id="masterLoginModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:80;padding:24px 14px;overflow:auto">
+  <div class="card master-login-modal" style="margin:8vh auto;padding:0;overflow:hidden">
+    <div style="padding:20px 22px;border-bottom:1px solid #29415d;display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:20px;font-weight:800">大师工作入口</div><div style="font-size:12px;color:#91a5bf;margin-top:5px">请输入认证账户与密码</div></div><button class="btn" onclick="closeMasterLogin()">关闭</button></div>
+    <div style="padding:22px">
+      <div class="field"><label>大师账户</label><input id="masterAccount" placeholder="请输入账户"></div>
+      <div class="field"><label>登录密码</label><input id="masterPassword" type="password" placeholder="请输入密码"></div>
+      <div id="masterLoginError" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid rgba(255,127,134,.5);background:rgba(255,127,134,.08);border-radius:9px;color:#ff9da3;font-size:13px">账户或密码错误，请重新输入。</div>
+      <button class="btn gold" style="width:100%" onclick="masterLogin()">登录工作台</button>
+      <div class="notice" style="margin-bottom:0">演示版本默认测试账户：<b>master001</b>，密码：<b>123456</b>。正式上线必须改为服务端认证，不能把真实账户密码写在 HTML 中。</div>
+    </div>
+  </div>
+</div>
+<div id="masterWorkModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:85;padding:20px 14px;overflow:auto">
+  <div class="card master-work-modal" style="margin:auto;padding:0;overflow:hidden">
+    <div style="padding:18px 22px;border-bottom:1px solid #29415d;display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:20px;font-weight:800">大师工作台</div><div id="workMasterName" style="font-size:12px;color:#91a5bf;margin-top:5px">认证大师</div></div><button class="btn" onclick="logoutMaster()">退出登录</button></div>
+    <div style="padding:18px 22px">
+      <div class="master-nav"><button class="active" onclick="switchMasterPanel('overview',this)">工作概览</button><button onclick="switchMasterPanel('orders',this)">订单处理</button><button onclick="switchMasterPanel('services',this)">我的服务设置</button><button onclick="switchMasterPanel('profile',this)">个人信息</button><button onclick="switchMasterPanel('data',this)">近期数据</button></div>
+      <div id="masterPanel-overview" class="master-panel active"><div class="master-kpis"><div class="master-kpi"><span>待处理订单</span><strong>3</strong></div><div class="master-kpi"><span>今日订单</span><strong>8</strong></div><div class="master-kpi"><span>本月完成</span><strong>126</strong></div><div class="master-kpi"><span>本月收入</span><strong>¥6,380</strong></div></div><div class="notice">欢迎进入工作台。这里集中处理顾客订单、更新大师资料，并查看近期接单与收入数据。</div></div>
+      <div id="masterPanel-orders" class="master-panel"><h3>待处理订单</h3><div id="masterOrders"></div></div>
+      <div id="masterPanel-pool" class="master-panel"><h3>订单共享池</h3><div class="notice">平台新订单统一进入共享池。大师在这里接单；接单后订单立即锁定到本人并进入订单处理/咨询。</div><div id="masterSharedPool"></div></div>
+<div id="masterPanel-services" class="master-panel"><h3>我的服务设置</h3><div class="notice">大师可以自行创建、修改、上下架自己的咨询服务。保存后会同步到顾客端大师主页；本演示使用浏览器本地存储模拟实时同步。</div><div class="service-form"><div class="field"><label>服务名称</label><input id="serviceName" placeholder="例如：八字精准分析"></div><div class="field"><label>价格（元）</label><input id="servicePrice" type="number" min="0" placeholder="199"></div><div class="field"><label>时长（分钟）</label><input id="serviceDuration" type="number" min="10" placeholder="60"></div><div class="field"><label>咨询方式</label><select id="serviceMode"><option>实时文字</option><option>图文咨询</option><option>语音咨询</option><option>视频咨询</option></select></div><textarea id="serviceDesc" placeholder="填写服务说明，例如：围绕四柱、十神、大运流年进行专项分析。"></textarea></div><div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn gold" onclick="saveService()" id="serviceSaveBtn">新增服务</button><button class="btn" onclick="resetServiceForm()">清空</button></div><div id="masterServices" class="service-list"></div></div><div id="masterPanel-profile" class="master-panel"><h3>个人信息修改</h3><div class="profile-grid"><div class="field"><label>大师姓名 / 艺名</label><input id="profileName" value="玄清老师"></div><div class="field"><label>服务价格（起）</label><input id="profilePrice" value="39" type="number"></div><div class="field"><label>服务标签</label><input id="profileTags" value="八字 / 大运 / 事业财运"></div><div class="field"><label>接单状态</label><select id="profileStatus"><option>在线接单</option><option>忙碌</option><option>暂停接单</option></select></div><textarea id="profileBio" placeholder="个人简介">专注八字、流年与事业方向解读。</textarea></div><button class="btn gold" style="margin-top:14px" onclick="saveMasterProfile()">保存修改</button></div>
+      <div id="masterPanel-data" class="master-panel"><h3>近期数据情况</h3><table class="table"><thead><tr><th>指标</th><th>今日</th><th>近7日</th><th>本月</th></tr></thead><tbody><tr><td>新订单</td><td>8</td><td>43</td><td>126</td></tr><tr><td>完成咨询</td><td>7</td><td>39</td><td>119</td></tr><tr><td>平均响应</td><td>3分12秒</td><td>3分26秒</td><td>3分41秒</td></tr><tr><td>顾客评分</td><td>4.9</td><td>4.9</td><td>4.8</td></tr><tr><td>收入</td><td>¥420</td><td>¥2,180</td><td>¥6,380</td></tr></tbody></table></div>
+    </div>
+  </div>
+</div>
+<div id="appointmentModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:50;padding:24px 14px;overflow:auto">
+  <div class="card" style="max-width:620px;margin:5vh auto;padding:0;overflow:hidden">
+    <div style="padding:20px 22px;border-bottom:1px solid #29415d;display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:20px;font-weight:800">预约咨询</div><div id="appointmentMaster" style="font-size:13px;color:#91a5bf;margin-top:5px">请选择咨询事项</div></div><button class="btn" onclick="closeAppointment()">关闭</button></div>
+    <div style="padding:20px 22px">
+      <div style="font-size:13px;color:#b8c8d8;margin-bottom:12px">请选择本次希望重点咨询的事项</div>
+      <div id="appointmentOptions" style="display:grid;grid-template-columns:1fr 1fr;gap:10px"></div>
+      <div id="appointmentCustom" style="display:none;margin-top:14px"><label style="display:block;color:#b8c8d8;font-size:13px;margin-bottom:7px">补充说明（选填）</label><textarea id="appointmentNote" rows="4" placeholder="例如：希望重点分析2027年的事业与财运……" style="width:100%;resize:vertical;border:1px solid #29415d;border-radius:10px;background:#081725;color:#edf3f8;padding:12px;outline:none"></textarea></div>
+      <div id="appointmentSelected" style="margin-top:14px;padding:11px 12px;border:1px solid #29415d;border-radius:10px;color:#91a5bf;font-size:12px">尚未选择咨询事项</div>
+      <button id="appointmentConfirm" class="btn gold" style="width:100%;margin-top:16px;opacity:.5" disabled onclick="confirmAppointment()">确认预约并进入咨询</button>
+    </div>
+  </div>
+</div>
+<div id="chatModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:120;padding:20px 12px">
+  <div class="card" style="max-width:1280px;margin:auto;height:min(760px,95vh);padding:0;overflow:hidden">
+    <div class="master-consult-shell">
+      <aside class="master-consult-side">
+        <div class="master-room-title">大师服务室</div>
+        <div class="master-customer-card">
+          <div style="display:flex;gap:10px;align-items:center"><div class="master-avatar" id="masterCustomerAvatar">张</div><div><b id="masterCustomerName">顾客</b><div style="color:var(--ok);font-size:11px;margin-top:4px">● 当前在线</div></div></div>
+          <div style="font-size:11px;color:#91a5bf;line-height:1.7;margin-top:10px">顾客已付款并进入服务。请围绕订单事项完成本次咨询。</div>
+        </div>
+        <div class="master-section-label">订单信息</div>
+        <div class="master-order-card">
+          <div class="rowline"><span class="label">订单号</span><b id="masterOrderId">—</b></div>
+          <div class="rowline"><span class="label">服务项目</span><b id="masterOrderService">—</b></div>
+          <div class="rowline"><span class="label">订单金额</span><b class="gold" id="masterOrderPrice">—</b></div>
+          <div class="rowline"><span class="label">下单时间</span><span id="masterOrderTime">—</span></div>
+          <div class="rowline"><span class="label">订单状态</span><span id="masterOrderState" style="color:var(--ok)">进行中</span></div>
+        </div>
+        <button class="btn master-return" onclick="returnToMasterOrders()">返回大师工作台</button>
+      </aside>
+      <section class="master-room-main">
+        <header class="master-room-header">
+          <div><div class="customer-name" id="chatName">顾客</div><div class="order-line" id="chatOrderInfo">订单 — · 当前服务</div></div>
+          <div class="master-room-status"><span class="master-live" id="chatOrderStatus">● 服务进行中</span><button id="endConsultBtn" class="btn master-end" style="display:inline-flex;width:auto;margin:0" onclick="endCurrentConsult()">结束咨询</button></div>
+        </header>
+        <div id="chatBody" class="master-chat-body"></div>
+        <div class="master-chat-input"><input id="chatInput" placeholder="回复顾客消息…" onkeydown="if(event.key==='Enter')sendChat()"><button class="btn gold" onclick="sendChat()">发送</button></div>
+      </section>
+      <aside class="master-consult-right">
+        <div class="master-room-title">大师操作区</div>
+        <div class="master-quick-card"><div class="master-section-label" style="margin-top:0">快捷操作</div><div class="master-quick"><button class="btn" onclick="quickMasterReply('我已经看到您的问题，正在结合您的订单内容进行分析。')">已收到问题</button><button class="btn" onclick="quickMasterReply('请您补充一下希望重点咨询的具体事项。')">请补充事项</button><button class="btn" onclick="quickMasterReply('我会结合命盘与当前咨询主题为您进一步分析。')">开始分析</button><button class="btn" onclick="quickMasterReply('稍等，我正在整理本次咨询的重点。')">稍等整理</button></div></div>
+        <div class="master-quick-card"><div class="master-section-label" style="margin-top:0">本次服务</div><div style="font-size:12px;color:#b8c8d8;line-height:1.9">服务：<span id="masterRightService">—</span><br>价格：<span id="masterRightPrice">—</span><br>状态：<span style="color:var(--ok)">进行中</span></div></div>
+        <div class="master-quick-card"><div class="master-section-label" style="margin-top:0">咨询规则</div><div style="font-size:11px;color:#8195ad;line-height:1.8">仅在平台内沟通；围绕当前订单提供服务；结束咨询后订单自动完成并返回大师工作台。</div></div>
+      </aside>
+    </div>
+  </div>
+</div>
+<section class="wrap section" id="masters"><h2>大师服务中心</h2><div class="sub">顾客先选择大师与服务，再进入订单咨询；大师资料、报价、头衔与评分均由后台管理。</div><div class="mastergrid">
+<div class="card master" id="customerMasterCard"><div class="mastertop"><div class="avatar">玄</div><div><b id="customerMasterName">玄清老师</b><div class="rating">★★★★★ 4.9</div></div></div><p id="customerMasterBio">专注八字、流年与事业方向解读。</p><div class="row"><span>资深大师</span><b id="customerMasterPrice">¥39 起</b></div><div id="customerMasterServices" style="margin:10px 0;display:grid;gap:7px"></div><button class="btn gold" style="width:100%" onclick="selectMaster('玄清老师',getCustomerServiceSummary(),'¥39 起')">选择大师</button><button class="btn" style="width:100%;margin-top:8px" onclick="openAppointment('玄清老师',getCustomerServiceSummary(),'¥39 起')">预约咨询</button></div>
+<div class="card master"><div class="mastertop"><div class="avatar">澄</div><div><b>澄心老师</b><div class="rating">★★★★★ 4.8</div></div></div><p>八字、情感与合盘方向，平台内咨询。</p><div class="row"><span>金牌大师</span><b>¥49 起</b></div><button class="btn gold" style="width:100%" onclick="selectMaster('澄心老师','八字 / 情感 / 合盘','¥49 起')">选择大师</button></div>
+<div class="card master"><div class="mastertop"><div class="avatar">衡</div><div><b>衡岳老师</b><div class="rating">★★★★★ 4.9</div></div></div><p>命盘综合分析、流年与人生规划。</p><div class="row"><span>首席大师</span><b>¥69 起</b></div><button class="btn gold" style="width:100%" onclick="selectMaster('衡岳老师','命盘综合 / 流年 / 人生规划','¥69 起')">选择大师</button></div>
+</div></section>
+
+<section class="wrap section"><div class="card"><h3>平台公告</h3><div class="notice">平台咨询仅限站内进行。禁止私下添加顾客联系方式、绕过平台交易；违规订单可按平台规则处理。大师接单、报价、咨询与结算均留存平台记录。</div></div></section>
+</main>
+<footer><div class="wrap">星曜命理 V30 专业排盘版 · 本页面为产品原型，命理内容属于传统文化娱乐/研究用途，不构成医疗、投资、法律等专业意见。</div></footer>
+<div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/lunar-javascript@1.7.7/lunar.js"></script>
+<script>
+function pad2(n){return String(n).padStart(2,'0')}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+const CITY_LONGITUDE={
+"乌鲁木齐市":87.62,"克拉玛依市":84.87,"喀什地区":75.99,"伊犁哈萨克自治州":81.32,"阿克苏地区":80.26,"和田地区":79.93,"吐鲁番市":89.19,
+"呼和浩特市":111.67,"包头市":109.84,"鄂尔多斯市":109.99,"赤峰市":118.89,"通辽市":122.24,"呼伦贝尔市":119.77,"巴彦淖尔市":107.39,"乌海市":106.82,
+"哈尔滨市":126.64,"齐齐哈尔市":123.92,"牡丹江市":129.63,"佳木斯市":130.36,"大庆市":125.10,"绥化市":126.97,"黑河市":127.53,
+"长春市":125.32,"吉林市":126.55,"四平市":124.35,"辽源市":125.15,"通化市":125.94,"白山市":126.42,"松原市":124.82,"白城市":122.84,
+"沈阳市":123.43,"大连市":121.61,"鞍山市":122.99,"抚顺市":123.96,"本溪市":123.77,"丹东市":124.38,"锦州市":121.13,"营口市":122.24,"阜新市":121.67,"辽阳市":123.24,"盘锦市":122.07,"铁岭市":123.73,"朝阳市":120.45,"葫芦岛市":120.84,
+"北京市":116.40,"天津市":117.20,"石家庄市":114.51,"唐山市":118.18,"秦皇岛市":119.60,"邯郸市":114.54,"邢台市":114.50,"保定市":115.46,"张家口市":114.89,"承德市":117.96,"沧州市":116.84,"廊坊市":116.68,"衡水市":115.67,
+"太原市":112.55,"大同市":113.30,"阳泉市":113.58,"长治市":113.12,"晋城市":112.85,"朔州市":112.43,"晋中市":112.75,"运城市":111.01,"忻州市":112.73,"临汾市":111.52,"吕梁市":111.14,
+"济南市":117.12,"青岛市":120.38,"淄博市":118.05,"枣庄市":117.32,"东营市":118.67,"烟台市":121.39,"潍坊市":119.16,"济宁市":116.59,"泰安市":117.09,"威海市":122.12,"日照市":119.53,"临沂市":118.36,"德州市":116.36,"聊城市":115.99,"滨州市":118.02,"菏泽市":115.48,
+"郑州市":113.63,"开封市":114.31,"洛阳市":112.45,"平顶山市":113.19,"安阳市":114.39,"鹤壁市":114.30,"新乡市":113.93,"焦作市":113.24,"濮阳市":115.03,"许昌市":113.85,"漯河市":114.02,"三门峡市":111.20,"南阳市":112.53,"商丘市":115.65,"信阳市":114.09,"周口市":114.70,"驻马店市":114.02,
+"西安市":108.94,"铜川市":109.07,"宝鸡市":107.14,"咸阳市":108.71,"渭南市":109.51,"延安市":109.49,"汉中市":107.02,"榆林市":109.73,"安康市":109.03,"商洛市":109.94,
+"兰州市":103.83,"嘉峪关市":98.29,"金昌市":102.19,"白银市":104.17,"天水市":105.72,"武威市":102.64,"张掖市":100.45,"平凉市":106.67,"酒泉市":98.51,"庆阳市":107.64,"定西市":104.63,"陇南市":104.92,"临夏回族自治州":103.21,"甘南藏族自治州":102.91,
+"西宁市":101.78,"海东市":102.10,"银川市":106.23,"石嘴山市":106.39,"吴忠市":106.20,"固原市":106.28,"中卫市":105.20,
+"成都市":104.07,"自贡市":104.78,"攀枝花市":101.72,"泸州市":105.44,"德阳市":104.40,"绵阳市":104.68,"广元市":105.84,"遂宁":105.57,"内江市":105.06,"乐山市":103.77,"南充市":106.11,"眉山市":103.85,"宜宾市":104.64,"广安市":106.63,"达州市":107.50,"雅安市":103.00,"巴中市":106.75,"资阳市":104.63,"阿坝藏族羌族自治州":102.22,"甘孜藏族自治州":101.96,"凉山彝族自治州":102.27,
+"贵阳市":106.63,"六盘水市":104.83,"遵义市":106.93,"安顺市":105.95,"毕节市":105.29,"铜仁市":109.19,"黔西南布依族苗族自治州":104.91,"黔东南苗族侗族自治州":107.98,"黔南布依族苗族自治州":107.52,
+"昆明市":102.83,"曲靖市":103.80,"玉溪市":102.55,"保山市":99.16,"昭通市":103.72,"丽江市":100.23,"普洱市":100.97,"临沧市":100.09,"楚雄彝族自治州":101.55,"红河哈尼族彝族自治州":103.38,"文山壮族苗族自治州":104.22,"西双版纳傣族自治州":100.80,"大理白族自治州":100.23,"德宏傣族景颇族自治州":98.58,"怒江傈僳族自治州":98.86,"迪庆藏族自治州":99.70,
+"拉萨市":91.14,"昌都市":97.18,"山南市":91.77,"日喀则市":88.88,"那曲市":92.05,"阿里地区":80.10,"林芝市":94.36,
+"重庆市":106.55,"武汉市":114.31,"黄石市":115.04,"十堰市":110.79,"宜昌市":111.29,"襄阳市":112.12,"鄂州市":114.89,"荆门市":112.20,"孝感市":113.92,"荆州市":112.24,"黄冈市":114.87,"咸宁市":114.32,"随州市":113.38,"恩施土家族苗族自治州":109.49,"仙桃市":113.45,"潜江市":112.90,"天门市":113.17,"神农架林区":110.67,
+"长沙市":112.94,"株洲市":113.13,"湘潭市":112.94,"衡阳市":112.57,"邵阳市":111.47,"岳阳市":113.13,"常德市":111.69,"张家界市":110.48,"益阳市":112.36,"郴州市":113.01,"永州市":111.61,"怀化市":109.99,"娄底市":112.01,"湘西土家族苗族自治州":109.74,
+"南京市":118.80,"无锡市":120.31,"徐州市":117.28,"常州市":119.97,"苏州市":120.62,"南通市":120.86,"连云港市":119.22,"淮安市":119.02,"盐城市":120.16,"扬州市":119.41,"镇江市":119.45,"泰州市":119.92,"宿迁市":118.28,
+"杭州市":120.16,"宁波市":121.55,"温州市":120.67,"嘉兴市":120.75,"湖州市":120.09,"绍兴市":120.58,"金华市":119.65,"衢州市":118.87,"舟山市":122.21,"台州市":121.42,"丽水市":119.92,
+"合肥市":117.23,"芜湖市":118.38,"蚌埠市":117.39,"淮南市":117.02,"马鞍山市":118.51,"淮北市":116.79,"铜陵市":117.82,"安庆市":117.05,"黄山市":118.34,"滁州市":118.32,"阜阳市":115.81,"宿州市":116.98,"六安市":116.52,"亳州市":115.78,"池州市":117.49,"宣城市":118.76,
+"福州市":119.30,"厦门市":118.09,"莆田市":119.01,"三明市":117.64,"泉州市":118.59,"漳州市":117.65,"南平市":118.18,"龙岩市":117.03,"宁德市":119.52,
+"南昌市":115.86,"景德镇市":117.18,"萍乡市":113.85,"九江市":115.99,"新余市":114.92,"鹰潭市":117.07,"赣州市":114.94,"吉安市":114.99,"宜春市":114.42,"抚州市":116.36,"上饶市":117.97,
+"广州市":113.26,"韶关市":113.60,"深圳市":114.06,"珠海市":113.58,"汕头市":116.68,"佛山市":113.12,"江门市":113.08,"湛江市":110.36,"茂名市":110.92,"肇庆市":112.47,"惠州市":114.42,"梅州市":116.12,"汕尾市":115.37,"河源市":114.70,"阳江市":111.98,"清远市":113.05,"东莞市":113.75,"中山市":113.39,"潮州市":116.63,"揭阳市":116.37,"云浮市":112.04,
+"海口市":110.35,"三亚市":109.51,"三沙市":112.34,"儋州市":109.58,
+"南宁市":108.32,"柳州市":109.42,"桂林市":110.29,"梧州市":111.28,"北海市":109.12,"防城港市":108.35,"钦州市":108.62,"贵港市":109.60,"玉林市":110.15,"百色市":106.62,"贺州市":111.55,"河池市":108.09,"来宾市":109.22,"崇左市":107.36,
+"昆明市":102.83,"澳门":113.55,"香港":114.17,"台北市":121.56
+};
+const PROVINCE_LONGITUDE={"北京市":116.40,"天津市":117.20,"河北省":114.50,"山西省":112.30,"内蒙古自治区":111.67,"辽宁省":123.43,"吉林省":125.32,"黑龙江省":126.64,"上海市":121.47,"江苏省":119.50,"浙江省":120.15,"安徽省":117.25,"福建省":118.30,"江西省":115.90,"山东省":118.00,"河南省":113.65,"湖北省":112.25,"湖南省":112.98,"广东省":113.26,"广西壮族自治区":108.32,"海南省":110.35,"重庆市":106.55,"四川省":104.07,"贵州省":106.63,"云南省":102.83,"西藏自治区":91.13,"陕西省":108.95,"甘肃省":103.83,"青海省":101.78,"宁夏回族自治区":106.23,"新疆维吾尔自治区":87.62,"台湾省":121.56};
+async function resolveLongitude(){
+  const p=document.getElementById('province')?.value||'', c=document.getElementById('city')?.value||'', d=document.getElementById('district')?.value||'';
+  // 优先使用城市级经度；区县共享所属城市经度，避免让用户手动填写。
+  if(CITY_LONGITUDE[c]) return CITY_LONGITUDE[c];
+  if(CITY_LONGITUDE[p]) return CITY_LONGITUDE[p];
+  // 在线环境下尝试按完整出生地自动地理编码；失败则使用省级中心经度。
+  try{
+    const q=encodeURIComponent([p,c,d].filter(Boolean).join(' '));
+    const r=await fetch('https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&accept-language=zh-CN&q='+q,{headers:{'Accept':'application/json'}});
+    const a=await r.json(); if(a&&a[0]&&Number.isFinite(parseFloat(a[0].lon))) return parseFloat(a[0].lon);
+  }catch(e){}
+  return PROVINCE_LONGITUDE[p]??120;
+}
+function trueSolarDateTime(y,m,day,h,min,sec,longitude){
+  const date=new Date(Date.UTC(y,m-1,day,h,min,sec||0));
+  const n=Math.floor((Date.UTC(y,m-1,day)-Date.UTC(y,0,0))/86400000);
+  const B=2*Math.PI*(n-81)/364;
+  const eot=9.87*Math.sin(2*B)-7.53*Math.cos(B)-1.5*Math.sin(B);
+  const correction=4*(longitude-120)+eot;
+  return new Date(date.getTime()+correction*60000);
+}
+function loadLunarEngine(){
+  if(typeof window.Solar!=='undefined') return Promise.resolve(true);
+  return new Promise((resolve)=>{
+    let done=false, timer;
+    const finish=(ok)=>{ if(done)return; done=true; clearTimeout(timer); resolve(ok); };
+    const trySrc=(src,idx)=>{
+      if(typeof window.Solar!=='undefined') return finish(true);
+      let s=document.getElementById('lunarEngineScript');
+      if(!s){ s=document.createElement('script'); s.id='lunarEngineScript'; document.head.appendChild(s); }
+      s.onload=()=>finish(typeof window.Solar!=='undefined');
+      s.onerror=()=>{
+        if(idx===0){ s.onload=null; s.onerror=null; s.src='https://unpkg.com/lunar-javascript@1.7.7/lunar.js'; s.onload=()=>finish(typeof window.Solar!=='undefined'); s.onerror=()=>finish(false); }
+        else finish(false);
+      };
+      s.src=src;
+    };
+    timer=setTimeout(()=>finish(typeof window.Solar!=='undefined'),10000);
+    trySrc('https://cdn.jsdelivr.net/npm/lunar-javascript@1.7.7/lunar.js',0);
+  });
+}
+let currentBaziContext=null;
+async function calc(){
+  const loc=getLocationText(); if(!loc){toast('请先选择完整出生地（省 / 市 / 区县）');return}
+  const engineReady=await loadLunarEngine();
+  if(!engineReady){
+    toast('历法引擎未加载成功，请检查网络后重试');
+    const r=document.getElementById('result'); r.classList.add('show');
+    document.getElementById('baziMeta').innerHTML='<b style="color:#f0b35a">排盘引擎暂未加载</b><br>请保持网络连接后再次点击“生成我的命盘”。页面不会丢失已填写的出生资料。';
+    r.scrollIntoView({behavior:'smooth',block:'start'}); return;
+  }
+  const ds=document.getElementById('date').value, ts=document.getElementById('time').value;
+  if(!ds||!ts){toast('请完整填写出生日期和时间');return}
+  const [y,m,day]=ds.split('-').map(Number),[h,min]=ts.split(':').map(Number);
+  try{
+  const longitude=await resolveLongitude();
+  const corrected=trueSolarDateTime(y,m,day,h,min,0,longitude);
+  const sy=corrected.getUTCFullYear(),sm=corrected.getUTCMonth()+1,sd=corrected.getUTCDate(),sh=corrected.getUTCHours(),smin=corrected.getUTCMinutes();
+  // 以真太阳时进入历法引擎，避免仅按北京时间粗排；23:00子初的日界由引擎处理。
+  const solar=Solar.fromYmdHms(sy,sm,sd,sh,smin,0);
+  const lunar=solar.getLunar(), ec=lunar.getEightChar();
+  const bazi=[ec.getYear(),ec.getMonth(),ec.getDay(),ec.getTime()];
+  const stems=['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'];
+  const wuxing=['木','木','火','火','土','土','金','金','水','水'];
+  const dayGan=safeCall(ec,'getDayGan',''), dayStemIndex=stems.indexOf(dayGan);
+  const dm=dayGan+wuxing[dayStemIndex];
+  // V29：旧版残留的 yg/dm/solar 等节点已不存在，改为直接更新新版命盘表，避免 null.textContent 中断整个排盘。
+  const zodiac=safeCall(lunar,'getYearShengXiao', '—');
+  document.getElementById('autoGeoStatus').textContent=`出生地已自动定位 · ${longitude.toFixed(2)}°E`;
+  const sunNode=document.getElementById('sunSign'); if(sunNode) sunNode.textContent=safeCall(solar,'getXingZuo','—')+'座';
+  const lunarText=safeCall(lunar,'toFullString','—');
+  document.getElementById('baziMeta').innerHTML=`农历：${escapeHtml(lunarText)}<br>阳历：${y}年${pad2(m)}月${pad2(day)}日 ${pad2(h)}:${pad2(min)}　→　真太阳时：${pad2(sh)}:${pad2(smin)}<br>出生地：${escapeHtml(loc)}　出生地经度：${longitude.toFixed(2)}°E（自动）`;
+  document.getElementById('metaDayMaster').textContent='日主：'+dm;
+  document.getElementById('metaZodiac').textContent='生肖：'+zodiac;
+  document.getElementById('metaSolar').textContent='真太阳时：'+pad2(sh)+':'+pad2(smin);
+  renderBaziSheet(ec,lunar,dm);
+  const monthGan=ec.getMonthGan(), monthZhi=ec.getMonthZhi();
+  const monthWx=safeCall(ec,'getMonthWuXing'), ganTen=[safeCall(ec,'getYearShiShenGan'),safeCall(ec,'getMonthShiShenGan'),'日主',safeCall(ec,'getTimeShiShenGan')];
+  const dayHide=safeCall(ec,'getDayHideGan'), dayRelation=safeCall(lunar,'getChongDesc');
+  const allGan=[ec.getYearGan(),ec.getMonthGan(),ec.getDayGan(),ec.getTimeGan()];
+  const allHide=[].concat(ec.getYearHideGan(),ec.getMonthHideGan(),ec.getDayHideGan(),ec.getTimeHideGan());
+  const fiveCount={木:0,火:0,土:0,金:0,水:0}; const stemWx={甲:'木',乙:'木',丙:'火',丁:'火',戊:'土',己:'土',庚:'金',辛:'金',壬:'水',癸:'水'}; allGan.forEach(g=>fiveCount[stemWx[g]]++); allHide.forEach(h=>String(h||'').split('、').forEach(g=>{if(stemWx[g])fiveCount[stemWx[g]]++}));
+  const maxWx=Object.entries(fiveCount).sort((a,b)=>b[1]-a[1])[0], minWx=Object.entries(fiveCount).sort((a,b)=>a[1]-b[1])[0];
+  const branchRel=[]; const pairs=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]]; const he={'子':'丑','丑':'子','寅':'亥','亥':'寅','卯':'戌','戌':'卯','辰':'酉','酉':'辰','巳':'申','申':'巳','午':'未','未':'午'}; const chong={'子':'午','午':'子','丑':'未','未':'丑','寅':'申','申':'寅','卯':'酉','酉':'卯','辰':'戌','戌':'辰','巳':'亥','亥':'巳'}; pairs.forEach(([i,j])=>{if(he[z[i]]===z[j])branchRel.push(`${z[i]}${z[j]}六合`);if(chong[z[i]]===z[j])branchRel.push(`${z[i]}${z[j]}相冲`)});
+  const relationText=branchRel.length?branchRel.join('、'):'未见四柱地支六合/六冲主关系';
+  const hiddenText=allHide.length?allHide.join('、'):'—';
+  const confidence=`本次摘要严格引用当前排盘得到的四柱、月令、十神、藏干、五行分布与地支关系，不用固定模板套结论。`;
+  document.getElementById('summary').innerHTML=`<div class="core-summary-head"><div><div class="eyebrow">命理核心摘要 · 本命盘动态生成</div><h3>${escapeHtml(dm)}日主 · ${escapeHtml(bazi.join(' '))}</h3><p>以下内容随本次出生时间、出生地和真太阳时校正实时变化；用于帮助客户先看懂“为什么这样解读”，再进入精准细盘。</p></div><span class="trust-badge">✓ 已完成历法计算</span></div>
+  <div class="sum-grid"><div class="sum-card"><div class="k">日主与月令</div><div class="v">${escapeHtml(dm)} · ${escapeHtml(monthZhi)}</div><div class="d">月令为${escapeHtml(monthZhi)}，${escapeHtml(monthWx)}为时令参照；日主旺衰需结合根气、透干、藏干综合判断。</div></div><div class="sum-card"><div class="k">五行结构</div><div class="v">${escapeHtml(maxWx[0])}偏显 · ${escapeHtml(minWx[0])}偏少</div><div class="d">当前盘面统计：${Object.entries(fiveCount).map(([k,v])=>k+v).join(' · ')}；统计包含天干及藏干，仅作为结构观察。</div></div><div class="sum-card"><div class="k">十神结构</div><div class="v">${escapeHtml(ganTen.join(' · '))}</div><div class="d">年、月、日、时天干与日主的十神关系，精准细盘继续展开地支藏干十神。</div></div><div class="sum-card"><div class="k">真太阳时</div><div class="v">${pad2(sh)}:${pad2(smin)}</div><div class="d">依据出生地经度进行校正后再进入本次四柱计算。</div></div></div>
+  <div class="evidence-grid"><div><b>盘面依据</b><p>四柱：${escapeHtml(bazi.join(' · '))}<br>日支：${escapeHtml(ec.getDayZhi())} · 藏干：${escapeHtml(dayHide)}<br>地支关系：${escapeHtml(relationText)}</p></div><div><b>解读方向</b><p>先看月令与日主，再看五行是否有根、十神是否集中，随后结合合冲与大运流年观察阶段变化。${escapeHtml(confidence)}</p></div></div>`;
+  try { renderAccurateReports(lunar,ec); }
+  catch(e){
+    console.error('精准细盘初始化失败，但基础盘已生成',e);
+    const detail=document.getElementById('detailReport');
+    if(detail) detail.innerHTML='<div class="notice">精准细盘初始化暂时失败，基础盘不受影响。请点击“精准细盘”重试。</div>';
+  }
+  switchReport('basic');
+  document.getElementById('result').classList.add('show');
+  setTimeout(()=>{
+    const target=document.getElementById('result');
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+    target.setAttribute('tabindex','-1');
+    setTimeout(()=>target.focus({preventScroll:true}),500);
+  },80);
+  }catch(err){
+    console.error('排盘计算错误',err);
+    const r=document.getElementById('result'); r.classList.add('show');
+    document.getElementById('baziMeta').innerHTML='<b style="color:#f0b35a">排盘计算遇到异常</b><br>系统已保留排盘区域。错误：'+escapeHtml(err&&err.message?err.message:String(err))+'<br>请检查浏览器是否允许加载历法引擎。';
+    r.scrollIntoView({behavior:'smooth',block:'start'});
+    toast('排盘过程中出现异常，已保留结果区域');
+    const diag=document.getElementById('baziMeta'); if(diag) diag.innerHTML += '<br><span style="color:#9fb0c7">提示：四柱计算失败通常与历法引擎加载或浏览器拦截外部脚本有关。</span>';
+  }
+}
+function pillarShenSha(gan, zhi, dayGan, yearZhi, monthZhi, dayZhi){
+  const out=[];
+  const tg={甲:['丑','未'],乙:['子','申'],丙:['亥','酉'],丁:['亥','酉'],戊:['丑','未'],己:['子','申'],庚:['丑','未'],辛:['寅','午'],壬:['卯','巳'],癸:['卯','巳']};
+  const wc={甲:'巳',乙:'午',丙:'申',丁:'酉',戊:'申',己:'酉',庚:'亥',辛:'子',壬:'寅',癸:'卯'};
+  const lu={甲:'寅',乙:'卯',丙:'巳',丁:'午',戊:'巳',己:'午',庚:'申',辛:'酉',壬:'亥',癸:'子'};
+  const yangRen={甲:'卯',乙:'辰',丙:'午',丁:'未',戊:'午',己:'未',庚:'酉',辛:'戌',壬:'子',癸:'丑'};
+  const jinYu={甲:'辰',乙:'巳',丙:'未',丁:'申',戊:'未',己:'申',庚:'戌',辛:'亥',壬:'丑',癸:'寅'};
+  const groupMap={申子辰:{桃花:'酉',驿马:'寅',华盖:'辰',将星:'子',亡神:'亥',劫煞:'巳',灾煞:'午'},寅午戌:{桃花:'卯',驿马:'申',华盖:'戌',将星:'午',亡神:'巳',劫煞:'亥',灾煞:'子'},亥卯未:{桃花:'子',驿马:'巳',华盖:'未',将星:'卯',亡神:'寅',劫煞:'申',灾煞:'酉'},巳酉丑:{桃花:'午',驿马:'亥',华盖:'丑',将星:'酉',亡神:'申',劫煞:'寅',灾煞:'卯'}};
+  const red={子:'卯',卯:'午',午:'酉',酉:'子'}; const xi={子:'酉',丑:'申',寅:'未',卯:'午',辰:'巳',巳:'辰',午:'卯',未:'寅',申:'丑',酉:'子',戌:'亥',亥:'戌'};
+  const gua={寅:'巳',卯:'巳',辰:'巳',巳:'申',午:'申',未:'申',申:'亥',酉:'亥',戌:'亥',亥:'寅',子:'寅',丑:'寅'};
+  const guSu={寅:'丑',卯:'丑',辰:'丑',巳:'戌',午:'戌',未:'戌',申:'未',酉:'未',戌:'未',亥:'辰',子:'辰',丑:'辰'};
+  if((tg[dayGan]||[]).includes(zhi)) out.push('天乙贵人');
+  if(wc[dayGan]===zhi) out.push('文昌贵人');
+  if(lu[dayGan]===zhi) out.push('禄神');
+  if(yangRen[dayGan]===zhi) out.push('羊刃');
+  if(jinYu[dayGan]===zhi) out.push('金舆');
+  const g=Object.keys(groupMap).find(k=>k.includes(yearZhi));
+  if(g){ for(const [name,target] of Object.entries(groupMap[g])) if(target===zhi) out.push(name); }
+  // 月令常用贵神：天德、月德、月德合（按月支取本柱目标地支）
+  const tianDe={子:'巳',丑:'庚',寅:'丁',卯:'申',辰:'壬',巳:'辛',午:'亥',未:'甲',申:'癸',酉:'寅',戌:'丙',亥:'乙'};
+  const yueDe={寅:'丙',午:'丙',戌:'丙',申:'壬',子:'壬',辰:'壬',亥:'甲',卯:'甲',未:'甲',巳:'庚',酉:'庚',丑:'庚'};
+  const yueDeHe={寅:'辛',午:'辛',戌:'辛',申:'丁',子:'丁',辰:'丁',亥:'己',卯:'己',未:'己',巳:'乙',酉:'乙',丑:'乙'};
+  if(tianDe[monthZhi]===gan || tianDe[monthZhi]===zhi) out.push('天德贵人');
+  if(yueDe[monthZhi]===gan || yueDe[monthZhi]===zhi) out.push('月德贵人');
+  if(yueDeHe[monthZhi]===gan || yueDeHe[monthZhi]===zhi) out.push('月德合');
+  // 红鸾、天喜按年支取对冲/固定配对
+  if(red[yearZhi]===zhi) out.push('红鸾');
+  if(xi[yearZhi]===zhi) out.push('天喜');
+  if(gua[yearZhi]===zhi) out.push('孤辰');
+  if(guSu[yearZhi]===zhi) out.push('寡宿');
+  // 太极贵人常用干支组合
+  const taiji={甲:'子卯',乙:'子卯',丙:'午子',丁:'午子',戊:'辰戌丑未',己:'辰戌丑未',庚:'寅亥',辛:'寅亥',壬:'巳申',癸:'巳申'};
+  if((taiji[dayGan]||'').includes(zhi)) out.push('太极贵人');
+  // 学堂、词馆用日干五行常用纳支法，作为辅助神煞展示
+  const xueTang={甲:'巳',乙:'午',丙:'申',丁:'酉',戊:'申',己:'酉',庚:'亥',辛:'子',壬:'寅',癸:'卯'};
+  const ciGuan={甲:'亥',乙:'寅',丙:'寅',丁:'巳',戊:'寅',己:'巳',庚:'巳',辛:'申',壬:'申',癸:'亥'};
+  if(xueTang[dayGan]===zhi) out.push('学堂');
+  if(ciGuan[dayGan]===zhi) out.push('词馆');
+  return [...new Set(out)];
+}
+function calcZiZuo(ec){
+  const gs=[ec.getYearGan(),ec.getMonthGan(),ec.getDayGan(),ec.getTimeGan()], zs=[ec.getYearZhi(),ec.getMonthZhi(),ec.getDayZhi(),ec.getTimeZhi()];
+  const stems='甲乙丙丁戊己庚辛壬癸', branches='子丑寅卯辰巳午未申酉戌亥';
+  const longSheng={甲:'亥',乙:'午',丙:'寅',丁:'酉',戊:'寅',己:'酉',庚:'巳',辛:'子',壬:'申',癸:'卯'};
+  const stages=['长生','沐浴','冠带','临官','帝旺','衰','病','死','墓','绝','胎','养'];
+  return gs.map((g,i)=>{const zi=branches.indexOf(zs[i]), ls=branches.indexOf(longSheng[g]); if(zi<0||ls<0)return '—'; const gi=stems.indexOf(g); const n=gi%2===0?(zi-ls+12)%12:(ls-zi+12)%12; return stages[n]||'—';});
+}
+function renderBaziSheet(ec,lunar,dm){
+  const g=[ec.getYearGan(),ec.getMonthGan(),ec.getDayGan(),ec.getTimeGan()];
+  const z=[ec.getYearZhi(),ec.getMonthZhi(),ec.getDayZhi(),ec.getTimeZhi()];
+  const shi=[safeCall(ec,'getYearShiShenGan'),safeCall(ec,'getMonthShiShenGan'),'日主',safeCall(ec,'getTimeShiShenGan')];
+  const hide=[safeCall(ec,'getYearHideGan'),safeCall(ec,'getMonthHideGan'),safeCall(ec,'getDayHideGan'),safeCall(ec,'getTimeHideGan')];
+  const shizhi=[safeCall(ec,'getYearShiShenZhi'),safeCall(ec,'getMonthShiShenZhi'),safeCall(ec,'getDayShiShenZhi'),safeCall(ec,'getTimeShiShenZhi')];
+  const xing=[safeCall(ec,'getYearDiShi'),safeCall(ec,'getMonthDiShi'),safeCall(ec,'getDayDiShi'),safeCall(ec,'getTimeDiShi')];
+  const zuo=calcZiZuo(ec);
+  const kong=[safeCall(ec,'getYearXunKong'),safeCall(ec,'getMonthXunKong'),safeCall(ec,'getDayXunKong'),safeCall(ec,'getTimeXunKong')];
+  const nayin=[safeCall(ec,'getYearNaYin'),safeCall(ec,'getMonthNaYin'),safeCall(ec,'getDayNaYin'),safeCall(ec,'getTimeNaYin')];
+  const wx=[safeCall(ec,'getYearWuXing'),safeCall(ec,'getMonthWuXing'),safeCall(ec,'getDayWuXing'),safeCall(ec,'getTimeWuXing')];
+  let sha=[];
+  try { sha=z.map((v,i)=>pillarShenSha(g[i],v,ec.getDayGan(),ec.getYearZhi(),ec.getMonthZhi(),ec.getDayZhi())); }
+  catch(e){ console.warn('神煞计算失败，保留四柱基础盘',e); sha=[[],[],[],[]]; }
+  const fmt=v=>escapeHtml(v).replace(/、/g,'<br>'); const row=(label,vals,cls='')=>`<tr><th class="label">${label}</th>${vals.map(v=>`<td class="${cls}">${fmt(v)}</td>`).join('')}</tr>`;
+  document.querySelector('#baziSheet tbody').innerHTML=`<tr><th class="label">日期</th><td class="pillar-name">年柱</td><td class="pillar-name">月柱</td><td class="pillar-name">日柱</td><td class="pillar-name">时柱</td></tr>${row('主星',shi,'mini')}<tr><th class="label">天干</th>${g.map((v,i)=>`<td><div class="gan goldtext">${escapeHtml(v)}</div><div class="wuxing">${escapeHtml(wx[i])}</div></td>`).join('')}</tr><tr><th class="label">地支</th>${z.map((v,i)=>`<td><div class="zhi">${escapeHtml(v)}</div><div class="wuxing">${escapeHtml(wx[i])}</div></td>`).join('')}</tr>${row('藏干',hide,'mini')} ${row('副星',shizhi,'mini')} ${row('星运',xing,'mini')} ${row('自坐',zuo,'mini')} ${row('空亡',kong,'mini')} ${row('纳音',nayin,'mini')}<tr><th class="label">神煞</th>${sha.map((v,i)=>`<td class="mini ${v.length?'':'muted'}">${v.length?v.map(x=>`<span class="sha-tag">${escapeHtml(x)}</span>`).join('<br>'):'—'}</td>`).join('')}</tr>`;
+}
+function safeCall(obj,name,fallback='—'){try{const v=obj&&typeof obj[name]==='function'?obj[name]():fallback;return Array.isArray(v)?v.join('、'):String(v??fallback)}catch(e){return fallback}}
+function pillRow(title,items){return `<div style="margin-top:12px"><b style="color:#fff">${title}</b><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">${items.map(x=>`<span class="pill">${escapeHtml(x)}</span>`).join('')}</div></div>`}
+function renderAccurateReports(lunar,ec){
+  // V35修复：详细盘和运势区域统一由同一个 EightChar 对象生成，避免点击后出现空白。
+  const safeArr=(obj,name)=>{try{const v=obj&&typeof obj[name]==='function'?obj[name]():[];return Array.isArray(v)?v:(v==null||v==='—'?[]:[String(v)])}catch(e){return []}};
+  const gender=document.getElementById('gender')?.value==='男'?1:0;
+  const cols=[
+    ['年柱',safeCall(ec,'getYear'),'五行',safeCall(ec,'getYearWuXing'),'纳音',safeCall(ec,'getYearNaYin')],
+    ['月柱',safeCall(ec,'getMonth'),'五行',safeCall(ec,'getMonthWuXing'),'纳音',safeCall(ec,'getMonthNaYin')],
+    ['日柱',safeCall(ec,'getDay'),'五行',safeCall(ec,'getDayWuXing'),'纳音',safeCall(ec,'getDayNaYin')],
+    ['时柱',safeCall(ec,'getTime'),'五行',safeCall(ec,'getTimeWuXing'),'纳音',safeCall(ec,'getTimeNaYin')]
+  ];
+  const cards=cols.map(c=>`<div class="card" style="padding:16px"><div style="color:var(--muted);font-size:12px">${escapeHtml(c[0])}</div><div style="font-size:27px;color:var(--gold2);font-weight:800;margin:5px 0">${escapeHtml(c[1])}</div><div>${escapeHtml(c[3])}：${escapeHtml(c[4])}</div><div style="color:#aebed1;margin-top:4px">${escapeHtml(c[5])}</div></div>`).join('');
+  const hidden=[safeCall(ec,'getYearHideGan'),safeCall(ec,'getMonthHideGan'),safeCall(ec,'getDayHideGan'),safeCall(ec,'getTimeHideGan')];
+  const growth=[safeCall(ec,'getYearDiShi'),safeCall(ec,'getMonthDiShi'),safeCall(ec,'getDayDiShi'),safeCall(ec,'getTimeDiShi')];
+  const shishenZhi=[safeCall(ec,'getYearShiShenZhi'),safeCall(ec,'getMonthShiShenZhi'),safeCall(ec,'getDayShiShenZhi'),safeCall(ec,'getTimeShiShenZhi')];
+  const ziZuo=calcZiZuo(ec);
+  const kong=[safeCall(ec,'getYearXunKong'),safeCall(ec,'getMonthXunKong'),safeCall(ec,'getDayXunKong'),safeCall(ec,'getTimeXunKong')];
+  const nayin=[safeCall(ec,'getYearNaYin'),safeCall(ec,'getMonthNaYin'),safeCall(ec,'getDayNaYin'),safeCall(ec,'getTimeNaYin')];
+  let sha=[[],[],[],[]]; try { sha=[ec.getYearZhi(),ec.getMonthZhi(),ec.getDayZhi(),ec.getTimeZhi()].map((z,i)=>pillarShenSha([ec.getYearGan(),ec.getMonthGan(),ec.getDayGan(),ec.getTimeGan()][i],z,ec.getDayGan(),ec.getYearZhi(),ec.getMonthZhi(),ec.getDayZhi())); } catch(e){ console.warn('详细盘神煞计算失败',e); }
+  let yunSummary='<div class="notice">大运暂未生成，请重新排盘。</div>';
+  try{
+    const yun=ec.getYun(gender,2), start=yun.getStartSolar(), days=Array.from(yun.getDaYun(10)||[]);
+    yunSummary=`<div class="card" style="margin-top:16px;padding:16px"><h4 style="margin-top:0">起运信息</h4><div class="summary">${escapeHtml(String(yun.getStartYear()))}年${escapeHtml(String(yun.getStartMonth()))}个月${escapeHtml(String(yun.getStartDay()))}天${escapeHtml(String(yun.getStartHour()))}小时后起运 · ${escapeHtml(safeCall(start,'toYmdHms'))} · ${yun.isForward&&yun.isForward()?'顺行':'逆行'}</div><div class="luck-detail-grid">${days.map((d,i)=>`<button class="luck-mini" onclick="toggleDaYun(${i})"><span>第${i+1}步</span><b>${escapeHtml(safeCall(d,'getGanZhi'))}</b><small>${escapeHtml(safeCall(d,'getStartAge'))}岁 · ${escapeHtml(safeCall(d,'getStartYear'))}年</small></button><div id="detail-yun-${i}" class="nested-luck" style="display:none"></div>`).join('')}</div></div>`;
+    window.__daYun=days; window.__baziEc=ec;
+  }catch(e){ console.error('大运生成失败',e); yunSummary='<div class="notice">大运计算失败：请确认性别、出生时间和历法引擎均已加载。</div>'; window.__daYun=[]; }
+  const detail=document.getElementById('detailReport');
+  if(detail){
+    detail.innerHTML=`<div class="detail-grid">${[['年柱藏干',hidden[0]],['月柱藏干',hidden[1]],['日柱藏干',hidden[2]],['时柱藏干',hidden[3]],['年柱星运',growth[0]],['月柱星运',growth[1]],['日柱星运',growth[2]],['时柱星运',growth[3]],['年柱自坐',ziZuo[0]],['月柱自坐',ziZuo[1]],['日柱自坐',ziZuo[2]],['时柱自坐',ziZuo[3]]].map(x=>`<div class="card" style="padding:14px"><div style="color:var(--muted);font-size:12px">${escapeHtml(x[0])}</div><b style="color:var(--gold2);font-size:18px">${escapeHtml(x[1])}</b></div>`).join('')}</div>
+      <div class="card" style="margin-top:16px;padding:16px"><h4 style="margin-top:0">完整十神与辅助信息</h4>${pillRow('四柱地支十神',shishenZhi)}${pillRow('旬空',[...kong])}${pillRow('纳音',[...nayin])}${pillRow('胎元 / 命宫 / 身宫',[`胎元：${safeCall(ec,'getTaiYuan')}`,`命宫：${safeCall(ec,'getMingGong')}`,`身宫：${safeCall(ec,'getShenGong')}`])}${pillRow('神煞 · 年柱',sha[0].length?sha[0]:['—'])}${pillRow('神煞 · 月柱',sha[1].length?sha[1]:['—'])}${pillRow('神煞 · 日柱',sha[2].length?sha[2]:['—'])}${pillRow('神煞 · 时柱',sha[3].length?sha[3]:['—'])}</div>${yunSummary}`;
+  }
+  currentBaziContext={lunar,ec,gender};
+  renderLinkedLuck(lunar,ec,gender);
+}
+function toggleDaYun(index){
+  const box=document.getElementById('detail-yun-'+index); if(!box)return;
+  const open=box.style.display!=='none';
+  document.querySelectorAll('.nested-luck').forEach(x=>x.style.display='none');
+  if(open){box.style.display='none';return;}
+  const d=(window.__daYun||[])[index]; if(!d){box.innerHTML='<div class="notice">该步大运暂无数据。</div>';box.style.display='block';return;}
+  let ln=[]; try{ln=Array.from(d.getLiuNian?d.getLiuNian():[])}catch(e){ln=[];}
+  box.innerHTML=ln.length?`<div class="nested-title">${escapeHtml(safeCall(d,'getGanZhi'))} · 10年流年（点击年份查看流月）</div>${ln.map((y,i)=>`<button class="year-row" onclick="toggleLiuNian(${index},${i})"><span>${escapeHtml(safeCall(y,'getYear'))}年</span><b>${escapeHtml(safeCall(y,'getGanZhi'))}</b><small>${escapeHtml(safeCall(y,'getAge'))}岁</small></button><div id="detail-liunian-${index}-${i}" class="nested-month" style="display:none"></div>`).join('')}`:'<div class="notice">该大运未返回流年数据。</div>';
+  box.style.display='block';
+}
+function toggleLiuNian(yunIndex,yearIndex){
+  const box=document.getElementById(`detail-liunian-${yunIndex}-${yearIndex}`); if(!box)return;
+  const open=box.style.display!=='none';
+  document.querySelectorAll('.nested-month').forEach(x=>x.style.display='none');
+  if(open){box.style.display='none';return;}
+  const d=(window.__daYun||[])[yunIndex]; let ln=[];try{ln=Array.from(d.getLiuNian?d.getLiuNian():[])}catch(e){}
+  const y=ln[yearIndex]; if(!y){box.innerHTML='<div class="notice">流年数据不存在。</div>';box.style.display='block';return;}
+  let months=[];try{months=Array.from(y.getLiuYue?y.getLiuYue():[])}catch(e){months=[];}
+  box.innerHTML=months.length?`<div class="month-grid">${months.map(m=>`<div><span>${escapeHtml(safeCall(m,'getMonthInChinese','月'))}月</span><b>${escapeHtml(safeCall(m,'getGanZhi'))}</b></div>`).join('')}</div>`:'<div class="notice">该流年未返回流月数据。</div>';
+  box.style.display='block';
+}
+function renderLinkedLuck(lunar,ec,gender){
+  const yunBox=document.getElementById('yun'),liuBox=document.getElementById('liu'),monthBox=document.getElementById('month'); if(!yunBox||!liuBox||!monthBox)return;
+  let daYun=[]; try{daYun=Array.from(ec.getYun(gender,2).getDaYun(10)||[])}catch(e){console.error(e)}
+  window.__daYun=daYun; window.__baziEc=ec;
+  yunBox.innerHTML=daYun.length?`<div class="timeline-head"><b>本命盘 · 十步大运</b><span class="pill">已与当前八字绑定</span></div><div class="luck-scroll"><table class="table"><tr><th>序</th><th>大运</th><th>起运年龄</th><th>起运年份</th><th>起运日期</th></tr>${daYun.map((d,i)=>`<tr class="clickable-row" onclick="openLuckDetail(${i})"><td>${i+1}</td><td class="goldtext"><b>${escapeHtml(safeCall(d,'getGanZhi'))}</b></td><td>${escapeHtml(safeCall(d,'getStartAge'))}</td><td>${escapeHtml(safeCall(d,'getStartYear'))}</td><td>${escapeHtml((()=>{try{return d.getStartSolar().toYmd()}catch(e){return '—'}})())}</td></tr><tr id="luck-open-${i}" style="display:none"><td colspan="5"><div id="luck-open-content-${i}"></div></td></tr>`).join('')}</table></div><div class="notice">点击任意大运，可展开该步大运的10年流年；再点击流年，可展开对应流月。</div>`:'<div class="notice">本次排盘未返回大运数据，请检查历法引擎。</div>';
+  const nowYear=new Date().getFullYear(),birthYear=Number((document.getElementById('date').value||nowYear).slice(0,4));
+  let allYears=[]; daYun.forEach(d=>{try{allYears=allYears.concat(Array.from(d.getLiuNian?d.getLiuNian():[]))}catch(e){}});
+  const uniq=[]; const seen=new Set(); allYears.forEach(y=>{const key=String(safeCall(y,'getYear',''));if(key&&!seen.has(key)){seen.add(key);uniq.push(y)}});
+  const years=uniq.filter(y=>Math.abs(Number(safeCall(y,'getYear',0))-nowYear)<=8).slice(0,17);
+  liuBox.innerHTML=`<div class="timeline-head"><b>流年 · ${nowYear}附近</b><span class="pill">跟随当前八字 / 大运</span></div><div class="luck-scroll"><table class="table"><tr><th>年份</th><th>年龄</th><th>流年干支</th><th>所属大运</th></tr>${years.map(y=>{const gz=safeCall(y,'getGanZhi'),yy=safeCall(y,'getYear'),age=safeCall(y,'getAge',Number(yy)-birthYear);return `<tr><td>${escapeHtml(yy)}年</td><td>${escapeHtml(age)}岁</td><td class="goldtext"><b>${escapeHtml(gz)}</b></td><td>点击上方大运查看对应流年</td></tr>`}).join('')}</table></div>`;
+  const targetYear=nowYear; let target=null; years.forEach(y=>{if(Number(safeCall(y,'getYear',0))===targetYear)target=y});
+  if(!target && allYears.length){ target=allYears.reduce((a,b)=>Math.abs(Number(safeCall(a,'getYear',0))-targetYear)<=Math.abs(Number(safeCall(b,'getYear',0))-targetYear)?a:b); }
+  let rows=[]; if(target){try{rows=Array.from(target.getLiuYue?target.getLiuYue():[])}catch(e){}}
+  if(!rows.length){for(let m=1;m<=12;m++){try{const ee=Solar.fromYmd(targetYear,m,15).getLunar().getEightChar();rows.push({m,g:ee.getMonth()})}catch(e){}}}
+  monthBox.innerHTML=`<div class="timeline-head"><b>${targetYear}年流月</b><span class="pill">按节气月 · 与流年绑定</span></div><div class="luck-scroll"><table class="table"><tr><th>序</th><th>月份</th><th>月柱</th><th>天干十神</th></tr>${rows.map((r,i)=>`<tr><td>${i+1}</td><td>${escapeHtml(safeCall(r,'getMonthInChinese',r.m?['正','二','三','四','五','六','七','八','九','十','冬','腊'][r.m-1]:'月'))}月</td><td class="goldtext"><b>${escapeHtml(safeCall(r,'getGanZhi',r.g||'—'))}</b></td><td>${escapeHtml(safeCall(r,'getGanShiShen',safeCall(ec,'getMonthShiShenGan')))}</td></tr>`).join('')}</table></div>`;
+}
+function openLuckDetail(index){
+  const row=document.getElementById('luck-open-'+index),content=document.getElementById('luck-open-content-'+index),d=(window.__daYun||[])[index]; if(!row||!content||!d)return;
+  const open=row.style.display!=='none'; document.querySelectorAll('[id^="luck-open-"]').forEach(x=>x.style.display='none'); if(open)return;
+  let ln=[];try{ln=Array.from(d.getLiuNian?d.getLiuNian():[])}catch(e){}
+  content.innerHTML=ln.length?`<div class="nested-title">${escapeHtml(safeCall(d,'getGanZhi'))} · 流年</div>${ln.map((y,i)=>`<button class="year-row" onclick="toggleLiuNian(${index},${i})"><span>${escapeHtml(safeCall(y,'getYear'))}年</span><b>${escapeHtml(safeCall(y,'getGanZhi'))}</b><small>${escapeHtml(safeCall(y,'getAge'))}岁</small></button><div id="detail-liunian-${index}-${i}" class="nested-month" style="display:none"></div>`).join('')}`:'<div class="notice">该步大运没有流年数据。</div>';
+  row.style.display='table-row';
+}
+function switchReport(type){
+  const result=document.getElementById('result'); if(result) result.classList.add('show');
+  const sheet=document.getElementById('baziBasicView'),basic=document.getElementById('basicReport'),detail=document.getElementById('detailReport');
+  const bb=document.getElementById('basicBtn'),db=document.getElementById('detailBtn');
+  const isBasic=type!=='detail';
+  if(sheet) sheet.style.display=isBasic?'block':'none';
+  if(basic) basic.style.display=isBasic?'block':'none';
+  if(detail) detail.style.display=isBasic?'none':'block';
+  if(bb){bb.classList.toggle('active',isBasic);bb.setAttribute('aria-selected',String(isBasic));}
+  if(db){db.classList.toggle('active',!isBasic);db.setAttribute('aria-selected',String(!isBasic));}
+  if(!isBasic && currentBaziContext && detail){
+    try { renderAccurateReports(currentBaziContext.lunar,currentBaziContext.ec,currentBaziContext.gender); }
+    catch(e){ console.error('精准细盘切换失败',e); detail.innerHTML='<div class="notice">精准细盘暂时无法加载：'+escapeHtml(e.message||e)+'</div>'; }
+  }
+  // 每次切换到运势区都确保大运/流年/流月已经从当前八字重新绑定
+  if(window.__daYun && window.__daYun.length){
+    const y=document.getElementById('yun');
+    if(y && (!y.innerHTML.trim() || y.textContent.includes('生成八字后'))) renderLinkedLuck(currentBaziContext.lunar,currentBaziContext.ec,currentBaziContext.gender);
+  }
+}
+function tab(el,id){
+  const box=document.getElementById('luckTimeline'); if(!box)return;
+  box.querySelectorAll(':scope > .tabs .tab').forEach(x=>x.classList.remove('active')); if(el)el.classList.add('active');
+  ['yun','liu','month'].forEach(x=>{const n=document.getElementById(x);if(n)n.style.display=x===id?'block':'none';});
+}
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
+function buy(x){toast('已选择「'+x+'」专题，下一步进入订单/支付页面')}
+function order(x){selectMaster(x,'站内咨询','待定')}
+let appointmentState={master:'',service:'',price:'',topic:''};
+const appointmentTopics=['八字综合分析','事业 / 财运','感情 / 婚姻','合婚 / 姻缘','大运 / 流年','学业 / 考试','健康 / 生活趋势','家庭 / 人际关系','奇门遁甲','六爻','梅花易数','六壬','其他问题'];
+function openAppointment(master,service,price){
+  appointmentState={master,service,price,topic:''};
+  const m=document.getElementById('appointmentMaster'); if(m)m.textContent=master+' · '+service+' · '+price;
+  const box=document.getElementById('appointmentOptions');
+  box.innerHTML=appointmentTopics.map(t=>`<button type=\"button\" class=\"appointment-topic\" data-topic=\"${escapeHtml(t)}\" onclick=\"chooseAppointmentTopic(this, '${t.replace(/'/g,"\\'")}')\">${escapeHtml(t)}</button>`).join('');
+  document.getElementById('appointmentCustom').style.display='none';document.getElementById('appointmentNote').value='';
+  document.getElementById('appointmentSelected').textContent='尚未选择咨询事项';
+  const c=document.getElementById('appointmentConfirm');c.disabled=true;c.style.opacity='.5';
+  document.getElementById('appointmentModal').style.display='block';
+}
+function chooseAppointmentTopic(el,topic){
+  document.querySelectorAll('.appointment-topic').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');
+  appointmentState.topic=topic;
+  document.getElementById('appointmentSelected').textContent='已选择：'+topic;
+  document.getElementById('appointmentCustom').style.display=topic==='其他问题'?'block':'none';
+  const c=document.getElementById('appointmentConfirm');c.disabled=false;c.style.opacity='1';
+}
+function closeAppointment(){document.getElementById('appointmentModal').style.display='none'}
+function confirmAppointment(){
+  if(!appointmentState.topic)return;
+  const note=document.getElementById('appointmentNote').value.trim();
+  const topic=appointmentState.topic+(note?' · '+note:'');
+  closeAppointment();
+  selectMaster(appointmentState.master,topic,appointmentState.price);
+  toast('已选择咨询事项：'+appointmentState.topic);
+}
+function selectMaster(name,service,price){document.getElementById('chatName').textContent=name;document.getElementById('consultMasterName').textContent=name;document.getElementById('consultMasterService').textContent=service+' · '+price;document.getElementById('chatBody').innerHTML='<div style="max-width:78%;padding:11px 14px;border:1px solid #29415d;border-radius:12px;background:#0a1727">您好，我已经进入您的专属咨询界面。请告诉我您最想重点了解哪一方面？</div>';document.getElementById('chatModal').style.display='block';setTimeout(()=>document.getElementById('chatInput').focus(),80)}
+
+
+function switchDivination(type,btn){
+  document.querySelectorAll('.div-panel').forEach(x=>x.style.display='none');
+  const panel=document.getElementById(type==='bazi'?'bazi':'div-'+type);
+  if(panel) panel.style.display='block';
+  document.querySelectorAll('.divination-tabs .tab').forEach(x=>x.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  if(type==='bazi') window.scrollTo({top:document.getElementById('qimen').offsetTop-20,behavior:'smooth'});
+}
+function localDateValue(){return new Date().toISOString().slice(0,10)}
+function initDivinationDates(){
+  const d=localDateValue(); ['qDate','mDate','rDate'].forEach(id=>{const e=document.getElementById(id);if(e&&!e.value)e.value=d});
+  const now=new Date(); const iso=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16); const le=document.getElementById('liuTime'); if(le&&!le.value)le.value=iso;
+}
+function esc(v){return escapeHtml(String(v??''))}
+function generateQimen(){
+  const d=document.getElementById('qDate').value||localDateValue(), t=document.getElementById('qTime').value||'12:00', q=document.getElementById('qQuestion').value||'综合事项';
+  const dt=new Date(d+'T'+t), hour=dt.getHours();
+  const stems=['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'], zhi=['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'];
+  const hIdx=(hour===23?0:Math.floor((hour+1)/2))%12, ganzhi=stems[(dt.getFullYear()*3+dt.getMonth()+hIdx)%10]+zhi[hIdx];
+  const palaces=['坎一','坤二','震三','巽四','中五','乾六','兑七','艮八','离九'];
+  const stars=['天蓬','天芮','天冲','天辅','天禽','天心','天柱','天任','天英']; const doors=['休门','死门','伤门','杜门','中门','开门','惊门','生门','景门'];
+  const idx=(dt.getFullYear()+dt.getMonth()+dt.getDate()+hour)%9;
+  const cells=palaces.map((p,i)=>`<div class="gong"><b>${p}</b><small>${stars[(i+idx)%9]}<br>${doors[(i+idx)%9]}<br>${ganzhi} · ${i%2?'阴':'阳'}宫</small></div>`).join('');
+  document.getElementById('qimenResult').innerHTML=`<div class="div-card"><div class="div-title"><h3>奇门遁甲 · 起局结果</h3><span class="pill">${esc(d)} ${esc(t)}</span></div><div class="result-kv"><div class="card"><div class="k">占问</div><div class="v">${esc(q)}</div></div><div class="card"><div class="k">时辰干支</div><div class="v">${ganzhi}</div></div><div class="card"><div class="k">局式</div><div class="v">${esc(document.getElementById('qMode').value)}</div></div><div class="card"><div class="k">九宫</div><div class="v">九宫盘</div></div></div><div class="qimen-grid">${cells}</div></div>`;
+}
+let liuyao=[];
+function tossLiuyao(){if(liuyao.length>=6){toast('六爻已经完成，请先重置');return} const vals=[0,0,1,1,1,2]; const sum=vals[Math.floor(Math.random()*vals.length)]+vals[Math.floor(Math.random()*vals.length)]+vals[Math.floor(Math.random()*vals.length)]; const labels={0:'老阴（动）',1:'少阳',2:'少阴',3:'老阳（动）'}; const actual=sum; const label=labels[actual]||'少阳'; liuyao.push({sum:actual,label}); document.getElementById('coinLog').innerHTML=liuyao.map((x,i)=>`<span class="coin-item">${i+1}爻<br>${x.label}</span>`).join(''); document.getElementById('tossCount').textContent=liuyao.length; if(liuyao.length===6)renderLiuyao()}
+function resetLiuyao(){liuyao=[];document.getElementById('coinLog').innerHTML='';document.getElementById('tossCount').textContent='0';document.getElementById('liuyaoResult').innerHTML=''}
+function renderLiuyao(){const lines=liuyao.map(x=>x.sum===0?'--  --':x.sum===1?'━━━━':x.sum===2?'--  --':'━━━━'); const names=['初爻','二爻','三爻','四爻','五爻','上爻']; document.getElementById('liuyaoResult').innerHTML=`<div class="div-card"><div class="div-title"><h3>六爻 · 六次摇卦结果</h3><span class="pill">${esc(document.getElementById('liuQuestion').value||'综合事项')}</span></div><div class="gua-row">${lines.map((x,i)=>`<div class="yao">${names[i]}<br>${x}</div>`).join('')}</div><div class="notice">本页面已记录六爻阴阳与动爻展示位置；完整纳甲、六亲、世应、伏神、变卦等专业断卦规则建议接入经过验证的纳甲算法。</div></div>`}
+function generateMeihua(){const d=document.getElementById('mDate').value||localDateValue(),t=document.getElementById('mTime').value||'12:00',n=parseInt(document.getElementById('mNumber').value||'0',10),q=document.getElementById('mQuestion').value||'综合事项'; const dt=new Date(d+'T'+t); const seed=n||dt.getFullYear()+dt.getMonth()+1+dt.getDate()+dt.getHours(); const names=['乾','兑','离','震','巽','坎','艮','坤']; const up=names[seed%8],down=names[(seed+dt.getMinutes()+1)%8],move=(seed+dt.getHours())%6+1; document.getElementById('meihuaResult').innerHTML=`<div class="div-card"><div class="div-title"><h3>梅花易数 · 时间/数字起卦</h3><span class="pill">${esc(d)} ${esc(t)}</span></div><div class="result-kv"><div class="card"><div class="k">上卦</div><div class="v">${up}</div></div><div class="card"><div class="k">下卦</div><div class="v">${down}</div></div><div class="card"><div class="k">动爻</div><div class="v">第${move}爻</div></div><div class="card"><div class="k">占问</div><div class="v">${esc(q)}</div></div></div><div class="notice">本区提供起卦与卦象展示框架；完整体用、互卦、变卦、五行生克与应期分析建议使用经过验证的专业算法规则。</div></div>`}
+function generateLiuren(){const d=document.getElementById('rDate').value||localDateValue(),t=document.getElementById('rTime').value||'12:00',q=document.getElementById('rQuestion').value||'综合事项'; const dt=new Date(d+'T'+t); const z=['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥']; const s=['甲','乙','丙','丁','戊','己','庚','辛','壬','癸']; const h=z[Math.floor((dt.getHours()+1)/2)%12], gz=s[(dt.getDate()+dt.getMonth())%10]+h; const t1=z[(dt.getDate()+dt.getHours())%12],t2=z[(dt.getDate()+dt.getHours()+3)%12],t3=z[(dt.getDate()+dt.getHours()+6)%12]; document.getElementById('liurenResult').innerHTML=`<div class="div-card"><div class="div-title"><h3>大六壬 · 起课结果</h3><span class="pill">${esc(d)} ${esc(t)}</span></div><div class="result-kv"><div class="card"><div class="k">占时</div><div class="v">${gz}</div></div><div class="card"><div class="k">初传</div><div class="v">${t1}</div></div><div class="card"><div class="k">中传</div><div class="v">${t2}</div></div><div class="card"><div class="k">末传</div><div class="v">${t3}</div></div></div><div class="notice">六壬完整起课需要月将、占时、四课、三传、十二天将等严格规则。本区先完成独立排盘展示层，避免用简化结果冒充完整专业六壬课。</div><p style="color:#aebed1">占问：${esc(q)}</p></div>`}
+initDivinationDates();
+
+
+function setText(id,v){const e=document.getElementById(id);if(e)e.textContent=String(v??'—')}
+function baziParts(s){const x=String(s||'').trim().replace(/\s+/g,'');return x.length===2?[x[0],x[1]]:null}
+async function reverseBazi(){
+  const yb=baziParts(document.getElementById('revYear').value), mb=baziParts(document.getElementById('revMonth').value), db=baziParts(document.getElementById('revDay').value), tb=baziParts(document.getElementById('revTime').value);
+  const out=document.getElementById('reverseResult'); if(!yb||!mb||!db){out.innerHTML='<div class="notice">请至少完整填写年柱、月柱、日柱，例如：甲子。</div>';return}
+  const from=Math.max(1800,parseInt(document.getElementById('revFrom').value||1900,10)), to=Math.min(2200,parseInt(document.getElementById('revTo').value||2100,10));
+  if(to<from){out.innerHTML='<div class="notice">结束年份不能早于开始年份。</div>';return}
+  const ready=await loadLunarEngine(); if(!ready){out.innerHTML='<div class="notice">历法引擎未加载，无法进行反推。</div>';return}
+  out.innerHTML='<div class="notice">正在按年柱、月柱、日柱筛选候选日期，再校验时柱……</div>';
+  const hits=[]; const targetY=yb.join(''),targetM=mb.join(''),targetD=db.join(''),targetT=tb?tb.join(''):null;
+  for(let yy=from;yy<=to && hits.length<60;yy++){
+    for(let mm=1;mm<=12 && hits.length<60;mm++){
+      const last=new Date(Date.UTC(yy,mm,0)).getUTCDate();
+      for(let dd=1;dd<=last && hits.length<60;dd++){
+        let lunar,ec; try{lunar=Solar.fromYmd(yy,mm,dd).getLunar();ec=lunar.getEightChar()}catch(e){continue}
+        if(ec.getYear()!==targetY||ec.getMonth()!==targetM||ec.getDay()!==targetD)continue;
+        for(let hh=0;hh<24;hh+=1){
+          const sol=Solar.fromYmdHms(yy,mm,dd,hh,0,0), e2=sol.getLunar().getEightChar();
+          if(targetT && e2.getTime()!==targetT)continue;
+          hits.push({date:`${yy}-${pad2(mm)}-${pad2(dd)}`,time:`${pad2(hh)}:00`,bazi:`${e2.getYear()} ${e2.getMonth()} ${e2.getDay()} ${e2.getTime()}`});
+          if(hits.length>=60)break;
+        }
+      }
+    }
+  }
+  if(!hits.length){out.innerHTML='<div class="notice">在当前年份范围内没有找到完全匹配的候选。若出生时间可能采用真太阳时，请扩大范围或检查四柱输入。</div>';return}
+  out.innerHTML='<div class="div-card"><div class="div-title"><h3>反推候选结果</h3><span class="pill">最多展示60条</span></div><div class="reverse-grid">'+hits.map((h,i)=>`<div class="reverse-item"><div style="color:#91a5bf;font-size:11px">候选 ${i+1}</div><b>${h.date} ${h.time}</b><div style="margin-top:6px;color:#aebed1;font-size:12px">${h.bazi}</div></div>`).join('')+'</div><div class="notice">反推存在多解时，候选时间会随年份范围、时区、真太阳时校正和历法边界而变化。</div></div>';
+}
+const REGION_DATA=[["北京市",[["市辖区",["东城区","西城区","朝阳区","丰台区","石景山区","海淀区","门头沟区","房山区","通州区","顺义区","昌平区","大兴区","怀柔区","平谷区","密云区","延庆区"]]]],["天津市",[["市辖区",["和平区","河东区","河西区","南开区","河北区","红桥区","东丽区","西青区","津南区","北辰区","武清区","宝坻区","滨海新区","宁河区","静海区","蓟州区"]]]],["河北省",[["石家庄市",["长安区","桥西区","新华区","井陉矿区","裕华区","藁城区","鹿泉区","栾城区","井陉县","正定县","行唐县","灵寿县","高邑县","深泽县","赞皇县","无极县","平山县","元氏县","赵县","石家庄高新技术产业开发区","石家庄循环化工园区","辛集市","晋州市","新乐市"]],["唐山市",["路南区","路北区","古冶区","开平区","丰南区","丰润区","曹妃甸区","滦南县","乐亭县","迁西县","玉田县","河北唐山芦台经济开发区","唐山市汉沽管理区","唐山高新技术产业开发区","河北唐山海港经济开发区","遵化市","迁安市","滦州市"]],["秦皇岛市",["海港区","山海关区","北戴河区","抚宁区","青龙满族自治县","昌黎县","卢龙县","秦皇岛市经济技术开发区","北戴河新区"]],["邯郸市",["邯山区","丛台区","复兴区","峰峰矿区","肥乡区","永年区","临漳县","成安县","大名县","涉县","磁县","邱县","鸡泽县","广平县","馆陶县","魏县","曲周县","邯郸经济技术开发区","邯郸冀南新区","武安市"]],["邢台市",["襄都区","信都区","任泽区","南和区","临城县","内丘县","柏乡县","隆尧县","宁晋县","巨鹿县","新河县","广宗县","平乡县","威县","清河县","临西县","河北邢台经济开发区","南宫市","沙河市"]],["保定市",["竞秀区","莲池区","满城区","清苑区","徐水区","涞水县","阜平县","定兴县","唐县","高阳县","容城县","涞源县","望都县","安新县","易县","曲阳县","蠡县","顺平县","博野县","雄县","保定高新技术产业开发区","保定白沟新城","涿州市","定州市","安国市","高碑店市"]],["张家口市",["桥东区","桥西区","宣化区","下花园区","万全区","崇礼区","张北县","康保县","沽源县","尚义县","蔚县","阳原县","怀安县","怀来县","涿鹿县","赤城县","张家口经济开发区","张家口市察北管理区","张家口市塞北管理区"]],["承德市",["双桥区","双滦区","鹰手营子矿区","承德县","兴隆县","滦平县","隆化县","丰宁满族自治县","宽城满族自治县","围场满族蒙古族自治县","承德高新技术产业开发区","平泉市"]],["沧州市",["新华区","运河区","沧县","青县","东光县","海兴县","盐山县","肃宁县","南皮县","吴桥县","献县","孟村回族自治县","河北沧州经济开发区","沧州高新技术产业开发区","沧州渤海新区","泊头市","任丘市","黄骅市","河间市"]],["廊坊市",["安次区","广阳区","固安县","永清县","香河县","大城县","文安县","大厂回族自治县","廊坊经济技术开发区","霸州市","三河市"]],["衡水市",["桃城区","冀州区","枣强县","武邑县","武强县","饶阳县","安平县","故城县","景县","阜城县","河北衡水高新技术产业开发区","衡水滨湖新区","深州市"]]]],["山西省",[["太原市",["小店区","迎泽区","杏花岭区","尖草坪区","万柏林区","晋源区","清徐县","阳曲县","娄烦县","山西转型综合改革示范区","古交市"]],["大同市",["新荣区","平城区","云冈区","云州区","阳高县","天镇县","广灵县","灵丘县","浑源县","左云县","山西大同经济开发区"]],["阳泉市",["城区","矿区","郊区","平定县","盂县"]],["长治市",["潞州区","上党区","屯留区","潞城区","襄垣县","平顺县","黎城县","壶关县","长子县","武乡县","沁县","沁源县"]],["晋城市",["城区","沁水县","阳城县","陵川县","泽州县","高平市"]],["朔州市",["朔城区","平鲁区","山阴县","应县","右玉县","山西朔州经济开发区","怀仁市"]],["晋中市",["榆次区","太谷区","榆社县","左权县","和顺县","昔阳县","寿阳县","祁县","平遥县","灵石县","介休市"]],["运城市",["盐湖区","临猗县","万荣县","闻喜县","稷山县","新绛县","绛县","垣曲县","夏县","平陆县","芮城县","永济市","河津市"]],["忻州市",["忻府区","定襄县","五台县","代县","繁峙县","宁武县","静乐县","神池县","五寨县","岢岚县","河曲县","保德县","偏关县","五台山风景名胜区","原平市"]],["临汾市",["尧都区","曲沃县","翼城县","襄汾县","洪洞县","古县","安泽县","浮山县","吉县","乡宁县","大宁县","隰县","永和县","蒲县","汾西县","侯马市","霍州市"]],["吕梁市",["离石区","文水县","交城县","兴县","临县","柳林县","石楼县","岚县","方山县","中阳县","交口县","孝义市","汾阳市"]]]],["内蒙古自治区",[["呼和浩特市",["新城区","回民区","玉泉区","赛罕区","土默特左旗","托克托县","和林格尔县","清水河县","武川县","呼和浩特经济技术开发区"]],["包头市",["东河区","昆都仑区","青山区","石拐区","白云鄂博矿区","九原区","土默特右旗","固阳县","达尔罕茂明安联合旗","包头稀土高新技术产业开发区"]],["乌海市",["海勃湾区","海南区","乌达区"]],["赤峰市",["红山区","元宝山区","松山区","阿鲁科尔沁旗","巴林左旗","巴林右旗","林西县","克什克腾旗","翁牛特旗","喀喇沁旗","宁城县","敖汉旗"]],["通辽市",["科尔沁区","科尔沁左翼中旗","科尔沁左翼后旗","开鲁县","库伦旗","奈曼旗","扎鲁特旗","通辽经济技术开发区","霍林郭勒市"]],["鄂尔多斯市",["东胜区","康巴什区","达拉特旗","准格尔旗","鄂托克前旗","鄂托克旗","杭锦旗","乌审旗","伊金霍洛旗"]],["呼伦贝尔市",["海拉尔区","扎赉诺尔区","阿荣旗","莫力达瓦达斡尔族自治旗","鄂伦春自治旗","鄂温克族自治旗","陈巴尔虎旗","新巴尔虎左旗","新巴尔虎右旗","满洲里市","牙克石市","扎兰屯市","额尔古纳市","根河市"]],["巴彦淖尔市",["临河区","五原县","磴口县","乌拉特前旗","乌拉特中旗","乌拉特后旗","杭锦后旗"]],["乌兰察布市",["集宁区","卓资县","化德县","商都县","兴和县","凉城县","察哈尔右翼前旗","察哈尔右翼中旗","察哈尔右翼后旗","四子王旗","丰镇市"]],["兴安盟",["乌兰浩特市","阿尔山市","科尔沁右翼前旗","科尔沁右翼中旗","扎赉特旗","突泉县"]],["锡林郭勒盟",["二连浩特市","锡林浩特市","阿巴嘎旗","苏尼特左旗","苏尼特右旗","东乌珠穆沁旗","西乌珠穆沁旗","太仆寺旗","镶黄旗","正镶白旗","正蓝旗","多伦县","乌拉盖管理区管委会"]],["阿拉善盟",["阿拉善左旗","阿拉善右旗","额济纳旗","内蒙古阿拉善高新技术产业开发区"]]]],["辽宁省",[["沈阳市",["和平区","沈河区","大东区","皇姑区","铁西区","苏家屯区","浑南区","沈北新区","于洪区","辽中区","康平县","法库县","新民市"]],["大连市",["中山区","西岗区","沙河口区","甘井子区","旅顺口区","金州区","普兰店区","长海县","瓦房店市","庄河市"]],["鞍山市",["铁东区","铁西区","立山区","千山区","台安县","岫岩满族自治县","海城市"]],["抚顺市",["新抚区","东洲区","望花区","顺城区","抚顺县","新宾满族自治县","清原满族自治县"]],["本溪市",["平山区","溪湖区","明山区","南芬区","本溪满族自治县","桓仁满族自治县"]],["丹东市",["元宝区","振兴区","振安区","宽甸满族自治县","东港市","凤城市"]],["锦州市",["古塔区","凌河区","太和区","黑山县","义县","凌海市","北镇市"]],["营口市",["站前区","西市区","鲅鱼圈区","老边区","盖州市","大石桥市"]],["阜新市",["海州区","新邱区","太平区","清河门区","细河区","阜新蒙古族自治县","彰武县"]],["辽阳市",["白塔区","文圣区","宏伟区","弓长岭区","太子河区","辽阳县","灯塔市"]],["盘锦市",["双台子区","兴隆台区","大洼区","盘山县"]],["铁岭市",["银州区","清河区","铁岭县","西丰县","昌图县","调兵山市","开原市"]],["朝阳市",["双塔区","龙城区","朝阳县","建平县","喀喇沁左翼蒙古族自治县","北票市","凌源市"]],["葫芦岛市",["连山区","龙港区","南票区","绥中县","建昌县","兴城市"]]]],["吉林省",[["长春市",["南关区","宽城区","朝阳区","二道区","绿园区","双阳区","九台区","农安县","长春经济技术开发区","长春净月高新技术产业开发区","长春高新技术产业开发区","长春汽车经济技术开发区","榆树市","德惠市","公主岭市"]],["吉林市",["昌邑区","龙潭区","船营区","丰满区","永吉县","吉林经济开发区","吉林高新技术产业开发区","吉林中国新加坡食品区","蛟河市","桦甸市","舒兰市","磐石市"]],["四平市",["铁西区","铁东区","梨树县","伊通满族自治县","双辽市"]],["辽源市",["龙山区","西安区","东丰县","东辽县"]],["通化市",["东昌区","二道江区","通化县","辉南县","柳河县","梅河口市","集安市"]],["白山市",["浑江区","江源区","抚松县","靖宇县","长白朝鲜族自治县","临江市"]],["松原市",["宁江区","前郭尔罗斯蒙古族自治县","长岭县","乾安县","吉林松原经济开发区","扶余市"]],["白城市",["洮北区","镇赉县","通榆县","吉林白城经济开发区","洮南市","大安市"]],["延边朝鲜族自治州",["延吉市","图们市","敦化市","珲春市","龙井市","和龙市","汪清县","安图县"]]]],["黑龙江省",[["哈尔滨市",["道里区","南岗区","道外区","平房区","松北区","香坊区","呼兰区","阿城区","双城区","依兰县","方正县","宾县","巴彦县","木兰县","通河县","延寿县","尚志市","五常市"]],["齐齐哈尔市",["龙沙区","建华区","铁锋区","昂昂溪区","富拉尔基区","碾子山区","梅里斯达斡尔族区","龙江县","依安县","泰来县","甘南县","富裕县","克山县","克东县","拜泉县","讷河市"]],["鸡西市",["鸡冠区","恒山区","滴道区","梨树区","城子河区","麻山区","鸡东县","虎林市","密山市"]],["鹤岗市",["向阳区","工农区","南山区","兴安区","东山区","兴山区","萝北县","绥滨县"]],["双鸭山市",["尖山区","岭东区","四方台区","宝山区","集贤县","友谊县","宝清县","饶河县"]],["大庆市",["萨尔图区","龙凤区","让胡路区","红岗区","大同区","肇州县","肇源县","林甸县","杜尔伯特蒙古族自治县","大庆高新技术产业开发区"]],["伊春市",["伊美区","乌翠区","友好区","嘉荫县","汤旺县","丰林县","大箐山县","南岔县","金林区","铁力市"]],["佳木斯市",["向阳区","前进区","东风区","郊区","桦南县","桦川县","汤原县","同江市","富锦市","抚远市"]],["七台河市",["新兴区","桃山区","茄子河区","勃利县"]],["牡丹江市",["东安区","阳明区","爱民区","西安区","林口县","绥芬河市","海林市","宁安市","穆棱市","东宁市"]],["黑河市",["爱辉区","逊克县","孙吴县","北安市","五大连池市","嫩江市"]],["绥化市",["北林区","望奎县","兰西县","青冈县","庆安县","明水县","绥棱县","安达市","肇东市","海伦市"]],["大兴安岭地区",["漠河市","呼玛县","塔河县","加格达奇区","松岭区","新林区","呼中区"]]]],["上海市",[["市辖区",["黄浦区","徐汇区","长宁区","静安区","普陀区","虹口区","杨浦区","闵行区","宝山区","嘉定区","浦东新区","金山区","松江区","青浦区","奉贤区","崇明区"]]]],["江苏省",[["南京市",["玄武区","秦淮区","建邺区","鼓楼区","浦口区","栖霞区","雨花台区","江宁区","六合区","溧水区","高淳区"]],["无锡市",["锡山区","惠山区","滨湖区","梁溪区","新吴区","江阴市","宜兴市"]],["徐州市",["鼓楼区","云龙区","贾汪区","泉山区","铜山区","丰县","沛县","睢宁县","徐州经济技术开发区","新沂市","邳州市"]],["常州市",["天宁区","钟楼区","新北区","武进区","金坛区","溧阳市"]],["苏州市",["虎丘区","吴中区","相城区","姑苏区","吴江区","苏州工业园区","常熟市","张家港市","昆山市","太仓市"]],["南通市",["通州区","崇川区","海门区","如东县","南通经济技术开发区","启东市","如皋市","海安市"]],["连云港市",["连云区","海州区","赣榆区","东海县","灌云县","灌南县","连云港经济技术开发区"]],["淮安市",["淮安区","淮阴区","清江浦区","洪泽区","涟水县","盱眙县","金湖县","淮安经济技术开发区"]],["盐城市",["亭湖区","盐都区","大丰区","响水县","滨海县","阜宁县","射阳县","建湖县","盐城经济技术开发区","东台市"]],["扬州市",["广陵区","邗江区","江都区","宝应县","扬州经济技术开发区","仪征市","高邮市"]],["镇江市",["京口区","润州区","丹徒区","镇江新区","丹阳市","扬中市","句容市"]],["泰州市",["海陵区","高港区","姜堰区","兴化市","靖江市","泰兴市"]],["宿迁市",["宿城区","宿豫区","沭阳县","泗阳县","泗洪县","宿迁经济技术开发区"]]]],["浙江省",[["杭州市",["上城区","拱墅区","西湖区","滨江区","萧山区","余杭区","富阳区","临安区","临平区","钱塘区","桐庐县","淳安县","建德市"]],["宁波市",["海曙区","江北区","北仑区","镇海区","鄞州区","奉化区","象山县","宁海县","余姚市","慈溪市"]],["温州市",["鹿城区","龙湾区","瓯海区","洞头区","永嘉县","平阳县","苍南县","文成县","泰顺县","瑞安市","乐清市","龙港市"]],["嘉兴市",["南湖区","秀洲区","嘉善县","海盐县","海宁市","平湖市","桐乡市"]],["湖州市",["吴兴区","南浔区","德清县","长兴县","安吉县"]],["绍兴市",["越城区","柯桥区","上虞区","新昌县","诸暨市","嵊州市"]],["金华市",["婺城区","金东区","武义县","浦江县","磐安县","兰溪市","义乌市","东阳市","永康市"]],["衢州市",["柯城区","衢江区","常山县","开化县","龙游县","江山市"]],["舟山市",["定海区","普陀区","岱山县","嵊泗县"]],["台州市",["椒江区","黄岩区","路桥区","三门县","天台县","仙居县","温岭市","临海市","玉环市"]],["丽水市",["莲都区","青田县","缙云县","遂昌县","松阳县","云和县","庆元县","景宁畲族自治县","龙泉市"]]]],["安徽省",[["合肥市",["瑶海区","庐阳区","蜀山区","包河区","长丰县","肥东县","肥西县","庐江县","合肥高新技术产业开发区","合肥经济技术开发区","合肥新站高新技术产业开发区","巢湖市"]],["芜湖市",["镜湖区","鸠江区","弋江区","湾沚区","繁昌区","南陵县","芜湖经济技术开发区","安徽芜湖三山经济开发区","无为市"]],["蚌埠市",["龙子湖区","蚌山区","禹会区","淮上区","怀远县","五河县","固镇县","蚌埠市高新技术开发区","蚌埠市经济开发区"]],["淮南市",["大通区","田家庵区","谢家集区","八公山区","潘集区","凤台县","寿县"]],["马鞍山市",["花山区","雨山区","博望区","当涂县","含山县","和县"]],["淮北市",["杜集区","相山区","烈山区","濉溪县"]],["铜陵市",["铜官区","义安区","郊区","枞阳县"]],["安庆市",["迎江区","大观区","宜秀区","怀宁县","太湖县","宿松县","望江县","岳西县","安徽安庆经济开发区","桐城市","潜山市"]],["黄山市",["屯溪区","黄山区","徽州区","歙县","休宁县","黟县","祁门县"]],["滁州市",["琅琊区","南谯区","来安县","全椒县","定远县","凤阳县","中新苏滁高新技术产业开发区","滁州经济技术开发区","天长市","明光市"]],["阜阳市",["颍州区","颍东区","颍泉区","临泉县","太和县","阜南县","颍上县","阜阳合肥现代产业园区","阜阳经济技术开发区","界首市"]],["宿州市",["埇桥区","砀山县","萧县","灵璧县","泗县","宿州马鞍山现代产业园区","宿州经济技术开发区"]],["六安市",["金安区","裕安区","叶集区","霍邱县","舒城县","金寨县","霍山县"]],["亳州市",["谯城区","涡阳县","蒙城县","利辛县"]],["池州市",["贵池区","东至县","石台县","青阳县"]],["宣城市",["宣州区","郎溪县","泾县","绩溪县","旌德县","宣城市经济开发区","宁国市","广德市"]]]],["福建省",[["福州市",["鼓楼区","台江区","仓山区","马尾区","晋安区","长乐区","闽侯县","连江县","罗源县","闽清县","永泰县","平潭县","福清市"]],["厦门市",["思明区","海沧区","湖里区","集美区","同安区","翔安区"]],["莆田市",["城厢区","涵江区","荔城区","秀屿区","仙游县"]],["三明市",["三元区","沙县区","明溪县","清流县","宁化县","大田县","尤溪县","将乐县","泰宁县","建宁县","永安市"]],["泉州市",["鲤城区","丰泽区","洛江区","泉港区","惠安县","安溪县","永春县","德化县","金门县","石狮市","晋江市","南安市"]],["漳州市",["芗城区","龙文区","龙海区","长泰区","云霄县","漳浦县","诏安县","东山县","南靖县","平和县","华安县"]],["南平市",["延平区","建阳区","顺昌县","浦城县","光泽县","松溪县","政和县","邵武市","武夷山市","建瓯市"]],["龙岩市",["新罗区","永定区","长汀县","上杭县","武平县","连城县","漳平市"]],["宁德市",["蕉城区","霞浦县","古田县","屏南县","寿宁县","周宁县","柘荣县","福安市","福鼎市"]]]],["江西省",[["南昌市",["东湖区","西湖区","青云谱区","青山湖区","新建区","红谷滩区","南昌县","安义县","进贤县"]],["景德镇市",["昌江区","珠山区","浮梁县","乐平市"]],["萍乡市",["安源区","湘东区","莲花县","上栗县","芦溪县"]],["九江市",["濂溪区","浔阳区","柴桑区","武宁县","修水县","永修县","德安县","都昌县","湖口县","彭泽县","瑞昌市","共青城市","庐山市"]],["新余市",["渝水区","分宜县"]],["鹰潭市",["月湖区","余江区","贵溪市"]],["赣州市",["章贡区","南康区","赣县区","信丰县","大余县","上犹县","崇义县","安远县","定南县","全南县","宁都县","于都县","兴国县","会昌县","寻乌县","石城县","瑞金市","龙南市"]],["吉安市",["吉州区","青原区","吉安县","吉水县","峡江县","新干县","永丰县","泰和县","遂川县","万安县","安福县","永新县","井冈山市"]],["宜春市",["袁州区","奉新县","万载县","上高县","宜丰县","靖安县","铜鼓县","丰城市","樟树市","高安市"]],["抚州市",["临川区","东乡区","南城县","黎川县","南丰县","崇仁县","乐安县","宜黄县","金溪县","资溪县","广昌县"]],["上饶市",["信州区","广丰区","广信区","玉山县","铅山县","横峰县","弋阳县","余干县","鄱阳县","万年县","婺源县","德兴市"]]]],["山东省",[["济南市",["历下区","市中区","槐荫区","天桥区","历城区","长清区","章丘区","济阳区","莱芜区","钢城区","平阴县","商河县","济南高新技术产业开发区"]],["青岛市",["市南区","市北区","黄岛区","崂山区","李沧区","城阳区","即墨区","胶州市","平度市","莱西市"]],["淄博市",["淄川区","张店区","博山区","临淄区","周村区","桓台县","高青县","沂源县"]],["枣庄市",["市中区","薛城区","峄城区","台儿庄区","山亭区","滕州市"]],["东营市",["东营区","河口区","垦利区","利津县","广饶县","东营经济技术开发区","东营港经济开发区"]],["烟台市",["芝罘区","福山区","牟平区","莱山区","蓬莱区","烟台高新技术产业开发区","烟台经济技术开发区","龙口市","莱阳市","莱州市","招远市","栖霞市","海阳市"]],["潍坊市",["潍城区","寒亭区","坊子区","奎文区","临朐县","昌乐县","潍坊滨海经济技术开发区","青州市","诸城市","寿光市","安丘市","高密市","昌邑市"]],["济宁市",["任城区","兖州区","微山县","鱼台县","金乡县","嘉祥县","汶上县","泗水县","梁山县","济宁高新技术产业开发区","曲阜市","邹城市"]],["泰安市",["泰山区","岱岳区","宁阳县","东平县","新泰市","肥城市"]],["威海市",["环翠区","文登区","威海火炬高技术产业开发区","威海经济技术开发区","威海临港经济技术开发区","荣成市","乳山市"]],["日照市",["东港区","岚山区","五莲县","莒县","日照经济技术开发区"]],["临沂市",["兰山区","罗庄区","河东区","沂南县","郯城县","沂水县","兰陵县","费县","平邑县","莒南县","蒙阴县","临沭县","临沂高新技术产业开发区"]],["德州市",["德城区","陵城区","宁津县","庆云县","临邑县","齐河县","平原县","夏津县","武城县","德州天衢新区","乐陵市","禹城市"]],["聊城市",["东昌府区","茌平区","阳谷县","莘县","东阿县","冠县","高唐县","临清市"]],["滨州市",["滨城区","沾化区","惠民县","阳信县","无棣县","博兴县","邹平市"]],["菏泽市",["牡丹区","定陶区","曹县","单县","成武县","巨野县","郓城县","鄄城县","东明县","菏泽经济技术开发区","菏泽高新技术开发区"]]]],["河南省",[["郑州市",["中原区","二七区","管城回族区","金水区","上街区","惠济区","中牟县","郑州经济技术开发区","郑州高新技术产业开发区","郑州航空港经济综合实验区","巩义市","荥阳市","新密市","新郑市","登封市"]],["开封市",["龙亭区","顺河回族区","鼓楼区","禹王台区","祥符区","杞县","通许县","尉氏县","兰考县"]],["洛阳市",["老城区","西工区","瀍河回族区","涧西区","偃师区","孟津区","洛龙区","新安县","栾川县","嵩县","汝阳县","宜阳县","洛宁县","伊川县","洛阳高新技术产业开发区"]],["平顶山市",["新华区","卫东区","石龙区","湛河区","宝丰县","叶县","鲁山县","郏县","平顶山高新技术产业开发区","平顶山市城乡一体化示范区","舞钢市","汝州市"]],["安阳市",["文峰区","北关区","殷都区","龙安区","安阳县","汤阴县","滑县","内黄县","安阳高新技术产业开发区","林州市"]],["鹤壁市",["鹤山区","山城区","淇滨区","浚县","淇县","鹤壁经济技术开发区"]],["新乡市",["红旗区","卫滨区","凤泉区","牧野区","新乡县","获嘉县","原阳县","延津县","封丘县","新乡高新技术产业开发区","新乡经济技术开发区","新乡市平原城乡一体化示范区","卫辉市","辉县市","长垣市"]],["焦作市",["解放区","中站区","马村区","山阳区","修武县","博爱县","武陟县","温县","焦作城乡一体化示范区","沁阳市","孟州市"]],["濮阳市",["华龙区","清丰县","南乐县","范县","台前县","濮阳县","河南濮阳工业园区","濮阳经济技术开发区"]],["许昌市",["魏都区","建安区","鄢陵县","襄城县","许昌经济技术开发区","禹州市","长葛市"]],["漯河市",["源汇区","郾城区","召陵区","舞阳县","临颍县","漯河经济技术开发区"]],["三门峡市",["湖滨区","陕州区","渑池县","卢氏县","河南三门峡经济开发区","义马市","灵宝市"]],["南阳市",["宛城区","卧龙区","南召县","方城县","西峡县","镇平县","内乡县","淅川县","社旗县","唐河县","新野县","桐柏县","南阳高新技术产业开发区","南阳市城乡一体化示范区","邓州市"]],["商丘市",["梁园区","睢阳区","民权县","睢县","宁陵县","柘城县","虞城县","夏邑县","豫东综合物流产业聚集区","河南商丘经济开发区","永城市"]],["信阳市",["浉河区","平桥区","罗山县","光山县","新县","商城县","固始县","潢川县","淮滨县","息县","信阳高新技术产业开发区"]],["周口市",["川汇区","淮阳区","扶沟县","西华县","商水县","沈丘县","郸城县","太康县","鹿邑县","周口临港开发区","项城市"]],["驻马店市",["驿城区","西平县","上蔡县","平舆县","正阳县","确山县","泌阳县","汝南县","遂平县","新蔡县","河南驻马店经济开发区"]],["省直辖县级行政区划",["济源市"]]]],["湖北省",[["武汉市",["江岸区","江汉区","硚口区","汉阳区","武昌区","青山区","洪山区","东西湖区","汉南区","蔡甸区","江夏区","黄陂区","新洲区"]],["黄石市",["黄石港区","西塞山区","下陆区","铁山区","阳新县","大冶市"]],["十堰市",["茅箭区","张湾区","郧阳区","郧西县","竹山县","竹溪县","房县","丹江口市"]],["宜昌市",["西陵区","伍家岗区","点军区","猇亭区","夷陵区","远安县","兴山县","秭归县","长阳土家族自治县","五峰土家族自治县","宜都市","当阳市","枝江市"]],["襄阳市",["襄城区","樊城区","襄州区","南漳县","谷城县","保康县","老河口市","枣阳市","宜城市"]],["鄂州市",["梁子湖区","华容区","鄂城区"]],["荆门市",["东宝区","掇刀区","沙洋县","钟祥市","京山市"]],["孝感市",["孝南区","孝昌县","大悟县","云梦县","应城市","安陆市","汉川市"]],["荆州市",["沙市区","荆州区","公安县","江陵县","荆州经济技术开发区","石首市","洪湖市","松滋市","监利市"]],["黄冈市",["黄州区","团风县","红安县","罗田县","英山县","浠水县","蕲春县","黄梅县","龙感湖管理区","麻城市","武穴市"]],["咸宁市",["咸安区","嘉鱼县","通城县","崇阳县","通山县","赤壁市"]],["随州市",["曾都区","随县","广水市"]],["恩施土家族苗族自治州",["恩施市","利川市","建始县","巴东县","宣恩县","咸丰县","来凤县","鹤峰县"]],["省直辖县级行政区划",["仙桃市","潜江市","天门市","神农架林区"]]]],["湖南省",[["长沙市",["芙蓉区","天心区","岳麓区","开福区","雨花区","望城区","长沙县","浏阳市","宁乡市"]],["株洲市",["荷塘区","芦淞区","石峰区","天元区","渌口区","攸县","茶陵县","炎陵县","醴陵市"]],["湘潭市",["雨湖区","岳塘区","湘潭县","湖南湘潭高新技术产业园区","湘潭昭山示范区","湘潭九华示范区","湘乡市","韶山市"]],["衡阳市",["珠晖区","雁峰区","石鼓区","蒸湘区","南岳区","衡阳县","衡南县","衡山县","衡东县","祁东县","湖南衡阳松木经济开发区","湖南衡阳高新技术产业园区","耒阳市","常宁市"]],["邵阳市",["双清区","大祥区","北塔区","新邵县","邵阳县","隆回县","洞口县","绥宁县","新宁县","城步苗族自治县","武冈市","邵东市"]],["岳阳市",["岳阳楼区","云溪区","君山区","岳阳县","华容县","湘阴县","平江县","岳阳市屈原管理区","汨罗市","临湘市"]],["常德市",["武陵区","鼎城区","安乡县","汉寿县","澧县","临澧县","桃源县","石门县","常德市西洞庭管理区","津市市"]],["张家界市",["永定区","武陵源区","慈利县","桑植县"]],["益阳市",["资阳区","赫山区","南县","桃江县","安化县","益阳市大通湖管理区","湖南益阳高新技术产业园区","沅江市"]],["郴州市",["北湖区","苏仙区","桂阳县","宜章县","永兴县","嘉禾县","临武县","汝城县","桂东县","安仁县","资兴市"]],["永州市",["零陵区","冷水滩区","东安县","双牌县","道县","江永县","宁远县","蓝山县","新田县","江华瑶族自治县","永州经济技术开发区","永州市回龙圩管理区","祁阳市"]],["怀化市",["鹤城区","中方县","沅陵县","辰溪县","溆浦县","会同县","麻阳苗族自治县","新晃侗族自治县","芷江侗族自治县","靖州苗族侗族自治县","通道侗族自治县","怀化市洪江管理区","洪江市"]],["娄底市",["娄星区","双峰县","新化县","冷水江市","涟源市"]],["湘西土家族苗族自治州",["吉首市","泸溪县","凤凰县","花垣县","保靖县","古丈县","永顺县","龙山县"]]]],["广东省",[["广州市",["荔湾区","越秀区","海珠区","天河区","白云区","黄埔区","番禺区","花都区","南沙区","从化区","增城区"]],["韶关市",["武江区","浈江区","曲江区","始兴县","仁化县","翁源县","乳源瑶族自治县","新丰县","乐昌市","南雄市"]],["深圳市",["罗湖区","福田区","南山区","宝安区","龙岗区","盐田区","龙华区","坪山区","光明区"]],["珠海市",["香洲区","斗门区","金湾区"]],["汕头市",["龙湖区","金平区","濠江区","潮阳区","潮南区","澄海区","南澳县"]],["佛山市",["禅城区","南海区","顺德区","三水区","高明区"]],["江门市",["蓬江区","江海区","新会区","台山市","开平市","鹤山市","恩平市"]],["湛江市",["赤坎区","霞山区","坡头区","麻章区","遂溪县","徐闻县","廉江市","雷州市","吴川市"]],["茂名市",["茂南区","电白区","高州市","化州市","信宜市"]],["肇庆市",["端州区","鼎湖区","高要区","广宁县","怀集县","封开县","德庆县","四会市"]],["惠州市",["惠城区","惠阳区","博罗县","惠东县","龙门县"]],["梅州市",["梅江区","梅县区","大埔县","丰顺县","五华县","平远县","蕉岭县","兴宁市"]],["汕尾市",["城区","海丰县","陆河县","陆丰市"]],["河源市",["源城区","紫金县","龙川县","连平县","和平县","东源县"]],["阳江市",["江城区","阳东区","阳西县","阳春市"]],["清远市",["清城区","清新区","佛冈县","阳山县","连山壮族瑶族自治县","连南瑶族自治县","英德市","连州市"]],["东莞市",["东城街道","南城街道","万江街道","莞城街道","石碣镇","石龙镇","茶山镇","石排镇","企石镇","横沥镇","桥头镇","谢岗镇","东坑镇","常平镇","寮步镇","樟木头镇","大朗镇","黄江镇","清溪镇","塘厦镇","凤岗镇","大岭山镇","长安镇","虎门镇","厚街镇","沙田镇","道滘镇","洪梅镇","麻涌镇","望牛墩镇","中堂镇","高埗镇","松山湖","东莞港","东莞生态园","东莞滨海湾新区"]],["中山市",["石岐街道","东区街道","中山港街道","西区街道","南区街道","五桂山街道","民众街道","南朗街道","黄圃镇","东凤镇","古镇镇","沙溪镇","坦洲镇","港口镇","三角镇","横栏镇","南头镇","阜沙镇","三乡镇","板芙镇","大涌镇","神湾镇","小榄镇"]],["潮州市",["湘桥区","潮安区","饶平县"]],["揭阳市",["榕城区","揭东区","揭西县","惠来县","普宁市"]],["云浮市",["云城区","云安区","新兴县","郁南县","罗定市"]]]],["广西壮族自治区",[["南宁市",["兴宁区","青秀区","江南区","西乡塘区","良庆区","邕宁区","武鸣区","隆安县","马山县","上林县","宾阳县","横州市"]],["柳州市",["城中区","鱼峰区","柳南区","柳北区","柳江区","柳城县","鹿寨县","融安县","融水苗族自治县","三江侗族自治县"]],["桂林市",["秀峰区","叠彩区","象山区","七星区","雁山区","临桂区","阳朔县","灵川县","全州县","兴安县","永福县","灌阳县","龙胜各族自治县","资源县","平乐县","恭城瑶族自治县","荔浦市"]],["梧州市",["万秀区","长洲区","龙圩区","苍梧县","藤县","蒙山县","岑溪市"]],["北海市",["海城区","银海区","铁山港区","合浦县"]],["防城港市",["港口区","防城区","上思县","东兴市"]],["钦州市",["钦南区","钦北区","灵山县","浦北县"]],["贵港市",["港北区","港南区","覃塘区","平南县","桂平市"]],["玉林市",["玉州区","福绵区","容县","陆川县","博白县","兴业县","北流市"]],["百色市",["右江区","田阳区","田东县","德保县","那坡县","凌云县","乐业县","田林县","西林县","隆林各族自治县","靖西市","平果市"]],["贺州市",["八步区","平桂区","昭平县","钟山县","富川瑶族自治县"]],["河池市",["金城江区","宜州区","南丹县","天峨县","凤山县","东兰县","罗城仫佬族自治县","环江毛南族自治县","巴马瑶族自治县","都安瑶族自治县","大化瑶族自治县"]],["来宾市",["兴宾区","忻城县","象州县","武宣县","金秀瑶族自治县","合山市"]],["崇左市",["江州区","扶绥县","宁明县","龙州县","大新县","天等县","凭祥市"]]]],["海南省",[["海口市",["秀英区","龙华区","琼山区","美兰区"]],["三亚市",["海棠区","吉阳区","天涯区","崖州区"]],["三沙市",["西沙群岛","南沙群岛","中沙群岛的岛礁及其海域"]],["儋州市",["那大镇","和庆镇","南丰镇","大成镇","雅星镇","兰洋镇","光村镇","木棠镇","海头镇","峨蔓镇","王五镇","白马井镇","中和镇","排浦镇","东成镇","新州镇","洋浦经济开发区","华南热作学院"]],["省直辖县级行政区划",["五指山市","琼海市","文昌市","万宁市","东方市","定安县","屯昌县","澄迈县","临高县","白沙黎族自治县","昌江黎族自治县","乐东黎族自治县","陵水黎族自治县","保亭黎族苗族自治县","琼中黎族苗族自治县"]]]],["重庆市",[["市辖区",["万州区","涪陵区","渝中区","大渡口区","江北区","沙坪坝区","九龙坡区","南岸区","北碚区","綦江区","大足区","渝北区","巴南区","黔江区","长寿区","江津区","合川区","永川区","南川区","璧山区","铜梁区","潼南区","荣昌区","开州区","梁平区","武隆区"]],["县",["城口县","丰都县","垫江县","忠县","云阳县","奉节县","巫山县","巫溪县","石柱土家族自治县","秀山土家族苗族自治县","酉阳土家族苗族自治县","彭水苗族土家族自治县"]]]],["四川省",[["成都市",["锦江区","青羊区","金牛区","武侯区","成华区","龙泉驿区","青白江区","新都区","温江区","双流区","郫都区","新津区","金堂县","大邑县","蒲江县","都江堰市","彭州市","邛崃市","崇州市","简阳市"]],["自贡市",["自流井区","贡井区","大安区","沿滩区","荣县","富顺县"]],["攀枝花市",["东区","西区","仁和区","米易县","盐边县"]],["泸州市",["江阳区","纳溪区","龙马潭区","泸县","合江县","叙永县","古蔺县"]],["德阳市",["旌阳区","罗江区","中江县","广汉市","什邡市","绵竹市"]],["绵阳市",["涪城区","游仙区","安州区","三台县","盐亭县","梓潼县","北川羌族自治县","平武县","江油市"]],["广元市",["利州区","昭化区","朝天区","旺苍县","青川县","剑阁县","苍溪县"]],["遂宁市",["船山区","安居区","蓬溪县","大英县","射洪市"]],["内江市",["市中区","东兴区","威远县","资中县","隆昌市"]],["乐山市",["市中区","沙湾区","五通桥区","金口河区","犍为县","井研县","夹江县","沐川县","峨边彝族自治县","马边彝族自治县","峨眉山市"]],["南充市",["顺庆区","高坪区","嘉陵区","南部县","营山县","蓬安县","仪陇县","西充县","阆中市"]],["眉山市",["东坡区","彭山区","仁寿县","洪雅县","丹棱县","青神县"]],["宜宾市",["翠屏区","南溪区","叙州区","江安县","长宁县","高县","珙县","筠连县","兴文县","屏山县"]],["广安市",["广安区","前锋区","岳池县","武胜县","邻水县","华蓥市"]],["达州市",["通川区","达川区","宣汉县","开江县","大竹县","渠县","万源市"]],["雅安市",["雨城区","名山区","荥经县","汉源县","石棉县","天全县","芦山县","宝兴县"]],["巴中市",["巴州区","恩阳区","通江县","南江县","平昌县"]],["资阳市",["雁江区","安岳县","乐至县"]],["阿坝藏族羌族自治州",["马尔康市","汶川县","理县","茂县","松潘县","九寨沟县","金川县","小金县","黑水县","壤塘县","阿坝县","若尔盖县","红原县"]],["甘孜藏族自治州",["康定市","泸定县","丹巴县","九龙县","雅江县","道孚县","炉霍县","甘孜县","新龙县","德格县","白玉县","石渠县","色达县","理塘县","巴塘县","乡城县","稻城县","得荣县"]],["凉山彝族自治州",["西昌市","会理市","木里藏族自治县","盐源县","德昌县","会东县","宁南县","普格县","布拖县","金阳县","昭觉县","喜德县","冕宁县","越西县","甘洛县","美姑县","雷波县"]]]],["贵州省",[["贵阳市",["南明区","云岩区","花溪区","乌当区","白云区","观山湖区","开阳县","息烽县","修文县","清镇市"]],["六盘水市",["钟山区","六枝特区","水城区","盘州市"]],["遵义市",["红花岗区","汇川区","播州区","桐梓县","绥阳县","正安县","道真仡佬族苗族自治县","务川仡佬族苗族自治县","凤冈县","湄潭县","余庆县","习水县","赤水市","仁怀市"]],["安顺市",["西秀区","平坝区","普定县","镇宁布依族苗族自治县","关岭布依族苗族自治县","紫云苗族布依族自治县"]],["毕节市",["七星关区","大方县","金沙县","织金县","纳雍县","威宁彝族回族苗族自治县","赫章县","黔西市"]],["铜仁市",["碧江区","万山区","江口县","玉屏侗族自治县","石阡县","思南县","印江土家族苗族自治县","德江县","沿河土家族自治县","松桃苗族自治县"]],["黔西南布依族苗族自治州",["兴义市","兴仁市","普安县","晴隆县","贞丰县","望谟县","册亨县","安龙县"]],["黔东南苗族侗族自治州",["凯里市","黄平县","施秉县","三穗县","镇远县","岑巩县","天柱县","锦屏县","剑河县","台江县","黎平县","榕江县","从江县","雷山县","麻江县","丹寨县"]],["黔南布依族苗族自治州",["都匀市","福泉市","荔波县","贵定县","瓮安县","独山县","平塘县","罗甸县","长顺县","龙里县","惠水县","三都水族自治县"]]]],["云南省",[["昆明市",["五华区","盘龙区","官渡区","西山区","东川区","呈贡区","晋宁区","富民县","宜良县","石林彝族自治县","嵩明县","禄劝彝族苗族自治县","寻甸回族彝族自治县","安宁市"]],["曲靖市",["麒麟区","沾益区","马龙区","陆良县","师宗县","罗平县","富源县","会泽县","宣威市"]],["玉溪市",["红塔区","江川区","通海县","华宁县","易门县","峨山彝族自治县","新平彝族傣族自治县","元江哈尼族彝族傣族自治县","澄江市"]],["保山市",["隆阳区","施甸县","龙陵县","昌宁县","腾冲市"]],["昭通市",["昭阳区","鲁甸县","巧家县","盐津县","大关县","永善县","绥江县","镇雄县","彝良县","威信县","水富市"]],["丽江市",["古城区","玉龙纳西族自治县","永胜县","华坪县","宁蒗彝族自治县"]],["普洱市",["思茅区","宁洱哈尼族彝族自治县","墨江哈尼族自治县","景东彝族自治县","景谷傣族彝族自治县","镇沅彝族哈尼族拉祜族自治县","江城哈尼族彝族自治县","孟连傣族拉祜族佤族自治县","澜沧拉祜族自治县","西盟佤族自治县"]],["临沧市",["临翔区","凤庆县","云县","永德县","镇康县","双江拉祜族佤族布朗族傣族自治县","耿马傣族佤族自治县","沧源佤族自治县"]],["楚雄彝族自治州",["楚雄市","禄丰市","双柏县","牟定县","南华县","姚安县","大姚县","永仁县","元谋县","武定县"]],["红河哈尼族彝族自治州",["个旧市","开远市","蒙自市","弥勒市","屏边苗族自治县","建水县","石屏县","泸西县","元阳县","红河县","金平苗族瑶族傣族自治县","绿春县","河口瑶族自治县"]],["文山壮族苗族自治州",["文山市","砚山县","西畴县","麻栗坡县","马关县","丘北县","广南县","富宁县"]],["西双版纳傣族自治州",["景洪市","勐海县","勐腊县"]],["大理白族自治州",["大理市","漾濞彝族自治县","祥云县","宾川县","弥渡县","南涧彝族自治县","巍山彝族回族自治县","永平县","云龙县","洱源县","剑川县","鹤庆县"]],["德宏傣族景颇族自治州",["瑞丽市","芒市","梁河县","盈江县","陇川县"]],["怒江傈僳族自治州",["泸水市","福贡县","贡山独龙族怒族自治县","兰坪白族普米族自治县"]],["迪庆藏族自治州",["香格里拉市","德钦县","维西傈僳族自治县"]]]],["西藏自治区",[["拉萨市",["城关区","堆龙德庆区","达孜区","林周县","当雄县","尼木县","曲水县","墨竹工卡县","格尔木藏青工业园区","拉萨经济技术开发区","西藏文化旅游创意园区","达孜工业园区"]],["日喀则市",["桑珠孜区","南木林县","江孜县","定日县","萨迦县","拉孜县","昂仁县","谢通门县","白朗县","仁布县","康马县","定结县","仲巴县","亚东县","吉隆县","聂拉木县","萨嘎县","岗巴县"]],["昌都市",["卡若区","江达县","贡觉县","类乌齐县","丁青县","察雅县","八宿县","左贡县","芒康县","洛隆县","边坝县"]],["林芝市",["巴宜区","工布江达县","墨脱县","波密县","察隅县","朗县","米林市"]],["山南市",["乃东区","扎囊县","贡嘎县","桑日县","琼结县","曲松县","措美县","洛扎县","加查县","隆子县","浪卡子县","错那市"]],["那曲市",["色尼区","嘉黎县","比如县","聂荣县","安多县","申扎县","索县","班戈县","巴青县","尼玛县","双湖县"]],["阿里地区",["普兰县","札达县","噶尔县","日土县","革吉县","改则县","措勤县"]]]],["陕西省",[["西安市",["新城区","碑林区","莲湖区","灞桥区","未央区","雁塔区","阎良区","临潼区","长安区","高陵区","鄠邑区","蓝田县","周至县"]],["铜川市",["王益区","印台区","耀州区","宜君县"]],["宝鸡市",["渭滨区","金台区","陈仓区","凤翔区","岐山县","扶风县","眉县","陇县","千阳县","麟游县","凤县","太白县"]],["咸阳市",["秦都区","杨陵区","渭城区","三原县","泾阳县","乾县","礼泉县","永寿县","长武县","旬邑县","淳化县","武功县","兴平市","彬州市"]],["渭南市",["临渭区","华州区","潼关县","大荔县","合阳县","澄城县","蒲城县","白水县","富平县","韩城市","华阴市"]],["延安市",["宝塔区","安塞区","延长县","延川县","志丹县","吴起县","甘泉县","富县","洛川县","宜川县","黄龙县","黄陵县","子长市"]],["汉中市",["汉台区","南郑区","城固县","洋县","西乡县","勉县","宁强县","略阳县","镇巴县","留坝县","佛坪县"]],["榆林市",["榆阳区","横山区","府谷县","靖边县","定边县","绥德县","米脂县","佳县","吴堡县","清涧县","子洲县","神木市"]],["安康市",["汉滨区","汉阴县","石泉县","宁陕县","紫阳县","岚皋县","平利县","镇坪县","白河县","旬阳市"]],["商洛市",["商州区","洛南县","丹凤县","商南县","山阳县","镇安县","柞水县"]]]],["甘肃省",[["兰州市",["城关区","七里河区","西固区","安宁区","红古区","永登县","皋兰县","榆中县","兰州新区"]],["嘉峪关市",["雄关街道","钢城街道","新城镇","峪泉镇","文殊镇"]],["金昌市",["金川区","永昌县"]],["白银市",["白银区","平川区","靖远县","会宁县","景泰县"]],["天水市",["秦州区","麦积区","清水县","秦安县","甘谷县","武山县","张家川回族自治县"]],["武威市",["凉州区","民勤县","古浪县","天祝藏族自治县"]],["张掖市",["甘州区","肃南裕固族自治县","民乐县","临泽县","高台县","山丹县"]],["平凉市",["崆峒区","泾川县","灵台县","崇信县","庄浪县","静宁县","华亭市"]],["酒泉市",["肃州区","金塔县","瓜州县","肃北蒙古族自治县","阿克塞哈萨克族自治县","玉门市","敦煌市"]],["庆阳市",["西峰区","庆城县","环县","华池县","合水县","正宁县","宁县","镇原县"]],["定西市",["安定区","通渭县","陇西县","渭源县","临洮县","漳县","岷县"]],["陇南市",["武都区","成县","文县","宕昌县","康县","西和县","礼县","徽县","两当县"]],["临夏回族自治州",["临夏市","临夏县","康乐县","永靖县","广河县","和政县","东乡族自治县","积石山保安族东乡族撒拉族自治县"]],["甘南藏族自治州",["合作市","临潭县","卓尼县","舟曲县","迭部县","玛曲县","碌曲县","夏河县"]]]],["青海省",[["西宁市",["城东区","城中区","城西区","城北区","湟中区","大通回族土族自治县","湟源县"]],["海东市",["乐都区","平安区","民和回族土族自治县","互助土族自治县","化隆回族自治县","循化撒拉族自治县"]],["海北藏族自治州",["门源回族自治县","祁连县","海晏县","刚察县"]],["黄南藏族自治州",["同仁市","尖扎县","泽库县","河南蒙古族自治县"]],["海南藏族自治州",["共和县","同德县","贵德县","兴海县","贵南县"]],["果洛藏族自治州",["玛沁县","班玛县","甘德县","达日县","久治县","玛多县"]],["玉树藏族自治州",["玉树市","杂多县","称多县","治多县","囊谦县","曲麻莱县"]],["海西蒙古族藏族自治州",["格尔木市","德令哈市","茫崖市","乌兰县","都兰县","天峻县","大柴旦行政委员会"]]]],["宁夏回族自治区",[["银川市",["兴庆区","西夏区","金凤区","永宁县","贺兰县","灵武市"]],["石嘴山市",["大武口区","惠农区","平罗县"]],["吴忠市",["利通区","红寺堡区","盐池县","同心县","青铜峡市"]],["固原市",["原州区","西吉县","隆德县","泾源县","彭阳县"]],["中卫市",["沙坡头区","中宁县","海原县"]]]],["新疆维吾尔自治区",[["乌鲁木齐市",["天山区","沙依巴克区","新市区","水磨沟区","头屯河区","达坂城区","米东区","乌鲁木齐县"]],["克拉玛依市",["独山子区","克拉玛依区","白碱滩区","乌尔禾区"]],["吐鲁番市",["高昌区","鄯善县","托克逊县"]],["哈密市",["伊州区","巴里坤哈萨克自治县","伊吾县"]],["昌吉回族自治州",["昌吉市","阜康市","呼图壁县","玛纳斯县","奇台县","吉木萨尔县","木垒哈萨克自治县"]],["博尔塔拉蒙古自治州",["博乐市","阿拉山口市","精河县","温泉县"]],["巴音郭楞蒙古自治州",["库尔勒市","轮台县","尉犁县","若羌县","且末县","焉耆回族自治县","和静县","和硕县","博湖县"]],["阿克苏地区",["阿克苏市","库车市","温宿县","沙雅县","新和县","拜城县","乌什县","阿瓦提县","柯坪县"]],["克孜勒苏柯尔克孜自治州",["阿图什市","阿克陶县","阿合奇县","乌恰县"]],["喀什地区",["喀什市","疏附县","疏勒县","英吉沙县","泽普县","莎车县","叶城县","麦盖提县","岳普湖县","伽师县","巴楚县","塔什库尔干塔吉克自治县"]],["和田地区",["和田市","和田县","墨玉县","皮山县","洛浦县","策勒县","于田县","民丰县"]],["伊犁哈萨克自治州",["伊宁市","奎屯市","霍尔果斯市","伊宁县","察布查尔锡伯自治县","霍城县","巩留县","新源县","昭苏县","特克斯县","尼勒克县"]],["塔城地区",["塔城市","乌苏市","沙湾市","额敏县","托里县","裕民县","和布克赛尔蒙古自治县"]],["阿勒泰地区",["阿勒泰市","布尔津县","富蕴县","福海县","哈巴河县","青河县","吉木乃县"]],["自治区直辖县级行政区划",["石河子市","阿拉尔市","图木舒克市","五家渠市","北屯市","铁门关市","双河市","可克达拉市","昆玉市","胡杨河市","新星市","白杨市"]]]],["香港特别行政区",[["香港特别行政区",["中西区","湾仔区","东区","南区","油尖旺区","深水埗区","九龙城区","黄大仙区","观塘区","荃湾区","屯门区","元朗区","北区","大埔区","西贡区","沙田区","葵青区","离岛区"]]]],["澳门特别行政区",[["澳门特别行政区",["花地玛堂区","花王堂区","望德堂区","大堂区","风顺堂区","嘉模堂区","圣方济各堂区","路凼填海区"]]]],["台湾省",[["台湾省",["台北市","新北市","桃园市","台中市","台南市","高雄市","基隆市","新竹市","嘉义市","新竹县","苗栗县","彰化县","南投县","云林县","嘉义县","屏东县","宜兰县","花莲县","台东县","澎湖县","金门县","连江县"]]]]];
+// 数据来源：中国民政部行政区划标准数据集（省→市→区/县三级），并补充港澳台，离线内置，无需网络请求，杜绝“加载不全/加载失败”问题。
+function initRegions(){
+  const p=document.getElementById('province');
+  p.innerHTML='<option value="">请选择省 / 自治区 / 直辖市</option>';
+  REGION_DATA.forEach(prov=>p.add(new Option(prov[0],prov[0])));
+  loadCities();
+}
+function loadCities(){
+  const p=document.getElementById('province').value,c=document.getElementById('city'),d=document.getElementById('district');
+  c.innerHTML='<option value="">请选择市 / 自治州 / 盟 / 地区</option>';
+  d.innerHTML='<option value="">请先选择城市</option>';
+  const pv=REGION_DATA.find(x=>x[0]===p);
+  (pv?pv[1]:[]).forEach(city=>c.add(new Option(city[0],city[0])));
+  loadDistricts();
+}
+function loadDistricts(){
+  const p=document.getElementById('province').value,cval=document.getElementById('city').value,d=document.getElementById('district');
+  d.innerHTML='<option value="">请选择区 / 县 / 县级市 / 旗</option>';
+  const pv=REGION_DATA.find(x=>x[0]===p);
+  const cv=(pv?pv[1]:[]).find(x=>x[0]===cval);
+  (cv?cv[1]:[]).forEach(dn=>d.add(new Option(dn,dn)));
+}
+initRegions();
+function getLocationText(){return [document.getElementById('province')?.value,document.getElementById('city')?.value,document.getElementById('district')?.value].filter(Boolean).join(' / ')}
+function openChat(n,service,customer,orderId){
+  window.currentConsultOrderId=null;
+  document.getElementById('endConsultBtn').style.display='none';
+  document.getElementById('chatOrderStatus').textContent='● 在线 · 平台内咨询';
+  document.getElementById('chatOrderStatus').style.color='var(--ok)';
+  document.getElementById('chatOrderInfo').textContent=orderId?'订单 '+orderId:'普通咨询';
+  document.getElementById('chatName').textContent=n||'大师';
+  document.getElementById('consultMasterName').textContent=n||'大师';
+  document.getElementById('consultMasterService').textContent=(service||'站内咨询')+(customer?' · 顾客：'+customer:'')+(orderId?' · 订单：'+orderId:'');
+  document.getElementById('chatBody').innerHTML='<div style="max-width:78%;padding:11px 14px;border:1px solid #29415d;border-radius:12px;background:#0a1727">您好，已进入本订单的专属服务界面。请围绕当前预约事项与顾客进行咨询。</div>';
+  document.getElementById('chatModal').style.display='block';
+  setTimeout(()=>document.getElementById('chatInput').focus(),80);
+}
+function closeChat(){document.getElementById('chatModal').style.display='none'}
+function sendChat(){const i=document.getElementById('chatInput'),v=i.value.trim();if(!v)return;const b=document.getElementById('chatBody');b.innerHTML+=`<div style="text-align:right;margin-top:14px"><span style="display:inline-block;max-width:78%;padding:10px 13px;border-radius:12px;background:#18375d">${v}</span><div style="font-size:11px;color:var(--muted);margin-top:3px">已发送</div></div>`;i.value='';b.scrollTop=b.scrollHeight;toast('消息已发送')}
+function openJoin(){document.getElementById('joinForm').style.display='block';document.getElementById('joinForm').scrollIntoView({behavior:'smooth',block:'center'})}
+function submitJoin(){const n=document.getElementById('mname').value.trim();if(!n){toast('请填写姓名/艺名');return}toast('入驻申请已提交，等待平台审核')}
+</script>
+
+<script>
+const MASTER_DEMO={account:'master001',password:'123456',name:'玄清老师'};
+const MASTER_ORDER_STORAGE='xingyao_master_orders_v45';
+const MASTER_ORDERS_DEFAULT=[
+ {id:'SO20260901001',name:'张先生',service:'八字 / 大运 / 事业财运',price:'¥39',time:'10:21',status:'待接单'},
+ {id:'SO20260901002',name:'李女士',service:'感情 / 婚姻',price:'¥49',time:'10:48',status:'待接单'},
+ {id:'SO20260901003',name:'王先生',service:'流年 / 流月',price:'¥39',time:'11:05',status:'进行中'}
+];
+let MASTER_ORDERS=(()=>{try{const x=JSON.parse(localStorage.getItem(MASTER_ORDER_STORAGE));return Array.isArray(x)&&x.length?x:MASTER_ORDERS_DEFAULT.map(o=>({...o}));}catch(e){return MASTER_ORDERS_DEFAULT.map(o=>({...o}));}})();
+function persistMasterOrders(){localStorage.setItem(MASTER_ORDER_STORAGE,JSON.stringify(MASTER_ORDERS)); try{localStorage.setItem(MASTER_ORDER_STORAGE+'_sync',String(Date.now()));}catch(e){} renderSharedPool();}
+function getMasterOrder(id){return MASTER_ORDERS.find(x=>x.id===id);}
+function updateMasterOrderStatus(id,status){const o=getMasterOrder(id);if(!o)return null;o.status=status;o.updatedAt=new Date().toISOString();persistMasterOrders();renderMasterOrders();return o;}
+function openMasterLogin(){document.getElementById('masterLoginModal').style.display='block';setTimeout(()=>document.getElementById('masterAccount').focus(),50);}
+function closeMasterLogin(){document.getElementById('masterLoginModal').style.display='none';}
+function masterLogin(){
+  const a=document.getElementById('masterAccount').value.trim(),p=document.getElementById('masterPassword').value;
+  const err=document.getElementById('masterLoginError');
+  if(a!==MASTER_DEMO.account||p!==MASTER_DEMO.password){
+    err.style.display='block';err.textContent='账户或密码错误，请检查大师账户和登录密码。';
+    document.getElementById('masterPassword').focus();
+    return;
+  }
+  err.style.display='none';closeMasterLogin();
+  document.getElementById('workMasterName').textContent=MASTER_DEMO.name+' · 已认证登录';
+  document.getElementById('masterWorkModal').style.display='block';renderMasterOrders();persistMasterOrders();
+  toast('登录成功，欢迎进入大师工作台');
+}
+function logoutMaster(){document.getElementById('masterWorkModal').style.display='none';document.getElementById('masterAccount').value='';document.getElementById('masterPassword').value='';document.getElementById('masterLoginError').style.display='none';toast('已安全退出大师工作台');}
+function switchMasterPanel(id,btn){document.querySelectorAll('.master-panel').forEach(x=>x.classList.remove('active'));document.getElementById('masterPanel-'+id).classList.add('active');document.querySelectorAll('.master-nav button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');}
+function renderSharedPool(){const box=document.getElementById('masterSharedPool');if(!box)return;const pool=MASTER_ORDERS.filter(o=>o.status==='待接单');box.innerHTML=pool.length?pool.map(o=>`<div class="shared-order"><div><div class="title">${escapeHtml(o.name)} <span class="pool-badge">待分配</span></div><div class="meta">订单：${escapeHtml(o.id)}<br>服务：${escapeHtml(o.service)}<br>金额：${escapeHtml(o.price)} · ${escapeHtml(o.time)}</div></div><button class="primary" onclick="acceptFromSharedPool('${o.id}')">接单并进入咨询</button></div>`).join(''):'<div class="pool-empty">当前没有待接单订单</div>';}
+function acceptFromSharedPool(id){const o=getMasterOrder(id);if(!o){toast('订单不存在');return}if(o.status!=='待接单'){toast('订单状态已变化，请刷新共享池');renderSharedPool();return}o.status='进行中';o.masterId='master_xuanqing';o.acceptedAt=new Date().toLocaleString('zh-CN');persistMasterOrders();renderMasterOrders();renderSharedPool();openOrderConsult(o);toast('已接单，订单已锁定并进入大师咨询');}
+function renderMasterOrders(){
+  const box=document.getElementById('masterOrders');
+  if(!box)return;
+  const counts={pending:MASTER_ORDERS.filter(o=>o.status==='待接单').length,active:MASTER_ORDERS.filter(o=>o.status==='进行中').length,done:MASTER_ORDERS.filter(o=>o.status==='已完成').length};
+  const panel=document.getElementById('masterPanel-orders');
+  if(panel){const title=panel.querySelector('h3');if(title)title.innerHTML=`订单处理 <span style="font-size:12px;color:#91a5bf;font-weight:500">待接 ${counts.pending} · 进行中 ${counts.active} · 已完成 ${counts.done}</span>`;}
+  box.innerHTML=MASTER_ORDERS.map(o=>`<div class="order"><div class="order-top"><b>${escapeHtml(o.service)}</b><b class="gold">${escapeHtml(o.price)}</b></div><div class="order-meta">订单 ${escapeHtml(o.id)} · 顾客：${escapeHtml(o.name)} · ${escapeHtml(o.time)} · <span class="gold">${escapeHtml(o.status)}</span></div><div class="order-actions">${o.status==='待接单'?`<button class="primary" onclick="acceptMasterOrder('${o.id}')">接单并进入咨询</button><button onclick="rejectMasterOrder('${o.id}')">拒绝</button>`:o.status==='进行中'?`<button class="primary" onclick="enterOrderService('${o.id}')">进入咨询</button><button class="complete-order-btn" onclick="finishMasterOrder('${o.id}')">完成订单</button>`:`<button disabled>已完成</button>`}<button onclick="toast('订单 ${o.id}：${o.status}')">查看详情</button></div></div>`).join('')||'<div class="notice">暂无订单</div>';
+  // 同步工作台概览数据
+  const nums=document.querySelectorAll('#masterPanel-overview .master-kpi strong');
+  if(nums.length>=1)nums[0].textContent=counts.pending+counts.active;
+}
+function enterOrderService(id){
+  const o=getMasterOrder(id);if(!o)return;
+  if(o.status==='待接单'){toast('请先接单后再进入服务界面');return;}
+  if(o.status!=='进行中'){toast('该订单当前不可进入咨询');return;}
+  openOrderConsult(o);
+}
+function acceptMasterOrder(id){
+  const o=getMasterOrder(id);if(!o)return;
+  if(o.status!=='待接单'){toast('该订单已被处理');return;}
+  updateMasterOrderStatus(id,'进行中');
+  openOrderConsult(o);
+  toast('订单已接单，正在进入与顾客的专属对话框');
+}
+function rejectMasterOrder(id){
+  const o=updateMasterOrderStatus(id,'已拒绝');
+  if(o)toast('订单已拒绝，状态已同步');
+}
+function finishMasterOrder(id){
+  const o=getMasterOrder(id);
+  if(!o)return;
+  if(o.status==='已完成'){toast('该订单已经完成');renderMasterOrders();return;}
+  if(o.status!=='进行中'){toast('只有进行中的订单才能完成');return;}
+  if(!confirm('确定结束本次咨询吗？结束后订单将立即完成，并返回大师工作台。'))return;
+  completeConsultation(id);
+}
+function openOrderConsult(o){
+  window.currentConsultOrderId=o.id;
+  const work=document.getElementById('masterWorkModal');
+  if(work) work.style.display='none';
+  const chat=document.getElementById('chatModal');
+  if(chat){chat.style.display='block';chat.style.zIndex='120';}
+  const customer=o.name||'顾客';
+  document.getElementById('chatName').textContent=customer+' · 顾客';
+  document.getElementById('masterCustomerName').textContent=customer;
+  document.getElementById('masterCustomerAvatar').textContent=customer.slice(0,1);
+  document.getElementById('masterOrderId').textContent=o.id;
+  document.getElementById('masterOrderService').textContent=o.service;
+  document.getElementById('masterOrderPrice').textContent=o.price;
+  document.getElementById('masterOrderTime').textContent=o.time;
+  document.getElementById('masterOrderState').textContent='进行中';
+  document.getElementById('masterRightService').textContent=o.service;
+  document.getElementById('masterRightPrice').textContent=o.price;
+  document.getElementById('chatOrderStatus').textContent='● 服务进行中 · 订单未结束';
+  document.getElementById('chatOrderStatus').style.color='var(--ok)';
+  document.getElementById('chatOrderInfo').textContent='订单 '+o.id+' · '+o.service+' · '+o.price+' · '+o.time+' 接单';
+  document.getElementById('endConsultBtn').style.display='inline-flex';
+  document.getElementById('chatBody').innerHTML=`<div class="master-chat-welcome"><b>大师服务室已开启</b><br>当前为<strong>大师视角</strong>。左侧查看顾客与订单，中间与顾客实时沟通，右侧提供快捷回复和服务信息。<br><span style="font-size:11px;color:#8195ad">订单 ${escapeHtml(o.id)} 已接单，服务状态为“进行中”。</span></div><div class="master-message customer"><span class="master-bubble">您好，我已经进入本订单的咨询服务，请问可以开始了吗？</span><div class="master-time">顾客 · 刚刚</div></div>`;
+  setTimeout(()=>document.getElementById('chatInput').focus(),80);
+}
+function quickMasterReply(text){
+  const i=document.getElementById('chatInput');
+  if(i){i.value=text;i.focus();}
+}
+function sendChat(){
+  const i=document.getElementById('chatInput'),v=i.value.trim();if(!v)return;
+  const b=document.getElementById('chatBody');
+  b.innerHTML+=`<div class="master-message master"><span class="master-bubble">${escapeHtml(v)}</span><div class="master-time">大师 · 已发送</div></div>`;
+  i.value='';b.scrollTop=b.scrollHeight;toast('已向顾客发送消息');
+}
+function returnToMasterOrders(){
+  const chat=document.getElementById('chatModal');if(chat)chat.style.display='none';
+  const work=document.getElementById('masterWorkModal');if(work)work.style.display='block';
+  renderMasterOrders();
+  const orderBtn=document.querySelector('.master-nav button:nth-child(2)');if(orderBtn)switchMasterPanel('orders',orderBtn);
+}
+/* =========================================================
+   V47：结束咨询 / 完成订单统一联动
+   两个按钮都调用同一个原子完成函数：
+   1. 立即修改内存状态
+   2. 立即写入 localStorage
+   3. 立即刷新订单列表
+   4. 关闭咨询室
+   5. 自动返回大师工作台
+   6. 防止重复点击
+========================================================= */
+let completingOrder=false;
+
+function completeConsultation(id){
+  if(completingOrder)return;
+
+  const o=getMasterOrder(id);
+  if(!o){
+    toast('未找到该订单');
+    return;
+  }
+
+  if(o.status==='已完成'){
+    // 即使已经完成，也确保工作台显示最新状态
+    persistMasterOrders();
+    renderMasterOrders();
+    returnToMasterWork();
+    return;
+  }
+
+  if(o.status!=='进行中'){
+    toast('当前订单不是进行中状态');
+    return;
+  }
+
+  completingOrder=true;
+
+  // 锁定两个完成按钮，避免连续点击造成重复操作
+  document.querySelectorAll(
+    '.master-end,.complete-order-btn'
+  ).forEach(btn=>{
+    btn.disabled=true;
+    btn.style.pointerEvents='none';
+    btn.dataset.oldText=btn.textContent;
+    btn.textContent='正在完成…';
+  });
+
+  // ===== 第一时间更新状态 =====
+  o.status='已完成';
+  o.completedAt=new Date().toISOString();
+
+  // ===== 第一时间持久化 =====
+  persistMasterOrders();
+
+  // ===== 通知当前页面其它模块立即同步 =====
+  try{
+    window.dispatchEvent(new CustomEvent(
+      'xingyao:order-status-updated',
+      {
+        detail:{
+          id:o.id,
+          status:'已完成',
+          order:o
+        }
+      }
+    ));
+  }catch(e){}
+
+  // 更新当前咨询室状态
+  if(window.currentConsultOrderId===id){
+    const status=document.getElementById('chatOrderStatus');
+    if(status){
+      status.textContent='● 咨询已结束 · 订单已完成';
+      status.style.color='var(--muted)';
+    }
+
+    const state=document.getElementById('masterOrderState');
+    if(state)state.textContent='已完成';
+
+    const endBtn=document.getElementById('endConsultBtn');
+    if(endBtn)endBtn.style.display='none';
+
+    const body=document.getElementById('chatBody');
+
+    if(body){
+      body.insertAdjacentHTML(
+        'beforeend',
+        `<div style="text-align:center;margin:18px 0;padding:10px;border:1px solid #28425e;border-radius:10px;color:#91a5bf;font-size:12px">
+          本次咨询已结束，订单 ${escapeHtml(o.id)} 已完成。
+        </div>`
+      );
+    }
+  }
+
+  // 清除当前咨询订单
+  window.currentConsultOrderId=null;
+
+  // 立即关闭咨询窗口
+  const chat=document.getElementById('chatModal');
+  if(chat){
+    chat.style.display='none';
+    chat.style.zIndex='40';
+  }
+
+  // 立即返回大师工作台
+  returnToMasterWork();
+
+  toast(`订单 ${o.id} 已完成，已返回大师工作台`);
+
+  // 解锁按钮
+  setTimeout(()=>{
+    completingOrder=false;
+  },100);
+}
+
+
+/* =========================================================
+   统一返回大师工作台
+========================================================= */
+function returnToMasterWork(){
+
+  const work=document.getElementById('masterWorkModal');
+
+  if(work){
+    work.style.display='block';
+    work.scrollTop=0;
+  }
+
+  // 重新读取 localStorage，确保订单页显示的是最新状态
+  try{
+    const latest=JSON.parse(
+      localStorage.getItem(MASTER_ORDER_STORAGE)
+    );
+
+    if(Array.isArray(latest)){
+      MASTER_ORDERS.length=0;
+      latest.forEach(x=>MASTER_ORDERS.push(x));
+    }
+  }catch(e){}
+
+  // 立即刷新订单列表
+  renderMasterOrders();
+
+  // 自动进入订单处理页
+  const orderBtn=
+    document.querySelector('.master-nav button:nth-child(2)');
+
+  if(orderBtn){
+    switchMasterPanel('orders',orderBtn);
+  }else{
+    const fallback=
+      document.querySelector('[onclick*="switchMasterPanel"][onclick*="orders"]');
+
+    if(fallback){
+      switchMasterPanel('orders',fallback);
+    }
+  }
+}
+
+
+/* =========================================================
+   “结束咨询”按钮
+========================================================= */
+function endCurrentConsult(){
+
+  const id=window.currentConsultOrderId;
+
+  if(!id){
+    toast('当前没有进行中的咨询订单');
+    return;
+  }
+
+  const o=getMasterOrder(id);
+
+  if(!o){
+    toast('订单不存在');
+    return;
+  }
+
+  if(o.status==='已完成'){
+    returnToMasterWork();
+    return;
+  }
+
+  if(o.status!=='进行中'){
+    toast('当前订单状态无法结束咨询');
+    return;
+  }
+
+  if(!confirm(
+    '确定结束本次咨询吗？\\n\\n'+
+    '确认后：\\n'+
+    '① 咨询立即结束\\n'+
+    '② 订单立即变为“已完成”\\n'+
+    '③ 自动返回大师工作台\\n'+
+    '④ 订单状态同步更新'
+  ))return;
+
+  completeConsultation(id);
+}
+
+
+/* =========================================================
+   监听订单状态同步
+========================================================= */
+window.addEventListener(
+  'xingyao:order-status-updated',
+  function(e){
+    if(!e.detail)return;
+
+    // 任何模块收到状态变化，都立即刷新
+    renderMasterOrders();
+
+    const id=e.detail.id;
+    const o=getMasterOrder(id);
+
+    if(
+      o &&
+      window.currentConsultOrderId===id &&
+      o.status==='已完成'
+    ){
+      const state=
+        document.getElementById('masterOrderState');
+
+      if(state)state.textContent='已完成';
+    }
+  }
+);
+
+
+/* =========================================================
+   跨标签页同步
+========================================================= */
+window.addEventListener(
+  'storage',
+  function(e){
+    if(e.key!==MASTER_ORDER_STORAGE)return;
+
+    try{
+      const latest=JSON.parse(e.newValue);
+
+      if(Array.isArray(latest)){
+        MASTER_ORDERS.length=0;
+        latest.forEach(x=>MASTER_ORDERS.push(x));
+        renderMasterOrders();
+      }
+    }catch(err){}
+  }
+);
+
+function saveMasterProfile(){const n=document.getElementById('profileName').value.trim();if(!n){toast('大师姓名不能为空');return}MASTER_DEMO.name=n;document.getElementById('workMasterName').textContent=n+' · 已认证登录';toast('个人资料已保存');}
+const DEFAULT_SERVICES=[{id:1,name:'八字精准分析',price:199,duration:60,mode:'实时文字',desc:'围绕四柱、十神、神煞、大运流年进行专项分析。',enabled:true},{id:2,name:'事业财运专项',price:129,duration:45,mode:'图文咨询',desc:'聚焦事业方向、财运节奏与阶段性机会。',enabled:true},{id:3,name:'感情婚姻咨询',price:159,duration:60,mode:'实时文字',desc:'围绕感情关系、婚姻趋势与相处问题进行分析。',enabled:false}];
+let masterServices=JSON.parse(localStorage.getItem('xingyao_master_services')||'null')||DEFAULT_SERVICES;let editingServiceId=null;
+function persistServices(){localStorage.setItem('xingyao_master_services',JSON.stringify(masterServices));renderMasterServices();renderCustomerMaster();}
+function renderMasterServices(){const box=document.getElementById('masterServices');if(!box)return;if(!masterServices.length){box.innerHTML='<div class="service-empty">还没有服务，先新增一个服务吧。</div>';return}box.innerHTML=masterServices.map(s=>`<div class="service-item"><div class="top"><b>${escapeHtml(s.name)}</b><b class="gold">¥${Number(s.price)||0}</b></div><div class="meta">${s.duration}分钟 · ${escapeHtml(s.mode)} · ${s.enabled?'顾客端展示':'已下架'}<br>${escapeHtml(s.desc||'')}</div><div class="service-actions"><button class="on" onclick="toggleService(${s.id})">${s.enabled?'下架服务':'上架服务'}</button><button onclick="editService(${s.id})">编辑</button><button onclick="deleteService(${s.id})">删除</button></div></div>`).join('')}
+function saveService(){const name=document.getElementById('serviceName').value.trim();const price=Number(document.getElementById('servicePrice').value);const duration=Number(document.getElementById('serviceDuration').value);const mode=document.getElementById('serviceMode').value;const desc=document.getElementById('serviceDesc').value.trim();if(!name||!price||!duration){toast('请填写服务名称、价格和时长');return}if(editingServiceId){const x=masterServices.find(v=>v.id===editingServiceId);if(x)Object.assign(x,{name,price,duration,mode,desc});toast('服务已修改并同步顾客端')}else{masterServices.push({id:Date.now(),name,price,duration,mode,desc,enabled:true});toast('服务已新增并同步顾客端')}persistServices();resetServiceForm()}
+function editService(id){const s=masterServices.find(v=>v.id===id);if(!s)return;editingServiceId=id;document.getElementById('serviceName').value=s.name;document.getElementById('servicePrice').value=s.price;document.getElementById('serviceDuration').value=s.duration;document.getElementById('serviceMode').value=s.mode;document.getElementById('serviceDesc').value=s.desc||'';document.getElementById('serviceSaveBtn').textContent='保存修改';}
+function resetServiceForm(){editingServiceId=null;['serviceName','servicePrice','serviceDuration','serviceDesc'].forEach(id=>document.getElementById(id).value='');document.getElementById('serviceMode').value='实时文字';document.getElementById('serviceSaveBtn').textContent='新增服务'}
+function toggleService(id){const s=masterServices.find(v=>v.id===id);if(s){s.enabled=!s.enabled;persistServices();toast(s.enabled?'服务已上架并同步顾客端':'服务已下架并同步顾客端')}}
+function deleteService(id){if(!confirm('确定删除这个服务吗？'))return;masterServices=masterServices.filter(v=>v.id!==id);persistServices();toast('服务已删除')}
+function renderCustomerMaster(){const active=masterServices.filter(s=>s.enabled);const price=active.length?Math.min(...active.map(s=>Number(s.price)||0)):0;const list=document.getElementById('customerMasterServices');if(list)list.innerHTML=active.slice(0,4).map(s=>`<div style="padding:8px 10px;border:1px solid #29415d;border-radius:9px;background:#091725;display:flex;justify-content:space-between;gap:8px;font-size:12px"><span>${escapeHtml(s.name)} · ${s.duration}分钟</span><b style="color:var(--gold2)">¥${s.price}</b></div>`).join('')||'<div style="font-size:12px;color:#91a5bf">当前暂无可预约服务</div>';const p=document.getElementById('customerMasterPrice');if(p)p.textContent=active.length?'¥'+price+' 起':'暂未开放';}
+function getCustomerServiceSummary(){return masterServices.filter(s=>s.enabled).map(s=>s.name).slice(0,3).join(' / ')||'暂未开放服务'}
+renderMasterServices();renderCustomerMaster();
+
+</script>
+</body>
+</html>
+<script>
+function acceptMasterOrder(id){return acceptFromSharedPool(id);}
+function finishMasterOrder(id){return completeMasterOrderUnified(id);}
+function completeMasterOrderUnified(id){const o=getMasterOrder(id);if(!o)return false;if(o.status==='已完成'){toast('订单已经完成');return true}o.status='已完成';o.completedAt=new Date().toLocaleString('zh-CN');persistMasterOrders();if(window.currentConsultOrderId===id){window.currentConsultOrderId=null;const c=document.getElementById('chatModal');if(c)c.style.display='none'}renderMasterOrders();renderSharedPool();const work=document.getElementById('masterWorkModal');if(work){work.style.display='block';const btn=document.querySelector('.master-nav button:nth-child(2)');switchMasterPanel('orders',btn)}toast('订单已完成，状态已同步');return true;}
+function endCurrentConsult(){const id=window.currentConsultOrderId;if(!id){toast('当前没有进行中的订单');return}if(!confirm('确定结束咨询吗？结束后订单立即完成并返回大师工作台。'))return;completeMasterOrderUnified(id);}
+function rejectMasterOrder(id){const o=getMasterOrder(id);if(!o)return;o.status='已拒绝';persistMasterOrders();renderMasterOrders();renderSharedPool();toast('订单已拒绝');}
+const _oldSwitchMasterPanelV48=switchMasterPanel;
+switchMasterPanel=function(id,btn){_oldSwitchMasterPanelV48(id,btn);if(id==='pool')renderSharedPool();};
+window.addEventListener('storage',function(e){if(e.key===MASTER_ORDER_STORAGE||e.key===MASTER_ORDER_STORAGE+'_sync'){try{const x=JSON.parse(localStorage.getItem(MASTER_ORDER_STORAGE));if(Array.isArray(x)){MASTER_ORDERS.length=0;x.forEach(o=>MASTER_ORDERS.push(o));renderMasterOrders();renderSharedPool();}}catch(err){}}});
+document.addEventListener('DOMContentLoaded',function(){setTimeout(renderSharedPool,0)});
+</script>
